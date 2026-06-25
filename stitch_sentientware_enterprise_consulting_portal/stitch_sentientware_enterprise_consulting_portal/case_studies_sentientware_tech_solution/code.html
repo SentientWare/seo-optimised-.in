@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Case Studies | Sentientware Tech Solution</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary-container": "#002d5b",
+                      "secondary-fixed": "#ffdea5",
+                      "surface-container-lowest": "#ffffff",
+                      "tertiary-fixed-dim": "#ffb692",
+                      "on-secondary-fixed": "#261900",
+                      "primary-fixed-dim": "#a7c8ff",
+                      "surface-container": "#edeeef",
+                      "on-tertiary-container": "#ce825b",
+                      "secondary-fixed-dim": "#e9c176",
+                      "surface": "#f8f9fa",
+                      "error-container": "#ffdad6",
+                      "surface-tint": "#3e5f90",
+                      "text-main": "#1A1A1A",
+                      "tertiary-fixed": "#ffdbcb",
+                      "on-secondary-fixed-variant": "#5d4201",
+                      "error": "#ba1a1a",
+                      "tertiary-container": "#501e01",
+                      "on-error-container": "#93000a",
+                      "on-primary": "#ffffff",
+                      "on-error": "#ffffff",
+                      "primary-fixed": "#d5e3ff",
+                      "primary": "#001836",
+                      "on-secondary": "#ffffff",
+                      "inverse-on-surface": "#f0f1f2",
+                      "metallic-gold-light": "#D4B982",
+                      "on-tertiary-fixed": "#341100",
+                      "surface-grey": "#E9ECEF",
+                      "surface-variant": "#e1e3e4",
+                      "on-primary-container": "#7696ca",
+                      "tertiary": "#300e00",
+                      "outline": "#737780",
+                      "text-muted": "#6C757D",
+                      "enterprise-blue-dark": "#001A35",
+                      "outline-variant": "#c3c6d0",
+                      "on-primary-fixed": "#001b3c",
+                      "inverse-primary": "#a7c8ff",
+                      "on-tertiary-fixed-variant": "#713716",
+                      "on-surface-variant": "#43474f",
+                      "surface-dim": "#d9dadb",
+                      "secondary-container": "#fed488",
+                      "surface-bright": "#f8f9fa",
+                      "background": "#f8f9fa",
+                      "on-tertiary": "#ffffff",
+                      "secondary": "#775a19",
+                      "on-surface": "#191c1d",
+                      "on-primary-fixed-variant": "#254776",
+                      "on-background": "#191c1d",
+                      "surface-container-low": "#f3f4f5",
+                      "on-secondary-container": "#785a1a",
+                      "surface-container-high": "#e7e8e9",
+                      "inverse-surface": "#2e3132",
+                      "surface-container-highest": "#e1e3e4"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "gutter": "24px",
+                      "container-max-width": "1280px",
+                      "unit": "8px",
+                      "margin-desktop": "64px",
+                      "margin-mobile": "16px"
+              },
+              "fontFamily": {
+                      "display-xl": ["Sora"],
+                      "body-lg": ["Inter"],
+                      "body-md": ["Inter"],
+                      "headline-md": ["Sora"],
+                      "headline-lg": ["Sora"],
+                      "caption": ["Inter"],
+                      "label-bold": ["Inter"],
+                      "headline-lg-mobile": ["Sora"]
+              },
+              "fontSize": {
+                      "display-xl": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "headline-lg": ["40px", {"lineHeight": "48px", "fontWeight": "600"}],
+                      "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                      "label-bold": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
+                      "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="bg-surface dark:bg-enterprise-blue-dark w-full top-0 sticky z-50 border-b border-outline-variant dark:border-primary-container shadow-sm">
+<nav class="flex justify-between items-center px-margin-desktop h-20 max-w-container-max-width mx-auto">
+<div class="flex items-center gap-8">
+<a class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed" href="#">Sentientware Tech Solution</a>
+<div class="hidden md:flex items-center gap-6">
+<a class="text-on-surface-variant dark:text-surface-variant font-body-md hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200" href="#">Services</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-body-md hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200" href="#">Industries</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-body-md hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200" href="#">Solutions</a>
+<a class="text-primary dark:text-secondary-fixed font-label-bold border-b-2 border-secondary" href="#">Case Studies</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-body-md hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200" href="#">About Us</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-body-md hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200" href="#">Contact</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden lg:block px-4 py-2 text-on-surface-variant dark:text-surface-variant font-label-bold hover:text-secondary transition-all">Careers</button>
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-lg font-label-bold scale-95 active:opacity-80 transition-all">Get Started</button>
+</div>
+</nav>
+</header>
+<!-- Hero Section -->
+<section class="relative bg-enterprise-blue-dark text-on-primary py-24 overflow-hidden">
+<!-- Background Animation -->
+
+<div class="relative z-10 max-w-container-max-width mx-auto px-margin-desktop grid grid-cols-1 lg:grid-cols-2 gap-gutter items-center">
+<div>
+<span class="inline-block py-1 px-3 bg-secondary-container text-on-secondary-container font-label-bold rounded-full mb-6">Success Stories</span>
+<h1 class="font-display-xl text-display-xl mb-6">Proven Impact, Local Excellence</h1>
+<p class="font-body-lg text-body-lg text-primary-fixed-dim max-w-xl mb-10">
+                    We partner with global leaders to engineer digital transformation that delivers measurable growth and operational superiority. Explore how we solve the world's most complex technical challenges.
+                </p>
+<div class="flex gap-4">
+<button class="bg-metallic-gold-light text-primary px-8 py-4 rounded-lg font-label-bold flex items-center gap-2 hover:bg-secondary-fixed transition-all">
+                        Consult an Expert
+                        <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Metrics Collage Bento -->
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-primary-container p-8 rounded-xl border border-on-primary-container/20 flex flex-col justify-end h-48 group hover:scale-[1.02] transition-transform">
+<span class="text-secondary-fixed font-display-xl text-[48px] leading-tight mb-2">98%</span>
+<p class="text-on-primary-container font-label-bold">Client Retention</p>
+</div>
+<div class="bg-surface-container-lowest/10 backdrop-blur-md p-8 rounded-xl border border-white/10 flex flex-col justify-end h-64 mt-8 group hover:scale-[1.02] transition-transform">
+<span class="text-metallic-gold-light font-display-xl text-[48px] leading-tight mb-2">$2B+</span>
+<p class="text-surface-variant font-label-bold">Value Engineered</p>
+</div>
+<div class="bg-surface-container-lowest/10 backdrop-blur-md p-8 rounded-xl border border-white/10 flex flex-col justify-end h-64 -mt-8 group hover:scale-[1.02] transition-transform">
+<span class="text-tertiary-fixed-dim font-display-xl text-[48px] leading-tight mb-2">450+</span>
+<p class="text-surface-variant font-label-bold">Global Deployments</p>
+</div>
+<div class="bg-primary-container p-8 rounded-xl border border-on-primary-container/20 flex flex-col justify-end h-48 group hover:scale-[1.02] transition-transform">
+<span class="text-on-primary font-display-xl text-[48px] leading-tight mb-2">35ms</span>
+<p class="text-on-primary-container font-label-bold">Avg. Latency Reduction</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Case Study Filter Bar -->
+<section class="bg-surface-container-low py-8 sticky top-20 z-40 shadow-sm border-b border-surface-grey">
+<div class="max-w-container-max-width mx-auto px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex gap-4 overflow-x-auto pb-2 md:pb-0 w-full md:w-auto">
+<button class="bg-primary text-on-primary px-6 py-2 rounded-full font-label-bold whitespace-nowrap">All Industries</button>
+<button class="bg-white border border-outline-variant text-on-surface-variant px-6 py-2 rounded-full font-label-bold whitespace-nowrap hover:border-primary transition-colors">Healthcare</button>
+<button class="bg-white border border-outline-variant text-on-surface-variant px-6 py-2 rounded-full font-label-bold whitespace-nowrap hover:border-primary transition-colors">Financial Services</button>
+<button class="bg-white border border-outline-variant text-on-surface-variant px-6 py-2 rounded-full font-label-bold whitespace-nowrap hover:border-primary transition-colors">Manufacturing</button>
+</div>
+<div class="relative w-full md:w-64">
+<input class="w-full pl-10 pr-4 py-2.5 rounded-lg border border-outline-variant focus:ring-2 focus:ring-primary focus:border-primary transition-all" placeholder="Search case studies..." type="text"/>
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+</div>
+</div>
+</section>
+<!-- Case Study Library Grid -->
+<section class="py-24 bg-white">
+<div class="max-w-container-max-width mx-auto px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Card 1 -->
+<article class="group bg-white rounded-xl border border-surface-grey overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col">
+<div class="relative h-64 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A professional medical professional using a modern smartphone for a high-definition video consultation with a diverse patient. The lighting is clean and clinical, reflecting a high-end healthcare technology environment with soft blues and whites. The style is sharp and corporate, emphasizing reliability and digital innovation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvdtSbmV8r3YJzvom8dRNxwSQnZeqvJvemNCEQJLWJ1BwQROm1MieySFU86CZz3_JZqTVsGsPWZd1xpAQn-fg8o3D5Zlp4OhgVcop-_42dj6s-xft0P5fXpIRAboOCJMST7SKPtq80y3azw3eCWcwbT7as2El9uWq6IC1_q2fcuhnqx6ggVYEpPiFpGPxBl9PldLJyGipaFWrgzumXrk304nASHkAshlvi6xdDqmPOU_s0YRnM_QJEyofaUr36uW7Ek3jRSXaoszI1"/>
+<div class="absolute top-4 left-4">
+<span class="bg-primary text-white text-xs font-label-bold px-3 py-1 rounded-full uppercase tracking-wider">Healthcare</span>
+</div>
+</div>
+<div class="p-8 flex-grow flex flex-col border-t-2 border-transparent group-hover:border-metallic-gold-light transition-all">
+<h3 class="font-headline-md text-headline-md mb-4 text-enterprise-blue-dark">AI-Powered Patient Triage System for Regional Health Hub</h3>
+<p class="text-text-muted mb-8 line-clamp-3">Optimizing emergency response workflows using real-time predictive analytics and natural language processing across 14 hospitals.</p>
+<div class="mt-auto flex flex-col gap-6">
+<div class="bg-surface-container-low p-4 rounded-lg">
+<span class="block text-primary font-display-xl text-[32px] leading-none mb-1">35%</span>
+<span class="text-caption text-outline font-label-bold uppercase">Wait Time Reduction</span>
+</div>
+<a class="flex items-center gap-2 font-label-bold text-primary group-hover:text-secondary transition-colors" href="#">
+                                Read Story <span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</a>
+</div>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="group bg-white rounded-xl border border-surface-grey overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col">
+<div class="relative h-64 overflow-hidden">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="A close-up shot of a developer's hands using a stylus on a high-resolution tablet screen filled with sophisticated code. The tablet is tilted on a white desk in a brightly lit, minimalist office. The aesthetic is clean and high-tech, focusing on engineering precision and the human-machine interface in a professional tech hub." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDk1sr5ExXfrqsfHbB-NMl5jwAFTeAlywonanlpJ7D5vfG4Xz3n10lEH8-hofsdSzXyZJCHthAuBSOCXsebu4zoHr2I5uBLu4_8-bLLqN6Ahppf-AbRVWR_NzEv9KYe_0Cq2Ir7wGFoRW0MGEDhXYq7KiVqC-FnqAKtyHwOqSF57l-ED-cRNU-njczl7zMWHq7bS4yw7uJ73QrMEiIDUoGzemx7y1-23nlXSX6HWYjhxUPS3yJo4VJt60y53Pxlrzi7dACfAwn9EX8l')"></div>
+<div class="absolute top-4 left-4">
+<span class="bg-primary text-white text-xs font-label-bold px-3 py-1 rounded-full uppercase tracking-wider">Cloud migration</span>
+</div>
+</div>
+<div class="p-8 flex-grow flex flex-col border-t-2 border-transparent group-hover:border-metallic-gold-light transition-all">
+<h3 class="font-headline-md text-headline-md mb-4 text-enterprise-blue-dark">Cloud Migration for a Fortune 500 Global Bank</h3>
+<p class="text-text-muted mb-8 line-clamp-3">Architecting a seamless transition of legacy core banking systems to a multi-cloud environment without downtime.</p>
+<div class="mt-auto flex flex-col gap-6">
+<div class="bg-surface-container-low p-4 rounded-lg">
+<span class="block text-primary font-display-xl text-[32px] leading-none mb-1">40%</span>
+<span class="text-caption text-outline font-label-bold uppercase">Increase in Operational Efficiency</span>
+</div>
+<a class="flex items-center gap-2 font-label-bold text-primary group-hover:text-secondary transition-colors" href="#">
+                                Read Story <span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</a>
+</div>
+</div>
+</article>
+<!-- Card 3 -->
+<article class="group bg-white rounded-xl border border-surface-grey overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col">
+<div class="relative h-64 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A futuristic manufacturing floor showing robotic arms moving with geometric precision under soft, atmospheric lighting. The space is vast and modern, with a palette of deep blues, greys, and warm metallic accents. The focus is on the seamless integration of AI and hardware in a high-end industrial setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCP-MQjMzPp10R9GXqptlBmlhSI8l5spWw5WCUSaDpBD-RxItnyiVh1d7JmW6c5ijkoV4rkMiI99YgnWhsbCHMtSk5HF1YjEf6Rxq0h2IZSD3TfpOy962DV_gIDMnBa43wcjfwR9M2f2ydxgLkhHgl7IgIPUJIaZdegwT_iw4i7HmHf4gugR_lOqmVdutm3GogdzumXgCIgkh1hGVkVI1Nnu07vJBqxAOKJya5Ol1581G52ffxX7OO77LOdeSoEc8yfFYDH8SoDcgjx"/>
+<div class="absolute top-4 left-4">
+<span class="bg-primary text-white text-xs font-label-bold px-3 py-1 rounded-full uppercase tracking-wider">Industrial AI</span>
+</div>
+</div>
+<div class="p-8 flex-grow flex flex-col border-t-2 border-transparent group-hover:border-metallic-gold-light transition-all">
+<h3 class="font-headline-md text-headline-md mb-4 text-enterprise-blue-dark">Predictive Maintenance for Global Steel Manufacturer</h3>
+<p class="text-text-muted mb-8 line-clamp-3">Reducing unscheduled downtime through IoT-integrated sensor networks and deep learning failure models.</p>
+<div class="mt-auto flex flex-col gap-6">
+<div class="bg-surface-container-low p-4 rounded-lg">
+<span class="block text-primary font-display-xl text-[32px] leading-none mb-1">$12M</span>
+<span class="text-caption text-outline font-label-bold uppercase">Annual Maintenance Savings</span>
+</div>
+<a class="flex items-center gap-2 font-label-bold text-primary group-hover:text-secondary transition-colors" href="#">
+                                Read Story <span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</a>
+</div>
+</div>
+</article>
+</div>
+<div class="mt-16 flex justify-center">
+<button class="px-8 py-3 border-2 border-primary text-primary rounded-lg font-label-bold hover:bg-primary hover:text-white transition-all duration-300">
+                    Load More Case Studies
+                </button>
+</div>
+</div>
+</section>
+<!-- Featured Success Story -->
+<section class="py-24 bg-enterprise-blue-dark relative overflow-hidden">
+<div class="absolute top-0 right-0 w-1/2 h-full opacity-10">
+
+</div>
+<div class="max-w-container-max-width mx-auto px-margin-desktop relative z-10">
+<div class="flex flex-col lg:flex-row gap-16 items-center">
+<div class="w-full lg:w-1/2">
+<span class="text-metallic-gold-light font-label-bold uppercase tracking-widest mb-4 block">Flagship Transformation</span>
+<h2 class="font-display-xl text-[48px] text-white mb-8 leading-tight">Reimagining Logistics for EuroGlobal Freight</h2>
+<p class="text-primary-fixed-dim font-body-lg mb-10 leading-relaxed">
+                        EuroGlobal faced a critical scalability bottleneck in their manual dispatch logic. Our engineering team deployed a custom-built AI 'Orchestrator' that unified disparate legacy databases into a real-time graph database, enabling instant route optimization across 40 countries.
+                    </p>
+<div class="grid grid-cols-2 gap-8 mb-12">
+<div>
+<span class="text-secondary-fixed font-display-xl text-[40px] block mb-2">22%</span>
+<p class="text-surface-variant text-caption uppercase font-label-bold">Fuel Cost Reduction</p>
+</div>
+<div>
+<span class="text-secondary-fixed font-display-xl text-[40px] block mb-2">99.9%</span>
+<p class="text-surface-variant text-caption uppercase font-label-bold">System Uptime</p>
+</div>
+</div>
+<button class="bg-white text-enterprise-blue-dark px-10 py-4 rounded-lg font-label-bold flex items-center gap-3 hover:bg-surface-variant transition-all">
+                        View Full Report
+                        <span class="material-symbols-outlined">description</span>
+</button>
+</div>
+<div class="w-full lg:w-1/2">
+<div class="relative group">
+<div class="absolute -inset-2 bg-gradient-to-r from-metallic-gold-light to-secondary-fixed rounded-2xl blur-xl opacity-20 group-hover:opacity-40 transition-opacity"></div>
+<div class="relative glass-card p-4 rounded-2xl">
+<img class="rounded-xl w-full aspect-video object-cover shadow-2xl" data-alt="A wide cinematic shot of a modern, glass-walled command center overlooking a busy shipping port at dusk. High-tech digital data visualizations are projected on the glass surfaces, showing shipping lanes and real-time logistics metrics. The mood is powerful and strategic, with a color palette of deep enterprise blues and vibrant amber accents from the sunset." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAc1crElsqL96fsQO0OdgmtQHoymL5aw4QJSsReWQPBiWBBGz-5Yu_CtBIcFOysvim36NisywnYfJcPRCTPzqNSxtQeFct1rVlqYSjfJeuR6e4oTs0vDi3Ia7BmzNe0hzMVqFFgkSpbrg-LrYSSBTudrmg6jS75x0CREX8IaAKYy_9TfU7ru5_LnbUH9-a65XA8eWdNPwK_cDtfcXKEV4ZlwHDFliLCWwB27FNt4M5AEPUUhQNvnsDLg3ffooEFW1NyWklxVQkskLpI"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<button class="w-20 h-20 bg-primary/80 backdrop-blur-md rounded-full flex items-center justify-center text-white scale-100 hover:scale-110 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[40px]" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Global Reach Section -->
+<section class="py-24 bg-white border-b border-surface-grey">
+<div class="max-w-container-max-width mx-auto px-margin-desktop text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">A Global Presence</h2>
+<p class="text-text-muted max-w-2xl mx-auto font-body-lg">With strategic hubs in 21 countries, we combine global engineering standards with deep localized market insights.</p>
+</div>
+<div class="max-w-container-max-width mx-auto px-margin-desktop h-[500px] bg-surface-container-low rounded-2xl overflow-hidden relative border border-surface-grey">
+<div class="w-full h-full opacity-80 mix-blend-multiply" data-location="San Francisco, London, Bangalore, Munich, Singapore" style="">
+<!-- Map placeholder logic -->
+<div class="w-full h-full bg-cover bg-center" data-alt="A high-contrast, minimalist world map rendered in a corporate aesthetic using varying shades of enterprise blue and grey. Major global technology hubs are highlighted with glowing metallic gold markers, connected by subtle, thin network lines representing global connectivity and engineering synergy. The lighting is soft and professional." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBGJZKJWkl6JOAUa2Wq4CWR2eqsg_eWG5_ppMi3h-3o3-HfpEknGljmxfjjtKycGIDdT1i2xImghQmBR0ELcCdIa2eO_ETMX__9gN3PD3qwGENvTZ2s3oDTF8iXrVMBHrCrzRRFaSN_3VbIoICLhfgEDZWctQyg1AqQx_OQs90VMvmvAPiIUotlPlX07RnAIMPbHILEd-nwq2ihgmanZylkAgiDO-106ZQklBXTB1HIRALX_XajIbuuqpq1plMlfQgGyVHw-w3nxFAE')"></div>
+</div>
+<!-- Map Overlay Info -->
+<div class="absolute bottom-8 left-8 flex flex-wrap gap-4">
+<div class="bg-white/90 backdrop-blur-md p-4 rounded-lg shadow-lg border border-surface-grey">
+<span class="text-caption font-label-bold text-outline uppercase block mb-1">North America</span>
+<span class="text-body-md font-bold text-primary">6 Major Hubs</span>
+</div>
+<div class="bg-white/90 backdrop-blur-md p-4 rounded-lg shadow-lg border border-surface-grey">
+<span class="text-caption font-label-bold text-outline uppercase block mb-1">EMEA</span>
+<span class="text-body-md font-bold text-primary">12 Design Centers</span>
+</div>
+<div class="bg-white/90 backdrop-blur-md p-4 rounded-lg shadow-lg border border-surface-grey">
+<span class="text-caption font-label-bold text-outline uppercase block mb-1">APAC</span>
+<span class="text-body-md font-bold text-primary">15 Innovation Labs</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-enterprise-blue-dark dark:bg-primary-container w-full pt-margin-desktop pb-margin-mobile border-t border-primary-container">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop max-w-container-max-width mx-auto text-on-primary dark:text-on-primary-fixed">
+<div class="col-span-1">
+<h3 class="font-headline-md text-headline-md text-metallic-gold-light mb-6">Sentientware</h3>
+<p class="font-caption text-caption text-surface-variant opacity-80 max-w-xs mb-8">
+                    © 2024 Sentientware Tech Solution. Engineering Excellence Globally.
+                </p>
+<div class="flex gap-4">
+<a class="text-surface-variant hover:text-metallic-gold-light" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="text-surface-variant hover:text-metallic-gold-light" href="#"><span class="material-symbols-outlined">groups</span></a>
+<a class="text-surface-variant hover:text-metallic-gold-light" href="#"><span class="material-symbols-outlined">campaign</span></a>
+</div>
+</div>
+<div>
+<h4 class="font-label-bold mb-6">Industries</h4>
+<ul class="space-y-4 font-caption text-caption">
+<li><a class="text-surface-variant opacity-80 hover:text-metallic-gold-light underline transition-all" href="#">Banking &amp; Finance</a></li>
+<li><a class="text-surface-variant opacity-80 hover:text-metallic-gold-light underline transition-all" href="#">Healthcare</a></li>
+<li><a class="text-surface-variant opacity-80 hover:text-metallic-gold-light underline transition-all" href="#">High-Tech</a></li>
+<li><a class="text-surface-variant opacity-80 hover:text-metallic-gold-light underline transition-all" href="#">Manufacturing</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-bold mb-6">Resources</h4>
+<ul class="space-y-4 font-caption text-caption">
+<li><a class="text-surface-variant opacity-80 hover:text-metallic-gold-light underline transition-all" href="#">Global Offices</a></li>
+<li><a class="text-secondary-fixed font-bold underline transition-all" href="#">Resources</a></li>
+<li><a class="text-surface-variant opacity-80 hover:text-metallic-gold-light underline transition-all" href="#">Knowledge Base</a></li>
+<li><a class="text-surface-variant opacity-80 hover:text-metallic-gold-light underline transition-all" href="#">Whitepapers</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-bold mb-6">Legal</h4>
+<ul class="space-y-4 font-caption text-caption">
+<li><a class="text-surface-variant opacity-80 hover:text-metallic-gold-light underline transition-all" href="#">Privacy Policy</a></li>
+<li><a class="text-surface-variant opacity-80 hover:text-metallic-gold-light underline transition-all" href="#">Terms of Service</a></li>
+<li><a class="text-surface-variant opacity-80 hover:text-metallic-gold-light underline transition-all" href="#">Cookie Settings</a></li>
+</ul>
+</div>
+</div>
+<div class="mt-16 pt-8 border-t border-white/5 px-margin-desktop max-w-container-max-width mx-auto text-center">
+<p class="text-caption text-surface-variant opacity-60">Sentientware Tech Solution is a registered trademark. All rights reserved.</p>
+</div>
+</footer>
+<!-- FAB -->
+<button class="fixed bottom-8 right-8 w-16 h-16 bg-primary text-white rounded-full shadow-2xl flex items-center justify-center hover:bg-secondary-container hover:text-on-secondary-container transition-all z-50 group">
+<span class="material-symbols-outlined text-[32px]">support_agent</span>
+<span class="absolute right-20 bg-primary text-white px-4 py-2 rounded-lg text-xs font-label-bold opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-xl">Contact an Advisor</span>
+</button>
+<script>
+        // Micro-interactions for grid items
+        document.querySelectorAll('article').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-8px)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body></html>

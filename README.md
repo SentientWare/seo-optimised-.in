@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SentientWare - Digital Engineering Excellence
 
-## Getting Started
+Welcome to the official repository for **SentientWare**, an enterprise-grade digital solutions platform bridging the gap between human ambition and artificial intelligence to deliver unprecedented digital transformation at scale.
 
-First, run the development server:
+## 🚀 Overview
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+SentientWare empowers global enterprises to scale faster and smarter. We leverage cutting-edge artificial intelligence, cloud-native architectures, and deep industry expertise to transform operational workflows into autonomous, future-ready ecosystems.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+This project is built with modern web technologies:
+- **Framework:** [Next.js](https://nextjs.org/) (App Router)
+- **Library:** [React](https://react.dev/)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+- **Language:** [TypeScript](https://www.typescriptlang.org/)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## ⚙️ Getting Started
 
-## Learn More
+To run this project locally, follow these steps:
 
-To learn more about Next.js, take a look at the following resources:
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/your-username/SentientWare.git
+   cd SentientWare
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3. **Run the development server**
+   ```bash
+   npm run dev
+   ```
 
-## Deploy on Vercel
+4. **Open the application**
+   Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🌐 Deployment (Netlify)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is configured for seamless deployment on **Netlify**.
+
+1. Log into your Netlify dashboard.
+2. Select **Add new site** > **Import an existing project**.
+3. Choose **GitHub** and authorize access.
+4. Select this repository from the list.
+5. Netlify will automatically detect the Next.js framework. Leave the default build settings:
+   - **Build command:** `npm run build`
+   - **Publish directory:** `.next`
+6. Click **Deploy site**.
+
+## 📁 Project Structure
+
+- `src/app/` - Application routes and pages (Home, About, Services, etc.)
+- `src/components/` - Reusable UI components (Header, Footer, Logo)
+- `public/assets/` - Static assets, images, videos, and Lottie animations
+- `globals.css` - Global styling and Tailwind configurations
+
+## 📄 License
+
+This project is proprietary and confidential. Unauthorized copying of files, via any medium, is strictly prohibited.

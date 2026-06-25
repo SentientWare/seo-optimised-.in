@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Solutions | Sentientware Tech Solution</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-container": "#002d5b",
+                    "secondary-fixed": "#ffdea5",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-fixed-dim": "#ffb692",
+                    "on-secondary-fixed": "#261900",
+                    "primary-fixed-dim": "#a7c8ff",
+                    "surface-container": "#edeeef",
+                    "on-tertiary-container": "#ce825b",
+                    "secondary-fixed-dim": "#e9c176",
+                    "surface": "#f8f9fa",
+                    "error-container": "#ffdad6",
+                    "surface-tint": "#3e5f90",
+                    "text-main": "#1A1A1A",
+                    "tertiary-fixed": "#ffdbcb",
+                    "on-secondary-fixed-variant": "#5d4201",
+                    "error": "#ba1a1a",
+                    "tertiary-container": "#501e01",
+                    "on-error-container": "#93000a",
+                    "on-primary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "primary-fixed": "#d5e3ff",
+                    "primary": "#001836",
+                    "on-secondary": "#ffffff",
+                    "inverse-on-surface": "#f0f1f2",
+                    "metallic-gold-light": "#D4B982",
+                    "on-tertiary-fixed": "#341100",
+                    "surface-grey": "#E9ECEF",
+                    "surface-variant": "#e1e3e4",
+                    "on-primary-container": "#7696ca",
+                    "tertiary": "#300e00",
+                    "outline": "#737780",
+                    "text-muted": "#6C757D",
+                    "enterprise-blue-dark": "#001A35",
+                    "outline-variant": "#c3c6d0",
+                    "on-primary-fixed": "#001b3c",
+                    "inverse-primary": "#a7c8ff",
+                    "on-tertiary-fixed-variant": "#713716",
+                    "on-surface-variant": "#43474f",
+                    "surface-dim": "#d9dadb",
+                    "secondary-container": "#fed488",
+                    "surface-bright": "#f8f9fa",
+                    "background": "#f8f9fa",
+                    "on-tertiary": "#ffffff",
+                    "secondary": "#775a19",
+                    "on-surface": "#191c1d",
+                    "on-primary-fixed-variant": "#254776",
+                    "on-background": "#191c1d",
+                    "surface-container-low": "#f3f4f5",
+                    "on-secondary-container": "#785a1a",
+                    "surface-container-high": "#e7e8e9",
+                    "inverse-surface": "#2e3132",
+                    "surface-container-highest": "#e1e3e4"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "container-max-width": "1280px",
+                    "unit": "8px",
+                    "margin-desktop": "64px",
+                    "margin-mobile": "16px"
+            },
+            "fontFamily": {
+                    "display-xl": ["Sora"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-md": ["Sora"],
+                    "headline-lg": ["Sora"],
+                    "caption": ["Inter"],
+                    "label-bold": ["Inter"],
+                    "headline-lg-mobile": ["Sora"]
+            },
+            "fontSize": {
+                    "display-xl": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-lg": ["40px", {"lineHeight": "48px", "fontWeight": "600"}],
+                    "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                    "label-bold": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .bento-card {
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+        }
+        .bento-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 26, 53, 0.08);
+        }
+        .accent-line {
+            height: 2px;
+            width: 0;
+            transition: width 0.3s ease;
+        }
+        .bento-card:hover .accent-line {
+            width: 100%;
+        }
+        .text-glow {
+            text-shadow: 0 0 20px rgba(212, 185, 130, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<header class="w-full top-0 sticky z-50 bg-surface border-b border-outline-variant shadow-sm h-20 flex items-center">
+<nav class="flex justify-between items-center px-margin-desktop w-full max-w-container-max-width mx-auto">
+<div class="font-headline-md text-headline-md font-bold text-primary">
+                Sentientware Tech Solution
+            </div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant font-body-md hover:text-secondary transition-colors duration-200" href="#">Services</a>
+<a class="text-on-surface-variant font-body-md hover:text-secondary transition-colors duration-200" href="#">Industries</a>
+<a class="text-primary font-label-bold border-b-2 border-secondary" href="#">Solutions</a>
+<a class="text-on-surface-variant font-body-md hover:text-secondary transition-colors duration-200" href="#">Case Studies</a>
+<a class="text-on-surface-variant font-body-md hover:text-secondary transition-colors duration-200" href="#">About Us</a>
+<a class="text-on-surface-variant font-body-md hover:text-secondary transition-colors duration-200" href="#">Contact</a>
+</div>
+<div class="flex gap-4 items-center">
+<button class="px-6 py-2 bg-enterprise-blue-dark text-on-primary font-label-bold rounded-lg scale-95 active:opacity-80 transition-all">Get Started</button>
+</div>
+</nav>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-[80vh] flex items-center overflow-hidden bg-enterprise-blue-dark">
+<div class="absolute inset-0 opacity-40">
+<div class="w-full h-full bg-cover bg-center" data-alt="A sophisticated digital landscape showing interconnected neural networks and data streams in deep enterprise blue and vibrant gold accents. The lighting is cinematic, with sharp highlights reflecting off crystalline structures. This professional engineering aesthetic emphasizes stability and global technological reach." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC4PW3SQMWs-_kEYwHmxdfzaFC-Gtyv1li9g0XrKtzu79GwdIWfVWwM63n-HQLJSezjdvALdsOyRz7u4o3qZBRmBGSq2NYUVc5GvcjHBV80JGBNTH5ecEqlyYEFQ-DpJA967yD1mrIUL5RCqDwEyuoaZeKMnhnsGlCtg39WzmwQ1h2SDDKDnJKaGVsYRGLj8PK04Em_imgSitF8e1-fElsRvOnG9EMZOoL45pvpcgOXqjxQmeFcJdRSy3YurmNeyV5PPDo-B0Dke6ji')"></div>
+</div>
+<div class="relative px-margin-desktop max-w-container-max-width mx-auto grid md:grid-cols-2 gap-gutter items-center py-20">
+<div class="z-10">
+<span class="inline-block px-4 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-bold text-sm mb-6">
+                        Enterprise Excellence
+                    </span>
+<h1 class="font-display-xl text-display-xl text-on-primary mb-6">
+                        Intelligence <br/><span class="text-metallic-gold-light">at Scale</span>
+</h1>
+<p class="font-body-lg text-body-lg text-primary-fixed mb-10 max-w-lg">
+                        Accelerate your enterprise transformation with our industrial-grade AI platforms and domain-specialized solutions engineered for the modern global landscape.
+                    </p>
+<div class="flex gap-4">
+<button class="px-8 py-4 bg-metallic-gold-light text-enterprise-blue-dark font-label-bold rounded-lg hover:bg-white transition-all">Explore Frameworks</button>
+<button class="px-8 py-4 border border-outline-variant text-on-primary font-label-bold rounded-lg hover:bg-white/10 transition-all flex items-center gap-2">
+                            View Case Studies
+                            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="relative hidden md:block">
+<div class="rounded-xl overflow-hidden shadow-2xl border border-white/10 glass-effect p-4">
+<img alt="AI Visualization" class="w-full h-auto rounded-lg" src="https://lh3.googleusercontent.com/aida/AP1WRLtUqZwf9bNrWbc4QkCeiEEd9OiD36jbphEnDMvJIKwVGqdDKHGy7tMWaKTd_xwPnhZPplnqUA8QjmThAPrTd3Udb6oWY3SE6qybefQ7U2T9QVM2F3JKP6BxOIOCJVqep-wYhPCj3ygA0BHJy21CtstkA3U5eAWcI1QC3hKA50otiKTj-Dv086MxKoXIlz7EGzpBkeJ9eVnGicMjJE6N4b-L68J39lfqFfwG1AuK-xG9_gZDvyHjMRVhVis"/>
+</div>
+<!-- Decorative Elements -->
+<div class="absolute -top-10 -right-10 w-40 h-40 bg-secondary/20 rounded-full blur-3xl"></div>
+<div class="absolute -bottom-10 -left-10 w-60 h-60 bg-primary-container/40 rounded-full blur-3xl"></div>
+</div>
+</div>
+</section>
+<!-- AI Platforms Section (Bento Grid) -->
+<section class="py-24 px-margin-desktop max-w-container-max-width mx-auto">
+<div class="mb-16">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Core AI Platforms</h2>
+<div class="w-24 h-1 bg-metallic-gold-light"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<!-- Main Featured Platform -->
+<div class="md:col-span-8 bento-card bg-white border border-surface-grey p-10 relative overflow-hidden group">
+<div class="absolute top-0 left-0 accent-line bg-metallic-gold-light"></div>
+<div class="relative z-10">
+<span class="material-symbols-outlined text-4xl text-secondary mb-6" style="font-variation-settings: 'FILL' 1;">hub</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">GenAI Hub</h3>
+<p class="font-body-md text-on-surface-variant max-w-md mb-8">
+                            A centralized governance and orchestration layer for Large Language Models. Deploy, monitor, and scale generative AI applications with enterprise-grade security and compliance.
+                        </p>
+<ul class="space-y-3 mb-8">
+<li class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-lg">check_circle</span>
+                                Multi-LLM Interoperability
+                            </li>
+<li class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-lg">check_circle</span>
+                                Prompt Engineering Workspace
+                            </li>
+</ul>
+<a class="inline-flex items-center gap-2 font-label-bold text-primary group-hover:text-secondary transition-colors" href="#">
+                            Request Demo <span class="material-symbols-outlined">north_east</span>
+</a>
+</div>
+<div class="absolute right-0 bottom-0 w-1/2 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-[200px]" style="font-variation-settings: 'FILL' 1;">analytics</span>
+</div>
+</div>
+<!-- SASVA Equivalent -->
+<div class="md:col-span-4 bento-card bg-enterprise-blue-dark p-10 text-on-primary border border-white/5 relative overflow-hidden group">
+<div class="absolute top-0 left-0 accent-line bg-secondary-fixed"></div>
+<span class="material-symbols-outlined text-4xl text-metallic-gold-light mb-6" style="font-variation-settings: 'FILL' 1;">terminal</span>
+<h3 class="font-headline-md text-headline-md mb-4 text-glow">SASVA™ Assistant</h3>
+<p class="font-caption text-surface-variant mb-8">
+                        The AI-driven Engineering Co-pilot that automates 60% of the SDLC, from requirement gathering to testing.
+                    </p>
+<div class="mt-auto">
+<button class="w-full py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-sm font-label-bold transition-all">
+                            View Documentation
+                        </button>
+</div>
+</div>
+<!-- Automation Platform -->
+<div class="md:col-span-12 bento-card bg-white border border-surface-grey p-10 grid md:grid-cols-3 gap-8">
+<div class="md:col-span-1 border-r border-surface-grey pr-8">
+<span class="material-symbols-outlined text-4xl text-secondary mb-6">robot_2</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Intelligent Automation</h3>
+</div>
+<div class="md:col-span-2 flex flex-col justify-center">
+<p class="font-body-md text-on-surface-variant mb-6">
+                            Bridging the gap between RPA and cognitive AI to automate complex end-to-end business processes. Our platform provides the "eyes" and "brain" to your existing automation stack.
+                        </p>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="p-3 bg-surface rounded-lg text-center">
+<div class="text-secondary font-bold text-lg">45%</div>
+<div class="text-[10px] uppercase tracking-wider text-muted">Cost Savings</div>
+</div>
+<div class="p-3 bg-surface rounded-lg text-center">
+<div class="text-secondary font-bold text-lg">3x</div>
+<div class="text-[10px] uppercase tracking-wider text-muted">Throughput</div>
+</div>
+<div class="p-3 bg-surface rounded-lg text-center">
+<div class="text-secondary font-bold text-lg">99.9%</div>
+<div class="text-[10px] uppercase tracking-wider text-muted">Accuracy</div>
+</div>
+<div class="p-3 bg-surface rounded-lg text-center">
+<div class="text-secondary font-bold text-lg">24/7</div>
+<div class="text-[10px] uppercase tracking-wider text-muted">Operations</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Industry Solutions (Glass Cards) -->
+<section class="bg-surface py-24 px-margin-desktop overflow-hidden">
+<div class="max-w-container-max-width mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Domain Specialized Solutions</h2>
+<p class="max-w-2xl mx-auto text-on-surface-variant">Engineering value at the intersection of industry expertise and next-gen technology.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Banking -->
+<div class="group relative bg-white border border-surface-grey overflow-hidden rounded-xl h-[400px]">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110 opacity-40 group-hover:opacity-100" data-alt="A modern high-tech banking environment with glass partitions, digital ticker screens showing financial data, and a professional aesthetic. The color palette is composed of corporate blues and warm gold lighting, evoking a sense of trust and precision engineering." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC3tLLtgSEn1i8xT8kGFg_xneaFYqC333t0dMVsZ0zNLS6A8pPWCB1FmeT1qIghXiu7l0IvwuEJpJc0SWabA2HcjyOPMkgVNE6scOu2bY_MzEKpwsHk4A_pDiMUn0qvFTiOnd0cMrtvH1Cc6chwoX9rRbrS1vE_m28n3c8DXSFBRwDnlitUCk5MFd7_b7NCbJj-kWitdvXB7fThTldmMJpEofuU2YPe4wbHOIVQ_7nhiJDuuWCZ0l5W9Rg3CpUotkwXzdhkr5YYpRHo')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-enterprise-blue-dark via-enterprise-blue-dark/60 to-transparent"></div>
+<div class="relative h-full p-8 flex flex-col justify-end text-on-primary">
+<span class="material-symbols-outlined text-secondary-fixed mb-4">account_balance</span>
+<h4 class="font-headline-md text-headline-md mb-2">Banking &amp; Finance</h4>
+<p class="font-caption text-surface-variant opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                AI-driven fraud detection, algorithmic trading, and personalized wealth management platforms.
+                            </p>
+</div>
+</div>
+<!-- Healthcare -->
+<div class="group relative bg-white border border-surface-grey overflow-hidden rounded-xl h-[400px]">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110 opacity-40 group-hover:opacity-100" data-alt="A clean, minimalist medical laboratory with advanced diagnostic machines and glowing digital interfaces. The lighting is bright and clinically precise, utilizing a palette of soft whites and deep primary blues for an authoritative healthcare engineering look." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCoJAQFVIYOPUGGh7CVBi8nU3lIZQluf4tDO091FYkWsNXKK_Ep78Nr_QHsDNDYbbKI90RHrdZkTUt-WzsVTUijFCX9zmauShakAkyspkSgAUODvjeE00mpBU6P_VEqEh0YD4iv64YFVhf32lobiM1uCz1PSOIb_C926_rgJUimUjz7LTFG1t5CJZu2QaO2eTjKboQX2AAmvKRKUYOumpA-XL4HbPctPKFJsbB8CDkcKZg_3H_fKNM7o973sMY7MPido8B_zDhcZlpE')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-enterprise-blue-dark via-enterprise-blue-dark/60 to-transparent"></div>
+<div class="relative h-full p-8 flex flex-col justify-end text-on-primary">
+<span class="material-symbols-outlined text-secondary-fixed mb-4">health_and_safety</span>
+<h4 class="font-headline-md text-headline-md mb-2">Healthcare</h4>
+<p class="font-caption text-surface-variant opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                Precision diagnostics, patient care optimization, and HIPAA-compliant data lakes.
+                            </p>
+</div>
+</div>
+<!-- Life Sciences -->
+<div class="group relative bg-white border border-surface-grey overflow-hidden rounded-xl h-[400px]">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110 opacity-40 group-hover:opacity-100" data-alt="Abstract visualization of DNA strands and molecular structures rendered in a sophisticated 3D digital style. The lighting uses soft metallic gold highlights against a deep navy background, suggesting cutting-edge pharmaceutical engineering and innovation." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBFdX7PbL_sVraGl0tkC1xsjXm7QIPA6la7DzTo6d_8zT686b3eoITb3vBCH2bGf8jzK4CxPVNa_RoIFYFGV8wOy_VB0fq2i_-wxEiUW4pBWmy5_5JODZBWSsomkPzrCB635sDAPVALCt38mR7X_r531HXQVRdvtOYYsMUUZz11_UL72YDW3fGxBFIWpJO1jDEmgevZCY3KPg94jN-AdJl3doC6oHIT8U0ZRCb0hcP6uU0Hpj7XWKRcwlpW-CdjspVax6Mo1mgpty4g')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-enterprise-blue-dark via-enterprise-blue-dark/60 to-transparent"></div>
+<div class="relative h-full p-8 flex flex-col justify-end text-on-primary">
+<span class="material-symbols-outlined text-secondary-fixed mb-4">science</span>
+<h4 class="font-headline-md text-headline-md mb-2">Life Sciences</h4>
+<p class="font-caption text-surface-variant opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                Accelerating drug discovery and clinical trials through predictive analytics and AI.
+                            </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Partnerships -->
+<section class="py-20 border-y border-surface-grey bg-white">
+<div class="max-w-container-max-width mx-auto px-margin-desktop text-center">
+<p class="font-label-bold text-muted uppercase tracking-widest mb-10">Strategic Platform Ecosystem</p>
+<div class="flex flex-wrap justify-center items-center gap-16 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all">
+<span class="font-bold text-2xl text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">cloud</span> AWS
+                    </span>
+<span class="font-bold text-2xl text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">google</span> Google Cloud
+                    </span>
+<span class="font-bold text-2xl text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">hub</span> Salesforce
+                    </span>
+<span class="font-bold text-2xl text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">terminal</span> Microsoft
+                    </span>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-24 px-margin-desktop bg-enterprise-blue-dark relative overflow-hidden">
+<div class="absolute top-0 right-0 w-1/3 h-full bg-secondary/10 skew-x-[-20deg]"></div>
+<div class="max-w-container-max-width mx-auto relative z-10 grid md:grid-cols-2 gap-gutter items-center">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-primary mb-6">Ready to Re(AI)magine your enterprise?</h2>
+<p class="font-body-lg text-primary-fixed mb-10">
+                        Join 2,000+ global enterprises building the future on our platforms.
+                    </p>
+<div class="flex gap-6">
+<button class="px-10 py-5 bg-white text-enterprise-blue-dark font-bold rounded-lg hover:bg-secondary-fixed transition-all">Get in Touch</button>
+</div>
+</div>
+<div class="bg-white/5 p-12 border border-white/10 rounded-2xl glass-effect">
+<form class="space-y-6">
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="block text-primary-fixed text-xs mb-2">FULL NAME</label>
+<input class="w-full bg-transparent border border-white/20 rounded py-3 px-4 text-white focus:border-secondary transition-colors outline-none" type="text"/>
+</div>
+<div>
+<label class="block text-primary-fixed text-xs mb-2">WORK EMAIL</label>
+<input class="w-full bg-transparent border border-white/20 rounded py-3 px-4 text-white focus:border-secondary transition-colors outline-none" type="email"/>
+</div>
+</div>
+<div>
+<label class="block text-primary-fixed text-xs mb-2">SOLUTION OF INTEREST</label>
+<select class="w-full bg-transparent border border-white/20 rounded py-3 px-4 text-white focus:border-secondary transition-colors outline-none appearance-none">
+<option>GenAI Hub</option>
+<option>Intelligent Automation</option>
+<option>Industry Specialized Solutions</option>
+</select>
+</div>
+<button class="w-full py-4 bg-metallic-gold-light text-enterprise-blue-dark font-bold rounded hover:bg-white transition-all">Submit Inquiry</button>
+</form>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full pt-margin-desktop pb-margin-mobile bg-enterprise-blue-dark border-t border-primary-container">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop max-w-container-max-width mx-auto">
+<div class="flex flex-col gap-6">
+<div class="font-headline-md text-headline-md text-metallic-gold-light font-bold">Sentientware</div>
+<p class="text-surface-variant opacity-80 text-caption">Engineering Excellence Globally. Leading the AI frontier with robust enterprise frameworks.</p>
+</div>
+<div>
+<h5 class="text-on-primary font-label-bold mb-6">Industries</h5>
+<ul class="space-y-3 text-caption">
+<li><a class="text-surface-variant opacity-80 hover:text-metallic-gold-light underline transition-all" href="#">Banking</a></li>
+<li><a class="text-surface-variant opacity-80 hover:text-metallic-gold-light underline transition-all" href="#">Healthcare</a></li>
+<li><a class="text-surface-variant opacity-80 hover:text-metallic-gold-light underline transition-all" href="#">Life Sciences</a></li>
+<li><a class="text-surface-variant opacity-80 hover:text-metallic-gold-light underline transition-all" href="#">Insurance</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-on-primary font-label-bold mb-6">Platforms</h5>
+<ul class="space-y-3 text-caption">
+<li><a class="text-surface-variant opacity-80 hover:text-metallic-gold-light underline transition-all" href="#">GenAI Hub</a></li>
+<li><a class="text-surface-variant opacity-80 hover:text-metallic-gold-light underline transition-all" href="#">SASVA™</a></li>
+<li><a class="text-surface-variant opacity-80 hover:text-metallic-gold-light underline transition-all" href="#">Automation</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-on-primary font-label-bold mb-6">Corporate</h5>
+<ul class="space-y-3 text-caption">
+<li><a class="text-surface-variant opacity-80 hover:text-metallic-gold-light underline transition-all" href="#">Global Offices</a></li>
+<li><a class="text-surface-variant opacity-80 hover:text-metallic-gold-light underline transition-all" href="#">Privacy Policy</a></li>
+<li><a class="text-surface-variant opacity-80 hover:text-metallic-gold-light underline transition-all" href="#">Cookie Settings</a></li>
+</ul>
+</div>
+</div>
+<div class="mt-16 px-margin-desktop max-w-container-max-width mx-auto border-t border-white/5 pt-8 text-center">
+<p class="text-caption text-surface-variant opacity-60">© 2024 Sentientware Tech Solution. Engineering Excellence Globally.</p>
+</div>
+</footer>
+<script>
+        // Micro-interaction for cards
+        document.querySelectorAll('.bento-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+    </script>
+</body></html>

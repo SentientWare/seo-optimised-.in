@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sentientware Tech Solution | Engineering Excellence Globally</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-container": "#002d5b",
+                    "secondary-fixed": "#ffdea5",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-fixed-dim": "#ffb692",
+                    "on-secondary-fixed": "#261900",
+                    "primary-fixed-dim": "#a7c8ff",
+                    "surface-container": "#edeeef",
+                    "on-tertiary-container": "#ce825b",
+                    "secondary-fixed-dim": "#e9c176",
+                    "surface": "#f8f9fa",
+                    "error-container": "#ffdad6",
+                    "surface-tint": "#3e5f90",
+                    "text-main": "#1A1A1A",
+                    "tertiary-fixed": "#ffdbcb",
+                    "on-secondary-fixed-variant": "#5d4201",
+                    "error": "#ba1a1a",
+                    "tertiary-container": "#501e01",
+                    "on-error-container": "#93000a",
+                    "on-primary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "primary-fixed": "#d5e3ff",
+                    "primary": "#001836",
+                    "on-secondary": "#ffffff",
+                    "inverse-on-surface": "#f0f1f2",
+                    "metallic-gold-light": "#D4B982",
+                    "on-tertiary-fixed": "#341100",
+                    "surface-grey": "#E9ECEF",
+                    "surface-variant": "#e1e3e4",
+                    "on-primary-container": "#7696ca",
+                    "tertiary": "#300e00",
+                    "outline": "#737780",
+                    "text-muted": "#6C757D",
+                    "enterprise-blue-dark": "#001A35",
+                    "outline-variant": "#c3c6d0",
+                    "on-primary-fixed": "#001b3c",
+                    "inverse-primary": "#a7c8ff",
+                    "on-tertiary-fixed-variant": "#713716",
+                    "on-surface-variant": "#43474f",
+                    "surface-dim": "#d9dadb",
+                    "secondary-container": "#fed488",
+                    "surface-bright": "#f8f9fa",
+                    "background": "#f8f9fa",
+                    "on-tertiary": "#ffffff",
+                    "secondary": "#775a19",
+                    "on-surface": "#191c1d",
+                    "on-primary-fixed-variant": "#254776",
+                    "on-background": "#191c1d",
+                    "surface-container-low": "#f3f4f5",
+                    "on-secondary-container": "#785a1a",
+                    "surface-container-high": "#e7e8e9",
+                    "inverse-surface": "#2e3132",
+                    "surface-container-highest": "#e1e3e4"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "container-max-width": "1280px",
+                    "unit": "8px",
+                    "margin-desktop": "64px",
+                    "margin-mobile": "16px"
+            },
+            "fontFamily": {
+                    "display-xl": ["Sora"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-md": ["Sora"],
+                    "headline-lg": ["Sora"],
+                    "caption": ["Inter"],
+                    "label-bold": ["Inter"],
+                    "headline-lg-mobile": ["Sora"]
+            },
+            "fontSize": {
+                    "display-xl": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-lg": ["40px", {"lineHeight": "48px", "fontWeight": "600"}],
+                    "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                    "label-bold": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .hero-clip {
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .text-glow {
+            text-shadow: 0 0 20px rgba(212, 185, 130, 0.4);
+        }
+        .hover-lift {
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .hover-lift:hover {
+            transform: translateY(-8px);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="bg-surface dark:bg-enterprise-blue-dark w-full top-0 sticky border-b border-outline-variant dark:border-primary-container shadow-sm z-50">
+<div class="flex justify-between items-center px-margin-desktop h-20 max-w-container-max-width mx-auto">
+<div class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed tracking-tight">
+                Sentientware <span class="text-metallic-gold-light">Tech Solution</span>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-primary dark:text-secondary-fixed font-label-bold border-b-2 border-secondary transition-colors duration-200" href="#">Services</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-body-md hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200" href="#">Industries</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-body-md hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200" href="#">Solutions</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-body-md hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200" href="#">Case Studies</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-body-md hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200" href="#">About Us</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="px-6 py-2 bg-enterprise-blue-dark text-on-primary font-label-bold scale-95 active:opacity-80 transition-all">
+                    Get Started
+                </button>
+<button class="hidden md:block px-6 py-2 border border-metallic-gold-light text-primary font-label-bold scale-95 active:opacity-80 transition-all">
+                    Careers
+                </button>
+</div>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="relative min-h-[90vh] flex items-center overflow-hidden bg-enterprise-blue-dark">
+<div class="absolute inset-0 z-0">
+<img alt="" class="w-full h-full object-cover opacity-40" src="https://lh3.googleusercontent.com/aida/AP1WRLtKaHJITlLrZONaJm2nNbfyZ8LYkzVrSH3wY0t6veHcliOuATi6B69yOXWJfFxcMqE1PKJlEi8na-ynT4GbxbYvID181a6f579Qis5KAguiEdmC0RU4ejteYRJbpfdrYRs5Eg6cnxPlxX5TFVJwtALaaz6rY0mEjmm_NjhHfAljZYy3m0HrPTrfIggmVurC0hEGusE8Fxsa-5Szqx_kz5cmkAr_h6DVxOIGFfSlMaxGPTbUZaI_0UmcNrw"/>
+<div class="absolute inset-0 bg-gradient-to-r from-enterprise-blue-dark via-enterprise-blue-dark/80 to-transparent"></div>
+</div>
+<div class="relative z-10 px-margin-desktop max-w-container-max-width mx-auto grid grid-cols-1 md:grid-cols-2 gap-gutter items-center">
+<div class="space-y-unit*8">
+<span class="inline-block px-4 py-1 bg-secondary-container text-on-secondary-container text-caption font-label-bold tracking-widest uppercase mb-4">
+                    Pioneering Digital Futures
+                </span>
+<h1 class="font-display-xl text-display-xl text-white leading-tight">
+                    Re(AI)magining Your <br/>
+<span class="text-metallic-gold-light">Enterprise Potential</span>
+</h1>
+<p class="font-body-lg text-body-lg text-white/80 max-w-lg mb-8">
+                    Sentientware engineers the future of business. We bridge the gap between human ambition and artificial intelligence to deliver unprecedented digital transformation at scale.
+                </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-metallic-gold-light hover:bg-secondary-fixed text-enterprise-blue-dark font-label-bold px-10 py-4 shadow-lg transition-all duration-300">
+                        Explore Our AI Lab
+                    </button>
+<button class="border border-white/30 text-white font-label-bold px-10 py-4 hover:bg-white/10 transition-all duration-300">
+                        Watch Keynote
+                    </button>
+</div>
+</div>
+<div class="hidden md:flex justify-end">
+<div class="relative w-96 h-96">
+<div class="absolute inset-0 border-2 border-metallic-gold-light/20 animate-pulse rounded-full"></div>
+<div class="absolute inset-4 border border-metallic-gold-light/40 animate-spin-slow rounded-full" style="animation-duration: 20s"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="glass-card p-8 rounded-full shadow-2xl flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-4xl text-metallic-gold-light mb-2" data-icon="hub">hub</span>
+<div class="font-headline-md text-headline-md text-enterprise-blue-dark">300+</div>
+<div class="text-caption text-text-muted font-label-bold">Global Patents</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Company Statistics -->
+<section class="bg-surface py-20 border-b border-surface-grey">
+<div class="max-w-container-max-width mx-auto px-margin-desktop grid grid-cols-2 lg:grid-cols-4 gap-gutter text-center">
+<div class="space-y-2">
+<div class="font-display-xl text-headline-lg text-primary" id="stat-revenue">$1.65B+</div>
+<div class="text-caption text-text-muted font-label-bold uppercase tracking-widest">Annual Revenue</div>
+</div>
+<div class="space-y-2">
+<div class="font-display-xl text-headline-lg text-primary">30,000+</div>
+<div class="text-caption text-text-muted font-label-bold uppercase tracking-widest">Global Talent</div>
+</div>
+<div class="space-y-2">
+<div class="font-display-xl text-headline-lg text-primary">25+</div>
+<div class="text-caption text-text-muted font-label-bold uppercase tracking-widest">Countries</div>
+</div>
+<div class="space-y-2">
+<div class="font-display-xl text-headline-lg text-primary">100%</div>
+<div class="text-caption text-text-muted font-label-bold uppercase tracking-widest">Carbon Neutral Goals</div>
+</div>
+</div>
+</section>
+<!-- Services Overview: The Core Pillars -->
+<section class="py-32 bg-enterprise-blue-dark text-white relative overflow-hidden">
+<!-- Abstract Decoration -->
+<div class="absolute top-0 right-0 w-1/3 h-full opacity-10 pointer-events-none">
+
+</div>
+<div class="max-w-container-max-width mx-auto px-margin-desktop relative z-10">
+<div class="max-w-2xl mb-20">
+<h2 class="font-headline-lg text-headline-lg mb-6">Our Core Methodology</h2>
+<p class="font-body-lg text-surface-variant">We don't just solve problems; we engineer sustainable ecosystems. Our four-pillar approach ensures every digital touchpoint is optimized for excellence.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Pillar: Imagine -->
+<div class="group p-8 border border-white/10 hover:border-metallic-gold-light/50 transition-all duration-300 bg-white/5">
+<span class="material-symbols-outlined text-4xl text-metallic-gold-light mb-6 block" data-icon="lightbulb">lightbulb</span>
+<h3 class="font-headline-md text-headline-md mb-4 group-hover:text-metallic-gold-light transition-colors">Imagine</h3>
+<p class="text-surface-variant font-body-md mb-8">Design new digital experiences and business models that exceed customer expectations.</p>
+<ul class="space-y-3 text-caption opacity-60">
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-metallic-gold-light rounded-full"></span> Design Strategy</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-metallic-gold-light rounded-full"></span> Market Analysis</li>
+</ul>
+</div>
+<!-- Pillar: Engineer -->
+<div class="group p-8 border border-white/10 hover:border-metallic-gold-light/50 transition-all duration-300 bg-white/5">
+<span class="material-symbols-outlined text-4xl text-metallic-gold-light mb-6 block" data-icon="engineering">engineering</span>
+<h3 class="font-headline-md text-headline-md mb-4 group-hover:text-metallic-gold-light transition-colors">Engineer</h3>
+<p class="text-surface-variant font-body-md mb-8">Streamline software engineering to drive greater efficiency and resiliency.</p>
+<ul class="space-y-3 text-caption opacity-60">
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-metallic-gold-light rounded-full"></span> Cloud Native Dev</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-metallic-gold-light rounded-full"></span> Legacy Modernization</li>
+</ul>
+</div>
+<!-- Pillar: Modernize -->
+<div class="group p-8 border border-white/10 hover:border-metallic-gold-light/50 transition-all duration-300 bg-white/5">
+<span class="material-symbols-outlined text-4xl text-metallic-gold-light mb-6 block" data-icon="rocket_launch">rocket_launch</span>
+<h3 class="font-headline-md text-headline-md mb-4 group-hover:text-metallic-gold-light transition-colors">Modernize</h3>
+<p class="text-surface-variant font-body-md mb-8">Reinvent applications and infrastructure for greater agility with AI-ready clouds.</p>
+<ul class="space-y-3 text-caption opacity-60">
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-metallic-gold-light rounded-full"></span> AI Foundations</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-metallic-gold-light rounded-full"></span> Security by Design</li>
+</ul>
+</div>
+<!-- Pillar: Manage -->
+<div class="group p-8 border border-white/10 hover:border-metallic-gold-light/50 transition-all duration-300 bg-white/5">
+<span class="material-symbols-outlined text-4xl text-metallic-gold-light mb-6 block" data-icon="monitoring">monitoring</span>
+<h3 class="font-headline-md text-headline-md mb-4 group-hover:text-metallic-gold-light transition-colors">Manage</h3>
+<p class="text-surface-variant font-body-md mb-8">Transform and optimize the heartbeat of systems to reduce costs and facilitate growth.</p>
+<ul class="space-y-3 text-caption opacity-60">
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-metallic-gold-light rounded-full"></span> Managed Services</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-metallic-gold-light rounded-full"></span> Continuous Optimization</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Industry Expertise -->
+<section class="py-32 bg-surface">
+<div class="max-w-container-max-width mx-auto px-margin-desktop">
+<div class="text-center max-w-3xl mx-auto mb-20">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-6">Our Industry Expertise</h2>
+<p class="font-body-md text-text-muted">Domain knowledge is our foundation. We partner with leaders across global sectors to build the technologies of tomorrow.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<div class="group relative overflow-hidden h-96 bg-enterprise-blue-dark">
+<img alt="" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida/AP1WRLsb2SmEMBxN9NrZcSLYwAxo0ZmXo34Mr-HgBJ0LKmogXmj06m4ajIwv_9LsHBbdSxqlwABsKdUfHExkbihDeBDS6LtsbGFLOoRGNHsaWKhzB4VG4BdDFQUTLNkW13gK_pC8-Q9iTMBjLpT7lExeW5fYkzxXei8y0sg53JRH5hquB8WMImxB4Vxop4ie5F-KLuGGJGQR-3UCnfWwgEw_mBTfF56YjOuwDxR-ZZpSSBl12yywJY4bx5zUNVvi"/>
+<div class="absolute inset-0 bg-gradient-to-t from-enterprise-blue-dark via-transparent to-transparent"></div>
+<div class="absolute bottom-8 left-8 right-8">
+<h4 class="font-headline-md text-white mb-2">Banking &amp; Financial Services</h4>
+<div class="h-1 w-0 group-hover:w-20 bg-metallic-gold-light transition-all duration-300"></div>
+</div>
+</div>
+<div class="group relative overflow-hidden h-96 bg-enterprise-blue-dark lg:col-span-1">
+<img alt="" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida/AP1WRLvfm3-g_gP7zZT5EE7l39hP3B_7UVtenVAtzSm_eLACVA7-eS__HatOGgJJbXclObFw7fc3nmEDl4Bo-wGLF9FjsaAZW1xkC__G-WQzMVaJDvGRsG_0o9sGaOQbjvhLFLQ9hE43VwRB51rADTWPc97N-APBL5wWVQyO-vQMEFd9QEn3wcnByGPOM6xnIK8H0f3EKEv1ZgJLz-X1a77_lvB5zMQu3ATqH_mpQV-1t5UyISDjY8GnFU-Rj1R8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-enterprise-blue-dark via-transparent to-transparent"></div>
+<div class="absolute bottom-8 left-8 right-8">
+<h4 class="font-headline-md text-white mb-2">Insurance</h4>
+<div class="h-1 w-0 group-hover:w-20 bg-metallic-gold-light transition-all duration-300"></div>
+</div>
+</div>
+<div class="group relative overflow-hidden h-96 bg-enterprise-blue-dark">
+<div class="absolute inset-0 bg-enterprise-blue-dark flex items-center justify-center p-12 text-center">
+<div>
+<h4 class="font-headline-md text-white mb-4">Life Sciences &amp; Healthcare</h4>
+<p class="text-caption text-surface-variant mb-6">Revolutionizing patient care through precision engineering and data-driven insights.</p>
+<button class="text-metallic-gold-light font-label-bold flex items-center gap-2 mx-auto group">
+                                Learn More <span class="material-symbols-outlined text-sm group-hover:translate-x-2 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Case Studies Section -->
+<section class="py-32 bg-white">
+<div class="max-w-container-max-width mx-auto px-margin-desktop">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+<div class="max-w-xl">
+<span class="text-metallic-gold-light font-label-bold uppercase tracking-widest mb-4 block">Proven Success</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">Global Impact, Local Excellence</h2>
+</div>
+<button class="px-8 py-3 border-2 border-primary text-primary font-label-bold hover:bg-primary hover:text-white transition-all">
+                    View All Case Studies
+                </button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Case Study Card -->
+<div class="bg-surface border border-surface-grey hover-lift overflow-hidden">
+<div class="h-64 overflow-hidden relative">
+<img alt="" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida/AP1WRLuK9VGd6qcvaluqxB3LZkJkY4mrT-Qve8zm5YrYrLe36hGCMKeBfzjSlVlgygRO4fhGytlhR6sacO7L7hZZiJbEaHW08BdOOIbyF9xRS9dBqHC9CxcrlRDyN-JkKu0YW0FBlKKSbnJUUgTD5PJwo4_VN5JAgqr1gfqREyhPyGYhlUIuo62Lv-fBaJKzmt_8HeEw9xeaqK7CvIpIwaAxEVtB8jBJcIsv7d9h8ChH78mgluzYKXJyEhrX3Fnn"/>
+<span class="absolute top-4 left-4 bg-primary text-white text-caption px-3 py-1 font-label-bold uppercase">FinTech</span>
+</div>
+<div class="p-8">
+<h4 class="font-headline-md text-primary mb-4 leading-tight">Orchestrating Cloud Migration for a Fortune 500 Bank</h4>
+<p class="text-text-muted mb-6">Achieved 40% reduction in infrastructure costs while increasing deployment speed by 3x.</p>
+<a class="text-primary font-label-bold inline-flex items-center gap-2 group" href="#">
+                            Read Story <span class="material-symbols-outlined text-base group-hover:translate-x-1 transition-transform" data-icon="trending_flat">trending_flat</span>
+</a>
+</div>
+</div>
+<div class="bg-surface border border-surface-grey hover-lift overflow-hidden">
+<div class="h-64 bg-enterprise-blue-dark flex items-center justify-center p-12 text-white">
+<span class="material-symbols-outlined text-6xl opacity-20" data-icon="health_and_safety">health_and_safety</span>
+</div>
+<div class="p-8">
+<h4 class="font-headline-md text-primary mb-4 leading-tight">AI-Driven Genomics Platform for Precision Medicine</h4>
+<p class="text-text-muted mb-6">Developing predictive models that identify patient risks months ahead of traditional methods.</p>
+<a class="text-primary font-label-bold inline-flex items-center gap-2 group" href="#">
+                            Read Story <span class="material-symbols-outlined text-base group-hover:translate-x-1 transition-transform" data-icon="trending_flat">trending_flat</span>
+</a>
+</div>
+</div>
+<div class="bg-surface border border-surface-grey hover-lift overflow-hidden">
+<div class="h-64 overflow-hidden relative">
+<div class="w-full h-full bg-cover bg-center" data-alt="A futuristic manufacturing plant interior with glowing blue data lines connecting machines, representing a smart factory and industrial automation. High-key lighting, corporate tech aesthetic, clean and precise." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuARKmiXgxkNFWDz9enyOyJex-DdxvAmKDdWfZuTmKd8y8pGc9Te0oQbag1quvPidIr17fxgQ6NOqxiFlP2T7NNGvx1cvTRjnfrTMjUqiQS7AuCDjo-ijQzZrFlcKSViWa0adsKKZzYiRJNQXoWLwYq0cBFOJdgLhLj3m8Ybg3VZ9akbV9K6liG499-bOW_FFnDsaxP0C41a0TK1O6RCAw2AJ5asWWAN81oYK1SCl2EVG0KvoRjC7pYkqQUcDRJSL6MpfMc0P9OWeTRP')"></div>
+<span class="absolute top-4 left-4 bg-primary text-white text-caption px-3 py-1 font-label-bold uppercase">Industrial</span>
+</div>
+<div class="p-8">
+<h4 class="font-headline-md text-primary mb-4 leading-tight">Digital Twin Implementation for Smart Factories</h4>
+<p class="text-text-muted mb-6">Real-time simulation environment that prevented millions in potential downtime losses.</p>
+<a class="text-primary font-label-bold inline-flex items-center gap-2 group" href="#">
+                            Read Story <span class="material-symbols-outlined text-base group-hover:translate-x-1 transition-transform" data-icon="trending_flat">trending_flat</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Global Delivery Center Section -->
+<section class="py-32 bg-enterprise-blue-dark text-white">
+<div class="max-w-container-max-width mx-auto px-margin-desktop grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+<div>
+<h2 class="font-headline-lg text-headline-lg mb-8">Engineering Excellence Everywhere</h2>
+<p class="font-body-lg text-surface-variant mb-12">With over 50 delivery centers worldwide, our globally distributed teams provide 24/7 innovation, ensuring your enterprise never sleeps.</p>
+<div class="grid grid-cols-2 gap-8">
+<div class="border-l-2 border-metallic-gold-light pl-6">
+<div class="text-display-xl font-bold text-metallic-gold-light mb-1">50+</div>
+<div class="text-caption uppercase font-label-bold opacity-60">Global Centers</div>
+</div>
+<div class="border-l-2 border-metallic-gold-light pl-6">
+<div class="text-display-xl font-bold text-metallic-gold-light mb-1">200+</div>
+<div class="text-caption uppercase font-label-bold opacity-60">Fortune 500 Clients</div>
+</div>
+</div>
+</div>
+<div class="relative h-[400px] bg-white/5 border border-white/10 rounded-xl overflow-hidden shadow-2xl">
+<div class="absolute inset-0 opacity-40">
+<img class="w-full h-full object-cover" data-alt="A stylized global world map with glowing nodes representing interconnected delivery centers. The map uses a deep navy blue background with gold and light blue light connections. Professional, authoritative, and showing global reach." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkXR1RWndeTuA0KLi3DO4AUYmuuni78sXDehK3k9OMJbW3jrNrdM7RpRUx0frEK6ZG3bYxhzKeN0XmfTQplXPKwsfpB2g5LxOzYmSt2bH2cZq1L0lF0_iYe0yU5CgdtrpK7mWLKRYuYN1npKUbqj3izt7ubg1JhOZ_ApDXaJ6maRm4PvqICdB1mr46bbqEkoP4Ff8qoAv9LskUn6Wqmg6QCNcxC6co3icRWafecXu-VGho7Mmuw91R7BOSsC7ZY8wLGECRWxwBgeyJ"/>
+</div>
+<!-- Interactive Markers Simulation -->
+<div class="absolute inset-0 p-12">
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-4 bg-enterprise-blue-dark/80 p-4 border border-white/20 w-max">
+<span class="w-2 h-2 bg-metallic-gold-light rounded-full animate-ping"></span>
+<span class="font-label-bold">New Delivery Center: London, UK</span>
+</div>
+<div class="flex items-center gap-4 bg-enterprise-blue-dark/80 p-4 border border-white/20 w-max ml-12">
+<span class="w-2 h-2 bg-secondary rounded-full"></span>
+<span class="font-label-bold">Headquarters: Silicon Valley, USA</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact CTA Section -->
+<section class="py-32 bg-white">
+<div class="max-w-container-max-width mx-auto px-margin-desktop">
+<div class="bg-surface p-12 lg:p-20 border border-surface-grey flex flex-col lg:flex-row gap-16 items-center">
+<div class="flex-1">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-6">Ready to Re(AI)magine Your Future?</h2>
+<p class="font-body-lg text-text-muted mb-10">Our enterprise architects are ready to discuss your complex challenges. Let's engineer the next phase of your digital evolution together.</p>
+<div class="space-y-6">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="verified">verified</span>
+<div>
+<h5 class="font-label-bold text-primary">Confidential Consultation</h5>
+<p class="text-caption text-text-muted">A deep dive into your infrastructure and goals.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="speed">speed</span>
+<div>
+<h5 class="font-label-bold text-primary">Rapid Prototyping</h5>
+<p class="text-caption text-text-muted">Moving from concept to POC in as little as 4 weeks.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="w-full max-w-md bg-white p-8 shadow-xl border border-surface-grey">
+<form class="space-y-4">
+<div class="grid grid-cols-2 gap-4">
+<input class="w-full border-surface-grey focus:ring-primary focus:border-primary px-4 py-3 text-body-md rounded-none" placeholder="First Name" type="text"/>
+<input class="w-full border-surface-grey focus:ring-primary focus:border-primary px-4 py-3 text-body-md rounded-none" placeholder="Last Name" type="text"/>
+</div>
+<input class="w-full border-surface-grey focus:ring-primary focus:border-primary px-4 py-3 text-body-md rounded-none" placeholder="Work Email" type="email"/>
+<select class="w-full border-surface-grey focus:ring-primary focus:border-primary px-4 py-3 text-body-md rounded-none text-text-muted">
+<option>Industry Interest</option>
+<option>Banking</option>
+<option>Healthcare</option>
+<option>Manufacturing</option>
+<option>Other</option>
+</select>
+<textarea class="w-full border-surface-grey focus:ring-primary focus:border-primary px-4 py-3 text-body-md rounded-none" placeholder="Tell us about your challenge" rows="4"></textarea>
+<button class="w-full bg-enterprise-blue-dark text-white font-label-bold py-4 hover:bg-primary transition-all shadow-lg">
+                            Request Collaboration
+                        </button>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-enterprise-blue-dark dark:bg-primary-container w-full pt-margin-desktop pb-margin-mobile border-t border-primary-container">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop max-w-container-max-width mx-auto">
+<div class="col-span-1 md:col-span-1 space-y-6">
+<div class="font-headline-md text-headline-md text-metallic-gold-light font-bold">
+                    Sentientware
+                </div>
+<p class="text-surface-variant opacity-80 text-caption max-w-xs">
+                    Engineering global excellence through high-performance technology solutions.
+                </p>
+<div class="flex gap-4">
+<a class="text-white hover:text-metallic-gold-light transition-colors" href="#"><span class="material-symbols-outlined" data-icon="public">public</span></a>
+<a class="text-white hover:text-metallic-gold-light transition-colors" href="#"><span class="material-symbols-outlined" data-icon="share">share</span></a>
+<a class="text-white hover:text-metallic-gold-light transition-colors" href="#"><span class="material-symbols-outlined" data-icon="forum">forum</span></a>
+</div>
+</div>
+<div>
+<h6 class="text-white font-label-bold mb-6 uppercase tracking-wider">Company</h6>
+<ul class="space-y-3">
+<li><a class="text-surface-variant opacity-80 text-caption hover:text-metallic-gold-light underline transition-all" href="#">About Us</a></li>
+<li><a class="text-surface-variant opacity-80 text-caption hover:text-metallic-gold-light underline transition-all" href="#">Careers</a></li>
+<li><a class="text-surface-variant opacity-80 text-caption hover:text-metallic-gold-light underline transition-all" href="#">Sustainability</a></li>
+<li><a class="text-surface-variant opacity-80 text-caption hover:text-metallic-gold-light underline transition-all" href="#">Investor Relations</a></li>
+</ul>
+</div>
+<div>
+<h6 class="text-white font-label-bold mb-6 uppercase tracking-wider">Services</h6>
+<ul class="space-y-3">
+<li><a class="text-surface-variant opacity-80 text-caption hover:text-metallic-gold-light underline transition-all" href="#">Cloud Engineering</a></li>
+<li><a class="text-surface-variant opacity-80 text-caption hover:text-metallic-gold-light underline transition-all" href="#">Generative AI</a></li>
+<li><a class="text-surface-variant opacity-80 text-caption hover:text-metallic-gold-light underline transition-all" href="#">Digital Modernization</a></li>
+<li><a class="text-surface-variant opacity-80 text-caption hover:text-metallic-gold-light underline transition-all" href="#">Security Solutions</a></li>
+</ul>
+</div>
+<div>
+<h6 class="text-white font-label-bold mb-6 uppercase tracking-wider">Global Support</h6>
+<ul class="space-y-3">
+<li><a class="text-surface-variant opacity-80 text-caption hover:text-metallic-gold-light underline transition-all" href="#">Global Offices</a></li>
+<li><a class="text-surface-variant opacity-80 text-caption hover:text-metallic-gold-light underline transition-all" href="#">Resources</a></li>
+<li><a class="text-surface-variant opacity-80 text-caption hover:text-metallic-gold-light underline transition-all" href="#">Privacy Policy</a></li>
+<li><a class="text-surface-variant opacity-80 text-caption hover:text-metallic-gold-light underline transition-all" href="#">Terms of Service</a></li>
+</ul>
+</div>
+</div>
+<div class="mt-20 border-t border-white/5 py-8 text-center">
+<p class="text-surface-variant opacity-40 text-caption">
+                © 2024 Sentientware Tech Solution. Engineering Excellence Globally.
+            </p>
+</div>
+</footer>
+<script>
+        // Smooth reveal for statistics
+        document.addEventListener('DOMContentLoaded', () => {
+            const stats = document.querySelectorAll('.font-display-xl');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-bounce-in'); // Simple custom trigger
+                        // Could add a counter logic here
+                    }
+                });
+            }, { threshold: 0.5 });
+            stats.forEach(stat => observer.observe(stat));
+        });
+    </script>
+</body></html>

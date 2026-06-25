@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact Us | Sentientware Tech Solution</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&amp;family=Inter:wght@400;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Sora:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-container": "#002d5b",
+                        "secondary-fixed": "#ffdea5",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed-dim": "#ffb692",
+                        "on-secondary-fixed": "#261900",
+                        "primary-fixed-dim": "#a7c8ff",
+                        "surface-container": "#edeeef",
+                        "on-tertiary-container": "#ce825b",
+                        "secondary-fixed-dim": "#e9c176",
+                        "surface": "#f8f9fa",
+                        "error-container": "#ffdad6",
+                        "surface-tint": "#3e5f90",
+                        "text-main": "#1A1A1A",
+                        "tertiary-fixed": "#ffdbcb",
+                        "on-secondary-fixed-variant": "#5d4201",
+                        "error": "#ba1a1a",
+                        "tertiary-container": "#501e01",
+                        "on-error-container": "#93000a",
+                        "on-primary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "primary-fixed": "#d5e3ff",
+                        "primary": "#001836",
+                        "on-secondary": "#ffffff",
+                        "inverse-on-surface": "#f0f1f2",
+                        "metallic-gold-light": "#D4B982",
+                        "on-tertiary-fixed": "#341100",
+                        "surface-grey": "#E9ECEF",
+                        "surface-variant": "#e1e3e4",
+                        "on-primary-container": "#7696ca",
+                        "tertiary": "#300e00",
+                        "outline": "#737780",
+                        "text-muted": "#6C757D",
+                        "enterprise-blue-dark": "#001A35",
+                        "outline-variant": "#c3c6d0",
+                        "on-primary-fixed": "#001b3c",
+                        "inverse-primary": "#a7c8ff",
+                        "on-tertiary-fixed-variant": "#713716",
+                        "on-surface-variant": "#43474f",
+                        "surface-dim": "#d9dadb",
+                        "secondary-container": "#fed488",
+                        "surface-bright": "#f8f9fa",
+                        "background": "#f8f9fa",
+                        "on-tertiary": "#ffffff",
+                        "secondary": "#775a19",
+                        "on-surface": "#191c1d",
+                        "on-primary-fixed-variant": "#254776",
+                        "on-background": "#191c1d",
+                        "surface-container-low": "#f3f4f5",
+                        "on-secondary-container": "#785a1a",
+                        "surface-container-high": "#e7e8e9",
+                        "inverse-surface": "#2e3132",
+                        "surface-container-highest": "#e1e3e4"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "container-max-width": "1280px",
+                        "unit": "8px",
+                        "margin-desktop": "64px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "display-xl": ["Sora"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Sora"],
+                        "headline-lg": ["Sora"],
+                        "caption": ["Inter"],
+                        "label-bold": ["Inter"],
+                        "headline-lg-mobile": ["Sora"]
+                    },
+                    "fontSize": {
+                        "display-xl": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "headline-lg": ["40px", {"lineHeight": "48px", "fontWeight": "600"}],
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                        "label-bold": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .bento-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .bento-card:hover {
+            box-shadow: 0 20px 25px -5px rgba(0, 26, 53, 0.04), 0 10px 10px -5px rgba(0, 26, 53, 0.02);
+            border-top: 2px solid #D4B982;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-secondary-container">
+<!-- TopNavBar -->
+<header class="bg-surface dark:bg-enterprise-blue-dark w-full top-0 sticky z-50 shadow-sm border-b border-outline-variant dark:border-primary-container">
+<nav class="flex justify-between items-center px-margin-desktop h-20 max-w-container-max-width mx-auto">
+<div class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">
+                Sentientware Tech Solution
+            </div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-on-surface-variant dark:text-surface-variant font-body-md hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200" href="#">Services</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-body-md hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200" href="#">Industries</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-body-md hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200" href="#">Solutions</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-body-md hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200" href="#">Case Studies</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-body-md hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200" href="#">About Us</a>
+<a class="text-primary dark:text-secondary-fixed font-label-bold border-b-2 border-secondary hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200" href="#">Contact</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden lg:block text-on-surface-variant font-label-bold hover:text-secondary transition-all">Careers</button>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-lg font-label-bold scale-95 active:opacity-80 transition-all hover:bg-enterprise-blue-dark">Get Started</button>
+</div>
+</nav>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative py-24 bg-enterprise-blue-dark overflow-hidden">
+
+<div class="relative z-10 max-w-container-max-width mx-auto px-margin-desktop text-center">
+<span class="inline-block py-1 px-3 bg-primary-container text-metallic-gold-light font-label-bold rounded-full mb-6">Let's Connect</span>
+<h1 class="font-display-xl text-display-xl text-white mb-8">Let's <span class="text-metallic-gold-light">Re(AI)magine</span> the Future Together</h1>
+<p class="font-body-lg text-body-lg text-surface-variant max-w-2xl mx-auto opacity-90">
+                    From engineering breakthroughs to strategic AI implementation, our global team is ready to accelerate your enterprise's digital evolution.
+                </p>
+</div>
+</section>
+<!-- Contact Grid -->
+<section class="py-24 max-w-container-max-width mx-auto px-margin-desktop">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Lead Capture Form -->
+<div class="lg:col-span-7 bg-white p-12 rounded-xl border border-surface-grey shadow-sm">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-8">Send us a message</h2>
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="flex flex-col gap-2">
+<label class="font-label-bold text-primary">First Name*</label>
+<input class="p-3 border border-outline-variant rounded focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" placeholder="John" type="text"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-bold text-primary">Last Name*</label>
+<input class="p-3 border border-outline-variant rounded focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" placeholder="Doe" type="text"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="flex flex-col gap-2">
+<label class="font-label-bold text-primary">Work Email*</label>
+<input class="p-3 border border-outline-variant rounded focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" placeholder="john@company.com" type="email"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-bold text-primary">Company*</label>
+<input class="p-3 border border-outline-variant rounded focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" placeholder="Enterprise Inc." type="text"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="flex flex-col gap-2">
+<label class="font-label-bold text-primary">Job Title*</label>
+<input class="p-3 border border-outline-variant rounded focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" placeholder="Chief Innovation Officer" type="text"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-bold text-primary">Phone Number (Optional)</label>
+<input class="p-3 border border-outline-variant rounded focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" placeholder="+1 (555) 000-0000" type="tel"/>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-bold text-primary">How can we help?*</label>
+<textarea class="p-3 border border-outline-variant rounded focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" placeholder="Tell us about your project requirements or specific challenges..." rows="4"></textarea>
+</div>
+<div class="flex items-start gap-3 py-4">
+<input class="mt-1 rounded border-outline-variant text-primary focus:ring-primary" id="privacy" type="checkbox"/>
+<label class="font-caption text-caption text-on-surface-variant" for="privacy">
+                                I agree to the use or processing of my personal information by Sentientware Tech Solution for the purpose of fulfilling this request and in accordance with the <a class="text-primary underline" href="#">privacy notice</a>.
+                            </label>
+</div>
+<button class="w-full md:w-auto bg-primary text-on-primary px-12 py-4 rounded-lg font-label-bold hover:bg-enterprise-blue-dark transition-all transform active:scale-95 shadow-md" type="submit">
+                            Submit Inquiry
+                        </button>
+</form>
+</div>
+<!-- Contact Sidebar / Info -->
+<div class="lg:col-span-5 space-y-8">
+<!-- High-Touch Card -->
+<div class="bg-primary-container p-10 rounded-xl text-on-primary relative overflow-hidden group">
+<div class="absolute -right-10 -bottom-10 opacity-10 group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-[160px]">support_agent</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4 text-metallic-gold-light">Urgent Inquiry?</h3>
+<p class="font-body-md mb-6 opacity-80">Our executive response team is available for enterprise escalations and critical system inquiries.</p>
+<div class="space-y-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-metallic-gold-light">call</span>
+<span class="font-label-bold">+1-800-SENTIENT</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-metallic-gold-light">mail</span>
+<span class="font-label-bold">priority@sentientware.com</span>
+</div>
+</div>
+</div>
+<!-- Global Presence -->
+<div class="bg-white p-8 rounded-xl border border-surface-grey shadow-sm">
+<h3 class="font-headline-md text-headline-md text-primary mb-6">Global Presence</h3>
+<div class="space-y-6">
+<div class="pb-6 border-b border-surface-grey">
+<h4 class="font-label-bold text-primary mb-1">North America Headquarters</h4>
+<p class="font-caption text-on-surface-variant">1200 Innovation Drive, Suite 500<br/>San Francisco, CA 94105</p>
+</div>
+<div class="pb-6 border-b border-surface-grey">
+<h4 class="font-label-bold text-primary mb-1">EMEA Center of Excellence</h4>
+<p class="font-caption text-on-surface-variant">Tech Plaza, Building 4<br/>Zurich, Switzerland 8001</p>
+</div>
+<div class="">
+<h4 class="font-label-bold text-primary mb-1">APAC Hub</h4>
+<p class="font-caption text-on-surface-variant">Level 42, International Finance Centre<br/>Singapore 018981</p>
+</div>
+</div>
+<a class="mt-6 inline-flex items-center gap-2 font-label-bold text-primary hover:text-secondary transition-colors" href="#">
+                            View All Offices <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Specific Channels Section -->
+<section class="py-24 bg-surface-container">
+<div class="max-w-container-max-width mx-auto px-margin-desktop">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Specific Inquiries</h2>
+<p class="font-body-md text-on-surface-variant">Reach the right department directly for faster coordination.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Careers -->
+<div class="bg-white p-8 rounded-xl border border-surface-grey bento-card">
+<div class="w-12 h-12 bg-surface text-primary rounded-lg flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-[32px]">work</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-3">Careers</h3>
+<p class="font-body-md text-on-surface-variant mb-6">Explore global opportunities and join our team of engineering experts.</p>
+<a class="text-primary font-label-bold hover:text-secondary" href="#">Visit Careers Portal →</a>
+</div>
+<!-- Media -->
+<div class="bg-white p-8 rounded-xl border border-surface-grey bento-card">
+<div class="w-12 h-12 bg-surface text-primary rounded-lg flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-[32px]">news</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-3">Media &amp; Press</h3>
+<p class="font-body-md text-on-surface-variant mb-6">For journalist inquiries, brand assets, and official press releases.</p>
+<a class="text-primary font-label-bold hover:text-secondary" href="#">Media Kit →</a>
+</div>
+<!-- Investors -->
+<div class="bg-white p-8 rounded-xl border border-surface-grey bento-card">
+<div class="w-12 h-12 bg-surface text-primary rounded-lg flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-[32px]">trending_up</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-3">Investors</h3>
+<p class="font-body-md text-on-surface-variant mb-6">Access quarterly earnings reports, SEC filings, and governance data.</p>
+<a class="text-primary font-label-bold hover:text-secondary" href="#">Investor Relations →</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Map Section -->
+<section class="h-[400px] relative w-full overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center grayscale hover:grayscale-0 transition-all duration-700" data-alt="A cinematic, high-contrast aerial drone photograph of a modern glass skyscraper district in San Francisco at dusk. The city lights are beginning to twinkle with a warm golden glow, contrasting against the deep enterprise blue of the twilight sky. The scene conveys technological power, global scale, and engineering excellence in a clean light-mode friendly environment." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCa0W9mKGvy6urDJrrgKXlYV0twhKgFBF6rFi4TX5KIlwmQDJVxMeJVVbMbyhNj-CtZzY4LJmEA6odxTYvI7eEh9ld4-5kxlrNqgvXK9mie4RLBZGrK4Mich02wKzuHBBVmYD43VMQUXQfOsE97mLcTEPVzZyhkfyyE-2XBpj7kW5kRzy5G2_DzbT9or_VqrjO6T6yzmfIsEZeTebNbZPwvN9BoGXuT2ccM7dzLPP0v6ik1xJPWeEGs2jMxsCqwEI0bMjiY4lHoPFBe')"></div>
+<div class="absolute inset-0 bg-primary/20 pointer-events-none"></div>
+<div class="relative z-10 h-full flex items-center justify-center">
+<div class="bg-white/90 backdrop-blur-md p-8 rounded-xl border border-outline-variant shadow-xl text-center max-w-sm">
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Our Global HQ</h3>
+<p class="font-caption text-on-surface-variant mb-4">San Francisco, CA, USA</p>
+<button class="bg-primary text-on-primary px-6 py-2 rounded font-label-bold">Get Directions</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-enterprise-blue-dark dark:bg-primary-container w-full pt-margin-desktop pb-margin-mobile border-t border-primary-container">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop max-w-container-max-width mx-auto">
+<div class="col-span-1 md:col-span-1">
+<div class="font-headline-md text-headline-md text-metallic-gold-light mb-6">Sentientware</div>
+<p class="text-surface-variant opacity-80 font-caption mb-8">Engineering excellence for the autonomous enterprise era.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full border border-primary-container flex items-center justify-center text-on-primary hover:bg-metallic-gold-light hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined text-sm">share</span>
+</a>
+<a class="w-10 h-10 rounded-full border border-primary-container flex items-center justify-center text-on-primary hover:bg-metallic-gold-light hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined text-sm">hub</span>
+</a>
+<a class="w-10 h-10 rounded-full border border-primary-container flex items-center justify-center text-on-primary hover:bg-metallic-gold-light hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined text-sm">groups</span>
+</a>
+</div>
+</div>
+<div class="space-y-4">
+<h4 class="text-on-primary font-label-bold">Global Offices</h4>
+<ul class="space-y-2">
+<li><a class="text-surface-variant opacity-80 font-caption hover:text-metallic-gold-light underline transition-all" href="#">San Francisco</a></li>
+<li><a class="text-surface-variant opacity-80 font-caption hover:text-metallic-gold-light underline transition-all" href="#">London</a></li>
+<li><a class="text-surface-variant opacity-80 font-caption hover:text-metallic-gold-light underline transition-all" href="#">Singapore</a></li>
+<li><a class="text-surface-variant opacity-80 font-caption hover:text-metallic-gold-light underline transition-all" href="#">Zurich</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="text-on-primary font-label-bold">Resources</h4>
+<ul class="space-y-2">
+<li><a class="text-surface-variant opacity-80 font-caption hover:text-metallic-gold-light underline transition-all" href="#">White Papers</a></li>
+<li><a class="text-surface-variant opacity-80 font-caption hover:text-metallic-gold-light underline transition-all" href="#">Case Studies</a></li>
+<li><a class="text-surface-variant opacity-80 font-caption hover:text-metallic-gold-light underline transition-all" href="#">Insights Blog</a></li>
+<li><a class="text-surface-variant opacity-80 font-caption hover:text-metallic-gold-light underline transition-all" href="#">API Docs</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="text-on-primary font-label-bold">Legal</h4>
+<ul class="space-y-2">
+<li><a class="text-surface-variant opacity-80 font-caption hover:text-metallic-gold-light underline transition-all" href="#">Privacy Policy</a></li>
+<li><a class="text-surface-variant opacity-80 font-caption hover:text-metallic-gold-light underline transition-all" href="#">Terms of Service</a></li>
+<li><a class="text-surface-variant opacity-80 font-caption hover:text-metallic-gold-light underline transition-all" href="#">Cookie Settings</a></li>
+<li><a class="text-surface-variant opacity-80 font-caption hover:text-metallic-gold-light underline transition-all" href="#">Compliance</a></li>
+</ul>
+</div>
+</div>
+<div class="mt-20 border-t border-primary-container/30 px-margin-desktop max-w-container-max-width mx-auto pt-8">
+<p class="text-on-primary dark:text-on-primary-fixed font-caption text-caption opacity-60 text-center">
+                © 2024 Sentientware Tech Solution. Engineering Excellence Globally.
+            </p>
+</div>
+</footer>
+<script>
+        // Form Interaction Logic
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            const originalText = btn.innerText;
+            btn.innerText = 'Sending...';
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                btn.innerText = 'Message Sent Successfully';
+                btn.classList.add('bg-green-600');
+                e.target.reset();
+                setTimeout(() => {
+                    btn.innerText = originalText;
+                    btn.classList.remove('bg-green-600');
+                    btn.disabled = false;
+                }, 3000);
+            }, 1500);
+        });
+
+        // Hover effect for bento cards
+        document.querySelectorAll('.bento-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-4px)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body></html>
