@@ -94,7 +94,7 @@ export default function HomePage() {
               Driving Innovation in <span className="text-[#F5A623]">Automation,</span><br />
               <span className="text-[#F5A623]">AI Works & Seamless Automation</span>
             </h1>
-            
+
             <p className="text-surface-variant font-body-lg max-w-2xl text-lg md:text-xl opacity-90 leading-relaxed">
               Empowering global enterprises to scale faster and smarter. We leverage cutting-edge artificial intelligence, cloud-native architectures, and deep industry expertise to transform your operational workflows into autonomous, future-ready ecosystems.
             </p>
@@ -325,7 +325,7 @@ export default function HomePage() {
             <div className="group relative overflow-hidden h-96 bg-enterprise-blue-dark rounded shadow-lg">
               <Image src="/assets/c2c.jpg" alt="Consumer Tech Landscape" fill className="object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" />
               <div className="absolute inset-0 bg-gradient-to-t from-enterprise-blue-dark via-transparent to-transparent"></div>
-                            <div className="absolute bottom-8 left-8 right-8">
+              <div className="absolute bottom-8 left-8 right-8">
                 <h4 className="font-headline-md text-white mb-2">Consumer Tech</h4>
                 <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-all duration-500 ease-out">
                   <div className="overflow-hidden">
@@ -357,13 +357,13 @@ export default function HomePage() {
             </h2>
           </div>
         </div>
-        
+
         {/* Infinite Marquee */}
         <div className="relative w-full flex overflow-hidden group/marquee">
           {/* Fading edges for marquee */}
           <div className="absolute top-0 bottom-0 left-0 w-32 bg-gradient-to-r from-surface to-transparent z-10 pointer-events-none"></div>
           <div className="absolute top-0 bottom-0 right-0 w-32 bg-gradient-to-l from-surface to-transparent z-10 pointer-events-none"></div>
-          
+
           <div className="flex w-max animate-scroll-left group-hover/marquee:[animation-play-state:paused] whitespace-nowrap py-8">
             {[...Array(2)].map((_, arrayIndex) => (
               <div key={arrayIndex} className="flex items-center justify-center gap-12 md:gap-24 px-6 md:px-12 shrink-0">
@@ -424,13 +424,13 @@ export default function HomePage() {
               Our commitment to excellence translates into measurable success. We take pride in delivering robust solutions that drive absolute satisfaction for our enterprise partners.
             </p>
           </div>
-          
+
           {/* Horizontal Carousel for Stats */}
           <div className="relative w-full flex overflow-hidden group/marquee py-4">
             {/* Fading edges for marquee */}
             <div className="absolute top-0 bottom-0 left-0 w-24 bg-gradient-to-r from-enterprise-blue-dark to-transparent z-10 pointer-events-none"></div>
             <div className="absolute top-0 bottom-0 right-0 w-24 bg-gradient-to-l from-enterprise-blue-dark to-transparent z-10 pointer-events-none"></div>
-            
+
             <div className="flex w-max animate-scroll-left group-hover/marquee:[animation-play-state:paused] py-4">
               {[...Array(2)].map((_, arrayIndex) => (
                 <div key={arrayIndex} className="flex items-stretch gap-6 px-3 shrink-0">
@@ -454,7 +454,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
       {/* Technology Stack Section */}
       <TechnologyStack />
 
