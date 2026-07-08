@@ -2,6 +2,9 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
+import TechnologyStack from "@/components/TechnologyStack";
+import CaseStudies3DCarousel from "@/components/CaseStudies3DCarousel";
 
 export default function HomePage() {
   const [formData, setFormData] = useState({
@@ -157,89 +160,131 @@ export default function HomePage() {
               At SentientWare, we don&apos;t just deploy technology—we architect intelligent ecosystems. Our comprehensive four-pillar framework ensures your enterprise transitions seamlessly into an autonomous, AI-driven future.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+          <div className="space-y-24">
             {/* Pillar: Imagine */}
-            <div className="group p-8 border border-white/10 hover:border-metallic-gold-light/50 transition-all duration-300 bg-white/5 rounded">
-              <span className="material-symbols-outlined text-4xl text-metallic-gold-light mb-6 block">
-                lightbulb
-              </span>
-              <h3 className="font-headline-md text-headline-md mb-4 group-hover:text-metallic-gold-light transition-colors">
-                Imagine
-              </h3>
-              <p className="text-surface-variant font-body-md mb-8">
-                Envision autonomous workflows and intelligent business models that redefine operational efficiency and customer engagement.
-              </p>
-              <ul className="space-y-3 text-caption opacity-60">
-                <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 bg-metallic-gold-light rounded-full"></span> Design Strategy
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 bg-metallic-gold-light rounded-full"></span> Market Analysis
-                </li>
-              </ul>
+            <div className="flex flex-col lg:flex-row items-center gap-12 group">
+              <div className="w-full lg:w-1/2 relative overflow-hidden rounded-none shadow-2xl group-hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all duration-700 border border-white/10">
+                <div className="w-full pt-[56.25%]"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-enterprise-blue-dark/80 via-enterprise-blue-dark/20 to-transparent opacity-80 group-hover:opacity-0 transition-opacity duration-700 z-10"></div>
+                <Image src="/assets/human-robot-interaction-digital-world.jpg" alt="Imagine Pillar" fill className="object-cover object-center group-hover:scale-110 transition-transform duration-1000 ease-out" />
+              </div>
+              <div className="w-full lg:w-1/2 space-y-6 lg:pl-10">
+                <div className="flex items-center gap-4 mb-2">
+                  <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center backdrop-blur-sm border border-white/20">
+                    <span className="material-symbols-outlined text-2xl text-metallic-gold-light">lightbulb</span>
+                  </div>
+                  <span className="text-metallic-gold-light font-label-bold uppercase tracking-widest text-sm">Phase 01</span>
+                </div>
+                <h3 className="font-headline-lg text-4xl lg:text-5xl">Imagine</h3>
+                <p className="text-surface-variant font-body-lg text-lg leading-relaxed">
+                  Envision autonomous workflows and intelligent business models that redefine operational efficiency and customer engagement.
+                </p>
+                <div className="pt-4 flex items-center gap-6">
+                  <div className="flex items-center gap-2 border border-white/20 px-4 py-2 rounded-full bg-white/5">
+                    <span className="w-2 h-2 bg-metallic-gold-light rounded-full"></span>
+                    <span className="text-sm font-medium">Design Strategy</span>
+                  </div>
+                  <div className="flex items-center gap-2 border border-white/20 px-4 py-2 rounded-full bg-white/5">
+                    <span className="w-2 h-2 bg-metallic-gold-light rounded-full"></span>
+                    <span className="text-sm font-medium">Market Analysis</span>
+                  </div>
+                </div>
+              </div>
             </div>
 
             {/* Pillar: Engineer */}
-            <div className="group p-8 border border-white/10 hover:border-metallic-gold-light/50 transition-all duration-300 bg-white/5 rounded">
-              <span className="material-symbols-outlined text-4xl text-metallic-gold-light mb-6 block">
-                engineering
-              </span>
-              <h3 className="font-headline-md text-headline-md mb-4 group-hover:text-metallic-gold-light transition-colors">
-                Engineer
-              </h3>
-              <p className="text-surface-variant font-body-md mb-8">
-                Architect scalable, AI-driven infrastructures engineered for absolute reliability, extreme performance, and enterprise-grade security.
-              </p>
-              <ul className="space-y-3 text-caption opacity-60">
-                <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 bg-metallic-gold-light rounded-full"></span> Cloud Native Dev
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 bg-metallic-gold-light rounded-full"></span> Legacy Modernization
-                </li>
-              </ul>
+            <div className="flex flex-col lg:flex-row-reverse items-center gap-12 group">
+              <div className="w-full lg:w-1/2 relative overflow-hidden rounded-none shadow-2xl group-hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all duration-700 border border-white/10">
+                <div className="w-full pt-[56.25%]"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-enterprise-blue-dark/80 via-enterprise-blue-dark/20 to-transparent opacity-80 group-hover:opacity-0 transition-opacity duration-700 z-10"></div>
+                <Image src="/assets/krakenimages-Y5bvRlcCx8k-unsplash.jpg" alt="Engineer Pillar" fill className="object-cover object-center group-hover:scale-110 transition-transform duration-1000 ease-out" />
+              </div>
+              <div className="w-full lg:w-1/2 space-y-6 lg:pr-10 text-left lg:text-right flex flex-col items-start lg:items-end">
+                <div className="flex items-center gap-4 mb-2 flex-row-reverse lg:flex-row">
+                  <span className="text-metallic-gold-light font-label-bold uppercase tracking-widest text-sm hidden lg:block">Phase 02</span>
+                  <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center backdrop-blur-sm border border-white/20">
+                    <span className="material-symbols-outlined text-2xl text-metallic-gold-light">engineering</span>
+                  </div>
+                  <span className="text-metallic-gold-light font-label-bold uppercase tracking-widest text-sm lg:hidden">Phase 02</span>
+                </div>
+                <h3 className="font-headline-lg text-4xl lg:text-5xl">Engineer</h3>
+                <p className="text-surface-variant font-body-lg text-lg leading-relaxed lg:text-right">
+                  Architect scalable, AI-driven infrastructures engineered for absolute reliability, extreme performance, and enterprise-grade security.
+                </p>
+                <div className="pt-4 flex flex-wrap items-center gap-4 justify-start lg:justify-end">
+                  <div className="flex items-center gap-2 border border-white/20 px-4 py-2 rounded-full bg-white/5">
+                    <span className="w-2 h-2 bg-metallic-gold-light rounded-full"></span>
+                    <span className="text-sm font-medium">Cloud Native Dev</span>
+                  </div>
+                  <div className="flex items-center gap-2 border border-white/20 px-4 py-2 rounded-full bg-white/5">
+                    <span className="w-2 h-2 bg-metallic-gold-light rounded-full"></span>
+                    <span className="text-sm font-medium">Legacy Modernization</span>
+                  </div>
+                </div>
+              </div>
             </div>
 
             {/* Pillar: Modernize */}
-            <div className="group p-8 border border-white/10 hover:border-metallic-gold-light/50 transition-all duration-300 bg-white/5 rounded">
-              <span className="material-symbols-outlined text-4xl text-metallic-gold-light mb-6 block">
-                rocket_launch
-              </span>
-              <h3 className="font-headline-md text-headline-md mb-4 group-hover:text-metallic-gold-light transition-colors">
-                Modernize
-              </h3>
-              <p className="text-surface-variant font-body-md mb-8">
-                Transform legacy systems into agile, self-optimizing platforms powered by cutting-edge neural networks and multi-cloud architectures.
-              </p>
-              <ul className="space-y-3 text-caption opacity-60">
-                <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 bg-metallic-gold-light rounded-full"></span> AI Foundations
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 bg-metallic-gold-light rounded-full"></span> Security by Design
-                </li>
-              </ul>
+            <div className="flex flex-col lg:flex-row items-center gap-12 group">
+              <div className="w-full lg:w-1/2 relative overflow-hidden rounded-none shadow-2xl group-hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all duration-700 border border-white/10">
+                <div className="w-full pt-[56.25%]"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-enterprise-blue-dark/80 via-enterprise-blue-dark/20 to-transparent opacity-80 group-hover:opacity-0 transition-opacity duration-700 z-10"></div>
+                <Image src="/assets/deng-xiang--WXQm_NTK0U-unsplash.jpg" alt="Modernize Pillar" fill className="object-cover object-center group-hover:scale-110 transition-transform duration-1000 ease-out" />
+              </div>
+              <div className="w-full lg:w-1/2 space-y-6 lg:pl-10">
+                <div className="flex items-center gap-4 mb-2">
+                  <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center backdrop-blur-sm border border-white/20">
+                    <span className="material-symbols-outlined text-2xl text-metallic-gold-light">rocket_launch</span>
+                  </div>
+                  <span className="text-metallic-gold-light font-label-bold uppercase tracking-widest text-sm">Phase 03</span>
+                </div>
+                <h3 className="font-headline-lg text-4xl lg:text-5xl">Modernize</h3>
+                <p className="text-surface-variant font-body-lg text-lg leading-relaxed">
+                  Transform legacy systems into agile, self-optimizing platforms powered by cutting-edge neural networks and multi-cloud architectures.
+                </p>
+                <div className="pt-4 flex items-center gap-6">
+                  <div className="flex items-center gap-2 border border-white/20 px-4 py-2 rounded-full bg-white/5">
+                    <span className="w-2 h-2 bg-metallic-gold-light rounded-full"></span>
+                    <span className="text-sm font-medium">AI Foundations</span>
+                  </div>
+                  <div className="flex items-center gap-2 border border-white/20 px-4 py-2 rounded-full bg-white/5">
+                    <span className="w-2 h-2 bg-metallic-gold-light rounded-full"></span>
+                    <span className="text-sm font-medium">Security by Design</span>
+                  </div>
+                </div>
+              </div>
             </div>
 
             {/* Pillar: Manage */}
-            <div className="group p-8 border border-white/10 hover:border-metallic-gold-light/50 transition-all duration-300 bg-white/5 rounded">
-              <span className="material-symbols-outlined text-4xl text-metallic-gold-light mb-6 block">
-                monitoring
-              </span>
-              <h3 className="font-headline-md text-headline-md mb-4 group-hover:text-metallic-gold-light transition-colors">
-                Manage
-              </h3>
-              <p className="text-surface-variant font-body-md mb-8">
-                Ensure continuous innovation with managed AI operations, predictive maintenance, and seamless orchestration across your entire technology stack.
-              </p>
-              <ul className="space-y-3 text-caption opacity-60">
-                <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 bg-metallic-gold-light rounded-full"></span> Managed Services
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 bg-metallic-gold-light rounded-full"></span> Continuous Optimization
-                </li>
-              </ul>
+            <div className="flex flex-col lg:flex-row-reverse items-center gap-12 group">
+              <div className="w-full lg:w-1/2 relative overflow-hidden rounded-none shadow-2xl group-hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all duration-700 border border-white/10">
+                <div className="w-full pt-[56.25%]"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-enterprise-blue-dark/80 via-enterprise-blue-dark/20 to-transparent opacity-80 group-hover:opacity-0 transition-opacity duration-700 z-10"></div>
+                <Image src="/assets/chase-chappell-LKS62TmI-L8-unsplash.jpg" alt="Manage Pillar" fill className="object-cover object-center group-hover:scale-110 transition-transform duration-1000 ease-out" />
+              </div>
+              <div className="w-full lg:w-1/2 space-y-6 lg:pr-10 text-left lg:text-right flex flex-col items-start lg:items-end">
+                <div className="flex items-center gap-4 mb-2 flex-row-reverse lg:flex-row">
+                  <span className="text-metallic-gold-light font-label-bold uppercase tracking-widest text-sm hidden lg:block">Phase 04</span>
+                  <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center backdrop-blur-sm border border-white/20">
+                    <span className="material-symbols-outlined text-2xl text-metallic-gold-light">monitoring</span>
+                  </div>
+                  <span className="text-metallic-gold-light font-label-bold uppercase tracking-widest text-sm lg:hidden">Phase 04</span>
+                </div>
+                <h3 className="font-headline-lg text-4xl lg:text-5xl">Manage</h3>
+                <p className="text-surface-variant font-body-lg text-lg leading-relaxed lg:text-right">
+                  Ensure continuous innovation with managed AI operations, predictive maintenance, and seamless orchestration across your entire technology stack.
+                </p>
+                <div className="pt-4 flex flex-wrap items-center gap-4 justify-start lg:justify-end">
+                  <div className="flex items-center gap-2 border border-white/20 px-4 py-2 rounded-full bg-white/5">
+                    <span className="w-2 h-2 bg-metallic-gold-light rounded-full"></span>
+                    <span className="text-sm font-medium">Managed Services</span>
+                  </div>
+                  <div className="flex items-center gap-2 border border-white/20 px-4 py-2 rounded-full bg-white/5">
+                    <span className="w-2 h-2 bg-metallic-gold-light rounded-full"></span>
+                    <span className="text-sm font-medium">Continuous Optimization</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -256,48 +301,88 @@ export default function HomePage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
             <div className="group relative overflow-hidden h-96 bg-enterprise-blue-dark rounded shadow-lg">
-              <img
-                alt="Banking & Financial Services Landscape"
-                className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700"
-                src="https://lh3.googleusercontent.com/aida/AP1WRLsb2SmEMBxN9NrZcSLYwAxo0ZmXo34Mr-HgBJ0LKmogXmj06m4ajIwv_9LsHBbdSxqlwABsKdUfHExkbihDeBDS6LtsbGFLOoRGNHsaWKhzB4VG4BdDFQUTLNkW13gK_pC8-Q9iTMBjLpT7lExeW5fYkzxXei8y0sg53JRH5hquB8WMImxB4Vxop4ie5F-KLuGGJGQR-3UCnfWwgEw_mBTfF56YjOuwDxR-ZZpSSBl12yywJY4bx5zUNVvi"
-              />
+              <Image src="/assets/jared-brashier-duNHkmSkW6M-unsplash.jpg" alt="Drone & IoT Technologies Landscape" fill className="object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" />
               <div className="absolute inset-0 bg-gradient-to-t from-enterprise-blue-dark via-transparent to-transparent"></div>
               <div className="absolute bottom-8 left-8 right-8">
-                <h4 className="font-headline-md text-white mb-2">Banking & Financial Services</h4>
+                <h4 className="font-headline-md text-white mb-2">Drone & IoT Technologies</h4>
                 <div className="h-1 w-0 group-hover:w-20 bg-metallic-gold-light transition-all duration-300"></div>
               </div>
             </div>
             <div className="group relative overflow-hidden h-96 bg-enterprise-blue-dark rounded shadow-lg">
-              <img
-                alt="Insurance Landscape"
-                className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700"
-                src="https://lh3.googleusercontent.com/aida/AP1WRLvfm3-g_gP7zZT5EE7l39hP3B_7UVtenVAtzSm_eLACVA7-eS__HatOGgJJbXclObFw7fc3nmEDl4Bo-wGLF9FjsaAZW1xkC__G-WQzMVaJDvGRsG_0o9sGaOQbjvhLFLQ9hE43VwRB51rADTWPc97N-APBL5wWVQyO-vQMEFd9QEn3wcnByGPOM6xnIK8H0f3EKEv1ZgJLz-X1a77_lvB5zMQu3ATqH_mpQV-1t5UyISDjY8GnFU-Rj1R8"
-              />
+              <Image src="/assets/Pixel Foundry.jpg" alt="Software & Hi-Tech Landscape" fill className="object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" />
               <div className="absolute inset-0 bg-gradient-to-t from-enterprise-blue-dark via-transparent to-transparent"></div>
               <div className="absolute bottom-8 left-8 right-8">
-                <h4 className="font-headline-md text-white mb-2">Insurance</h4>
-                <div className="h-1 w-0 group-hover:w-20 bg-metallic-gold-light transition-all duration-300"></div>
-              </div>
-            </div>
-            <div className="group relative overflow-hidden h-96 bg-enterprise-blue-dark rounded shadow-lg">
-              <div className="absolute inset-0 bg-enterprise-blue-dark flex items-center justify-center p-12 text-center">
-                <div>
-                  <h4 className="font-headline-md text-white mb-4">Life Sciences & Healthcare</h4>
-                  <p className="text-caption text-surface-variant mb-6">
-                    Revolutionizing patient care through precision engineering and data-driven insights.
-                  </p>
-                  <Link
-                    href="/industries"
-                    className="text-metallic-gold-light font-label-bold flex items-center gap-2 mx-auto justify-center group"
-                  >
-                    Learn More{" "}
-                    <span className="material-symbols-outlined text-sm group-hover:translate-x-2 transition-transform">
-                      arrow_forward
-                    </span>
+                <div className="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300 ease-out">
+                  <h4 className="font-headline-md text-white mb-2">Software & Hi-Tech</h4>
+                  <div className="h-1 w-0 group-hover:w-20 bg-metallic-gold-light transition-all duration-300 mb-2"></div>
+                  <Link href="/industries" className="flex items-center gap-2 text-metallic-gold-light opacity-0 group-hover:opacity-100 transition-opacity duration-300 cursor-pointer">
+                    <span className="font-label-bold uppercase tracking-wider text-sm hover:underline">Learn More</span>
+                    <span className="material-symbols-outlined text-sm transform group-hover:translate-x-1 transition-transform">arrow_forward</span>
                   </Link>
                 </div>
               </div>
             </div>
+            <div className="group relative overflow-hidden h-96 bg-enterprise-blue-dark rounded shadow-lg">
+              <Image src="/assets/c2c.jpg" alt="Consumer Tech Landscape" fill className="object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" />
+              <div className="absolute inset-0 bg-gradient-to-t from-enterprise-blue-dark via-transparent to-transparent"></div>
+                            <div className="absolute bottom-8 left-8 right-8">
+                <h4 className="font-headline-md text-white mb-2">Consumer Tech</h4>
+                <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-all duration-500 ease-out">
+                  <div className="overflow-hidden">
+                    <p className="text-surface-variant text-sm leading-relaxed pb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                      Transforming the consumer electronics ecosystem with AI-driven insights, smart device connectivity, and hyper-personalized digital experiences.
+                    </p>
+                  </div>
+                </div>
+                <div className="h-[2px] w-12 group-hover:w-full bg-metallic-gold-light transition-all duration-500 ease-out mb-4 mt-2"></div>
+                <Link href="/industries" className="flex items-center gap-2 text-metallic-gold-light cursor-pointer w-fit group/btn">
+                  <span className="font-label-bold uppercase tracking-wider text-sm group-hover/btn:text-white transition-colors">Learn More</span>
+                  <span className="material-symbols-outlined text-sm transform group-hover/btn:translate-x-2 transition-transform">arrow_forward</span>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Clients Section */}
+      <section className="py-24 bg-surface border-y border-surface-variant overflow-hidden">
+        <div className="max-w-container-max-width mx-auto px-6 md:px-margin-desktop mb-16">
+          <div className="text-center">
+            <span className="text-metallic-gold-light font-label-bold uppercase tracking-widest mb-4 block">
+              Trusted By Industry Leaders
+            </span>
+            <h2 className="font-headline-lg text-3xl md:text-4xl text-primary">
+              Our Clients & Partners
+            </h2>
+          </div>
+        </div>
+        
+        {/* Infinite Marquee */}
+        <div className="relative w-full flex overflow-hidden group/marquee">
+          {/* Fading edges for marquee */}
+          <div className="absolute top-0 bottom-0 left-0 w-32 bg-gradient-to-r from-surface to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute top-0 bottom-0 right-0 w-32 bg-gradient-to-l from-surface to-transparent z-10 pointer-events-none"></div>
+          
+          <div className="flex w-max animate-scroll-left group-hover/marquee:[animation-play-state:paused] whitespace-nowrap py-8">
+            {[...Array(2)].map((_, arrayIndex) => (
+              <div key={arrayIndex} className="flex items-center justify-center gap-12 md:gap-24 px-6 md:px-12 shrink-0">
+                {[
+                  { name: "Microsoft", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/microsoft/microsoft-original.svg" },
+                  { name: "Google Cloud", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/googlecloud/googlecloud-original.svg" },
+                  { name: "Amazon", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" },
+                  { name: "IBM", icon: "https://www.vectorlogo.zone/logos/ibm/ibm-icon.svg" },
+                  { name: "Oracle", icon: "https://www.vectorlogo.zone/logos/oracle/oracle-icon.svg" },
+                  { name: "DigitalOcean", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/digitalocean/digitalocean-original.svg" },
+                  { name: "Salesforce", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/salesforce/salesforce-original.svg" },
+                  { name: "Docker", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" }
+                ].map((client, idx) => (
+                  <div key={idx} className="flex items-center justify-center transition-all duration-500 group-hover/marquee:opacity-30 group-hover/marquee:grayscale hover:!opacity-100 hover:!grayscale-0 hover:scale-125 hover:drop-shadow-2xl cursor-pointer w-28 h-14 md:w-40 md:h-20 shrink-0">
+                    <img src={client.icon} alt={client.name} className="max-h-full max-w-full object-contain" />
+                  </div>
+                ))}
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -321,143 +406,57 @@ export default function HomePage() {
               View All Case Studies
             </Link>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-            {/* Case Study 1 */}
-            <div className="bg-surface border border-surface-grey hover-lift overflow-hidden rounded shadow-sm">
-              <div className="h-64 overflow-hidden relative">
-                <img
-                  alt="Fortune 500 Bank Cloud Orchestration"
-                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
-                  src="https://lh3.googleusercontent.com/aida/AP1WRLuK9VGd6qcvaluqxB3LZkJkY4mrT-Qve8zm5YrYrLe36hGCMKeBfzjSlVlgygRO4fhGytlhR6sacO7L7hZZiJbEaHW08BdOOIbyF9xRS9dBqHC9CxcrlRDyN-JkKu0YW0FBlKKSbnJUUgTD5PJwo4_VN5JAgqr1gfqREyhPyGYhlUIuo62Lv-fBaJKzmt_8HeEw9xeaqK7CvIpIwaAxEVtB8jBJcIsv7d9h8ChH78mgluzYKXJyEhrX3Fnn"
-                />
-                <span className="absolute top-4 left-4 bg-primary text-white text-caption px-3 py-1 font-label-bold uppercase">
-                  FinTech
-                </span>
-              </div>
-              <div className="p-8">
-                <h4 className="font-headline-md text-primary mb-4 leading-tight">
-                  Orchestrating Cloud Migration for a Fortune 500 Bank
-                </h4>
-                <p className="text-text-muted mb-6 font-body-md text-sm">
-                  Achieved 40% reduction in infrastructure costs while increasing deployment speed by 3x.
-                </p>
-                <Link
-                  href="/case-studies"
-                  className="text-primary font-label-bold inline-flex items-center gap-2 group"
-                >
-                  Read Story{" "}
-                  <span className="material-symbols-outlined text-base group-hover:translate-x-1 transition-transform">
-                    trending_flat
-                  </span>
-                </Link>
-              </div>
-            </div>
-
-            {/* Case Study 2 */}
-            <div className="bg-surface border border-surface-grey hover-lift overflow-hidden rounded shadow-sm">
-              <div className="h-64 bg-enterprise-blue-dark flex items-center justify-center p-12 text-white">
-                <span className="material-symbols-outlined text-6xl opacity-20">
-                  health_and_safety
-                </span>
-              </div>
-              <div className="p-8">
-                <h4 className="font-headline-md text-primary mb-4 leading-tight">
-                  AI-Driven Genomics Platform for Precision Medicine
-                </h4>
-                <p className="text-text-muted mb-6 font-body-md text-sm">
-                  Developing predictive models that identify patient risks months ahead of traditional methods.
-                </p>
-                <Link
-                  href="/case-studies"
-                  className="text-primary font-label-bold inline-flex items-center gap-2 group"
-                >
-                  Read Story{" "}
-                  <span className="material-symbols-outlined text-base group-hover:translate-x-1 transition-transform">
-                    trending_flat
-                  </span>
-                </Link>
-              </div>
-            </div>
-
-            {/* Case Study 3 */}
-            <div className="bg-surface border border-surface-grey hover-lift overflow-hidden rounded shadow-sm">
-              <div className="h-64 overflow-hidden relative">
-                <div
-                  className="w-full h-full bg-cover bg-center"
-                  style={{
-                    backgroundImage:
-                      "url('https://lh3.googleusercontent.com/aida-public/AB6AXuARKmiXgxkNFWDz9enyOyJex-DdxvAmKDdWfZuTmKd8y8pGc9Te0oQbag1quvPidIr17fxgQ6NOqxiFlP2T7NNGvx1cvTRjnfrTMjUqiQS7AuCDjo-ijQzZrFlcKSViWa0adsKKZzYiRJNQXoWLwYq0cBFOJdgLhLj3m8Ybg3VZ9akbV9K6liG499-bOW_FFnDsaxP0C41a0TK1O6RCAw2AJ5asWWAN81oYK1SCl2EVG0KvoRjC7pYkqQUcDRJSL6MpfMc0P9OWeTRP')",
-                  }}
-                ></div>
-                <span className="absolute top-4 left-4 bg-primary text-white text-caption px-3 py-1 font-label-bold uppercase">
-                  Industrial
-                </span>
-              </div>
-              <div className="p-8">
-                <h4 className="font-headline-md text-primary mb-4 leading-tight">
-                  Digital Twin Implementation for Smart Factories
-                </h4>
-                <p className="text-text-muted mb-6 font-body-md text-sm">
-                  Real-time simulation environment that prevented millions in potential downtime losses.
-                </p>
-                <Link
-                  href="/case-studies"
-                  className="text-primary font-label-bold inline-flex items-center gap-2 group"
-                >
-                  Read Story{" "}
-                  <span className="material-symbols-outlined text-base group-hover:translate-x-1 transition-transform">
-                    trending_flat
-                  </span>
-                </Link>
-              </div>
-            </div>
-          </div>
+          <CaseStudies3DCarousel />
         </div>
       </section>
 
-      {/* Global Delivery Center Section */}
-      <section className="py-32 bg-enterprise-blue-dark text-white">
-        <div className="max-w-container-max-width mx-auto px-6 md:px-margin-desktop grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-          <div>
-            <h2 className="font-headline-lg text-3xl md:text-headline-lg mb-8">Engineering Excellence Everywhere</h2>
-            <p className="font-body-lg text-surface-variant mb-12">
-              With over 50 delivery centers worldwide, our globally distributed teams provide 24/7 innovation, ensuring your enterprise never sleeps.
+      {/* Project Delivery & User Satisfaction */}
+      <section className="py-12 bg-enterprise-blue-dark text-white border-y border-white/10">
+        <div className="max-w-container-max-width mx-auto px-6 md:px-margin-desktop text-center">
+          <div className="max-w-3xl mx-auto mb-8">
+            <span className="text-metallic-gold-light font-label-bold uppercase tracking-widest mb-2 block">
+              Excellence Delivered
+            </span>
+            <h2 className="font-headline-lg text-2xl md:text-3xl mb-4">
+              Project Delivery & User Satisfaction
+            </h2>
+            <p className="font-body-md text-surface-variant">
+              Our commitment to excellence translates into measurable success. We take pride in delivering robust solutions that drive absolute satisfaction for our enterprise partners.
             </p>
-            <div className="grid grid-cols-2 gap-8">
-              <div className="border-l-2 border-metallic-gold-light pl-6">
-                <div className="text-3xl md:text-display-xl font-bold text-metallic-gold-light mb-1">50+</div>
-                <div className="text-caption uppercase font-label-bold opacity-60">Global Centers</div>
-              </div>
-              <div className="border-l-2 border-metallic-gold-light pl-6">
-                <div className="text-3xl md:text-display-xl font-bold text-metallic-gold-light mb-1">200+</div>
-                <div className="text-caption uppercase font-label-bold opacity-60">Fortune 500 Clients</div>
-              </div>
-            </div>
           </div>
-          <div className="relative h-[400px] bg-white/5 border border-white/10 rounded-xl overflow-hidden shadow-2xl">
-            <div className="absolute inset-0 opacity-40">
-              <img
-                className="w-full h-full object-cover"
-                alt="Global world map with interconnected delivery centers"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkXR1RWndeTuA0KLi3DO4AUYmuuni78sXDehK3k9OMJbW3jrNrdM7RpRUx0frEK6ZG3bYxhzKeN0XmfTQplXPKwsfpB2g5LxOzYmSt2bH2cZq1L0lF0_iYe0yU5CgdtrpK7mWLKRYuYN1npKUbqj3izt7ubg1JhOZ_ApDXaJ6maRm4PvqICdB1mr46bbqEkoP4Ff8qoAv9LskUn6Wqmg6QCNcxC6co3icRWafecXu-VGho7Mmuw91R7BOSsC7ZY8wLGECRWxwBgeyJ"
-              />
-            </div>
-            {/* Interactive Markers Simulation */}
-            <div className="absolute inset-0 p-8 md:p-12">
-              <div className="flex flex-col gap-4">
-                <div className="flex items-center gap-4 bg-enterprise-blue-dark/80 p-4 border border-white/20 w-max rounded">
-                  <span className="w-2 h-2 bg-metallic-gold-light rounded-full animate-ping"></span>
-                  <span className="font-label-bold text-xs md:text-sm">New Delivery Center: London, UK</span>
+          
+          {/* Horizontal Carousel for Stats */}
+          <div className="relative w-full flex overflow-hidden group/marquee py-4">
+            {/* Fading edges for marquee */}
+            <div className="absolute top-0 bottom-0 left-0 w-24 bg-gradient-to-r from-enterprise-blue-dark to-transparent z-10 pointer-events-none"></div>
+            <div className="absolute top-0 bottom-0 right-0 w-24 bg-gradient-to-l from-enterprise-blue-dark to-transparent z-10 pointer-events-none"></div>
+            
+            <div className="flex w-max animate-scroll-left group-hover/marquee:[animation-play-state:paused] py-4">
+              {[...Array(2)].map((_, arrayIndex) => (
+                <div key={arrayIndex} className="flex items-stretch gap-6 px-3 shrink-0">
+                  {[
+                    { icon: 'task_alt', stat: '10+', label: 'Projects Delivered' },
+                    { icon: 'sentiment_very_satisfied', stat: '99%', label: 'Client Satisfaction' },
+                    { icon: 'handshake', stat: '95%', label: 'Retention Rate' },
+                    { icon: 'engineering', stat: '50+', label: 'Expert Engineers' },
+                    { icon: 'network_check', stat: '99.9%', label: 'Uptime Guaranteed' },
+                    { icon: 'public', stat: '20+', label: 'Global Partners' }
+                  ].map((item, idx) => (
+                    <div key={idx} className="p-8 border border-white/10 bg-gradient-to-br from-white/10 to-white/5 rounded-none backdrop-blur-md shadow-lg hover:-translate-y-3 hover:shadow-[0_15px_40px_rgba(245,166,35,0.15)] hover:border-metallic-gold-light/40 transition-all duration-500 w-64 md:w-72 shrink-0 flex flex-col items-center justify-center text-center group cursor-default">
+                      <div className="text-metallic-gold-light material-symbols-outlined text-5xl mb-5 group-hover:scale-110 group-hover:drop-shadow-[0_0_15px_rgba(245,166,35,0.5)] transition-all duration-500">{item.icon}</div>
+                      <div className="font-display-xl text-4xl md:text-5xl font-bold mb-2 text-white group-hover:text-metallic-gold-light transition-colors duration-500">{item.stat}</div>
+                      <div className="text-surface-variant font-label-bold uppercase tracking-widest text-xs mt-2">{item.label}</div>
+                    </div>
+                  ))}
                 </div>
-                <div className="flex items-center gap-4 bg-enterprise-blue-dark/80 p-4 border border-white/20 w-max ml-6 md:ml-12 rounded">
-                  <span className="w-2 h-2 bg-secondary rounded-full"></span>
-                  <span className="font-label-bold text-xs md:text-sm">Headquarters: Silicon Valley, USA</span>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
+
+      {/* Technology Stack Section */}
+      <TechnologyStack />
 
       {/* Contact CTA Section */}
       <section className="py-32 bg-white">
@@ -555,6 +554,15 @@ export default function HomePage() {
                       <option>Banking</option>
                       <option>Healthcare</option>
                       <option>Manufacturing</option>
+                      <option>Technology</option>
+                      <option>Finance</option>
+                      <option>Education</option>
+                      <option>Retail & E-commerce</option>
+                      <option>Telecommunications</option>
+                      <option>Media & Entertainment</option>
+                      <option>Real Estate</option>
+                      <option>Energy & Utilities</option>
+                      <option>Logistics</option>
                       <option>Other</option>
                     </select>
                     <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-text-muted">
