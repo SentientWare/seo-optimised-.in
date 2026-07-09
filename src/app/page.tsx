@@ -293,11 +293,19 @@ export default function HomePage() {
       {/* Industry Expertise */}
       <section className="py-32 bg-surface">
         <div className="max-w-container-max-width mx-auto px-6 md:px-margin-desktop">
-          <div className="text-center max-w-3xl mx-auto mb-20">
-            <h2 className="font-headline-lg text-3xl md:text-headline-lg text-primary mb-6">Our Industry Expertise</h2>
-            <p className="font-body-md text-text-muted">
-              Domain knowledge is our foundation. We partner with leaders across global sectors to build the technologies of tomorrow.
-            </p>
+          <div className="max-w-[1400px] mx-auto text-center mb-20">
+            <h2 className="text-4xl md:text-5xl font-bold text-[#004643] mb-12 tracking-tight">
+              Our Industry Expertise
+            </h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 text-left max-w-5xl mx-auto">
+              <p className="text-lg md:text-xl text-gray-600 leading-relaxed border-l-4 border-[#004643] pl-6">
+                Domain knowledge is our foundation.
+              </p>
+              <p className="text-lg md:text-xl text-gray-600 leading-relaxed border-l-4 border-[#F0EDE5] pl-6">
+                We partner with leaders across global sectors to build the technologies of tomorrow.
+              </p>
+            </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
             <div className="group relative overflow-hidden h-96 bg-enterprise-blue-dark rounded shadow-lg">
@@ -413,16 +421,22 @@ export default function HomePage() {
       {/* Project Delivery & User Satisfaction */}
       <section className="py-12 bg-enterprise-blue-dark text-white border-y border-white/10">
         <div className="max-w-container-max-width mx-auto px-6 md:px-margin-desktop text-center">
-          <div className="max-w-3xl mx-auto mb-8">
-            <span className="text-metallic-gold-light font-label-bold uppercase tracking-widest mb-2 block">
+          <div className="max-w-[1400px] mx-auto text-center mb-16">
+            <span className="text-metallic-gold-light font-label-bold uppercase tracking-widest mb-4 block">
               Excellence Delivered
             </span>
-            <h2 className="font-headline-lg text-2xl md:text-3xl mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-12 tracking-tight">
               Project Delivery & User Satisfaction
             </h2>
-            <p className="font-body-md text-surface-variant">
-              Our commitment to excellence translates into measurable success. We take pride in delivering robust solutions that drive absolute satisfaction for our enterprise partners.
-            </p>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 text-left max-w-5xl mx-auto">
+              <p className="text-lg md:text-xl text-white/80 leading-relaxed border-l-4 border-[#F5A623] pl-6">
+                Our commitment to excellence translates into measurable success.
+              </p>
+              <p className="text-lg md:text-xl text-white/80 leading-relaxed border-l-4 border-white/20 pl-6">
+                We take pride in delivering robust solutions that drive absolute satisfaction for our enterprise partners.
+              </p>
+            </div>
           </div>
 
           {/* Horizontal Carousel for Stats */}

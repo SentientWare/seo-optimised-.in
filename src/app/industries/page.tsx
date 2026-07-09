@@ -138,11 +138,17 @@ export default function IndustriesPage() {
         className="py-32 px-6 md:px-margin-desktop max-w-container-max-width mx-auto scroll-mt-20"
         id="industries-grid"
       >
-        <div className="mb-20 text-center space-y-4">
-          <h2 className="font-headline-lg text-3xl md:text-headline-lg text-primary">Engineered for Success</h2>
-          <p className="font-body-lg text-body-md md:text-body-lg text-on-surface-variant max-w-2xl mx-auto">
-            From legacy modernization to greenfield AI implementations, we deliver measurable business outcomes tailored to your sector&apos;s unique constraints and opportunities.
-          </p>
+        <div className="mb-20 flex flex-col md:flex-row justify-between items-center gap-12">
+          <div className="w-full md:w-1/2">
+            <h2 className="text-4xl md:text-5xl font-bold text-[#004643] tracking-tight">
+              Engineered for Success
+            </h2>
+          </div>
+          <div className="w-full md:w-1/2">
+            <p className="text-lg md:text-xl text-gray-600 leading-relaxed border-l-4 border-[#004643] pl-6">
+              From legacy modernization to greenfield AI implementations, we deliver measurable business outcomes tailored to your sector&apos;s unique constraints and opportunities.
+            </p>
+          </div>
         </div>
 
         {/* Bento-style Industry Grid */}
@@ -175,6 +181,24 @@ export default function IndustriesPage() {
               </div>
             </div>
           ))}
+
+          {/* Custom Text Block to fill the remaining 2 columns next to Drone & UAV */}
+          <div className="lg:col-span-2 h-96 flex flex-col justify-center p-8 lg:p-12 bg-white rounded-lg border border-surface-variant shadow-sm relative overflow-hidden group">
+            <div className="absolute right-0 top-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+            <h3 className="text-3xl md:text-4xl font-bold text-[#004643] mb-6 tracking-tight">
+              Comprehensive Sector Coverage
+            </h3>
+            <p className="text-gray-600 font-body-lg text-lg leading-relaxed max-w-lg mb-8">
+              Don't see your specific industry listed? Our foundational AI architectures are universally adaptable. We engineer custom automation frameworks that seamlessly integrate with highly specialized enterprise requirements across any vertical.
+            </p>
+            <Link 
+              href="/contact" 
+              className="text-[#004643] font-label-bold flex items-center gap-2 group-hover:text-primary transition-colors w-fit"
+            >
+              <span className="uppercase tracking-widest text-sm font-bold">Discuss Your Sector</span> 
+              <span className="material-symbols-outlined transform group-hover:translate-x-2 transition-transform">arrow_forward</span>
+            </Link>
+          </div>
         </div>
       </section>
 

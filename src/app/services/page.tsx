@@ -221,13 +221,19 @@ export default function ServicesPage() {
 
       {/* Services Grid Introduction */}
       <section id="pillars" className="bg-surface py-32 px-6 md:px-margin-desktop scroll-mt-20">
-        <div className="max-w-container-max-width mx-auto text-center mb-20">
-          <h2 className="font-headline-lg text-3xl md:text-headline-lg text-primary mb-4">
+        <div className="max-w-[1400px] mx-auto text-center mb-20">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#004643] mb-12 tracking-tight">
             Core Transformation Pillars
           </h2>
-          <p className="text-body-lg font-body-lg text-on-surface-variant max-w-2xl mx-auto">
-            Comprehensive solutions tailored for complex global infrastructures. We specialize in high-performance engineering that drives sustainable growth.
-          </p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 text-left max-w-5xl mx-auto">
+            <p className="text-lg md:text-xl text-gray-600 leading-relaxed border-l-4 border-[#004643] pl-6">
+              Comprehensive solutions tailored for complex global infrastructures.
+            </p>
+            <p className="text-lg md:text-xl text-gray-600 leading-relaxed border-l-4 border-[#F0EDE5] pl-6">
+              We specialize in high-performance engineering that drives sustainable growth.
+            </p>
+          </div>
         </div>
         <ServicesScrollGallery items={services} />
       </section>
