@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import IndustryStatsCarousel from "@/components/IndustryStatsCarousel";
 
 interface Sector {
   title: string;
@@ -17,14 +18,14 @@ export default function IndustriesPage() {
     {
       title: "Banking & Financial Services",
       desc: "Securing digital assets and accelerating fintech innovation through robust architecture.",
-      imgUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuAfCvXrs0-Vi9HWCerUXJT5M5EYuqMnpjxTZSXJ0L37-JEJWA-ojOY3gDXm3qnMg1vbvr47ruopzgGd8Ab3GHlXreJ_ordfJzgmTRbTZSNE3uA5fwOhvtWqcn-fV8spP5TNww3alGgPXxiQJn0g3wZBUEd7S2I3Bd-ChMkNfDRKTZCtyqErEHsbCj5YSW-_3giExumOR7g_2DBe_3BH4xHgdJkIyIvV1l_1MIvn583dcA5SzddydmPQGmjGhpYiu8rt3v_7ebUzmk4S",
+      imgUrl: "/assets/download (7).jpg",
       linkText: "Case Study",
       href: "/case-studies",
     },
     {
       title: "Healthcare & Life Sciences",
       desc: "Engineering patient-centric ecosystems and interoperable data networks for global health systems.",
-      imgUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuCJ4Pk-bum-BIbJ9CxDeRhHmoDQ5_Zoba8ZxDQmenOYGJ4xYJ_pWamtY0D7nXgSKmj24yhQLfN7rBReRpGWx1DtwdFOEvq6_AYPpUAXSDTkhbToVAnHK8t9DTLO5l9M6dRvWFjMfDdMrE0enLJBD4TKv54pQN5sg_jDv6bAMVoDe8RSwcvfUIel1_kkiHu9CCekctR01m8DlsSWm2pr6NXVwHv0oJOYXDH_qs6dBbtV-HHLKeTCg_n5Hd17BaXpqIZs8GnV3m0JmBxl",
+      imgUrl: "/assets/Ejemplos de la Inteligencia Artificial en la medicina.jpg",
       linkText: "View Solutions",
       href: "/solutions",
     },
@@ -39,7 +40,7 @@ export default function IndustriesPage() {
     {
       title: "Manufacturing & Industrial",
       desc: "Driving Industry 4.0 through IoT sensors, digital twins, and predictive maintenance solutions.",
-      imgUrl: "https://lh3.googleusercontent.com/aida/AP1WRLsb2SmEMBxN9NrZcSLYwAxo0ZmXo34Mr-HgBJ0LKmogXmj06m4ajIwv_9LsHBbdSxqlwABsKdUfHExkbihDeBDS6LtsbGFLOoRGNHsaWKhzB4VG4BdDFQUTLNkW13gK_pC8-Q9iTMBjLpT7lExeW5fYkzxXei8y0sg53JRH5hquB8WMImxB4Vxop4ie5F-KLuGGJGQR-3UCnfWwgEw_mBTfF56YjOuwDxR-ZZpSSBl12yywJY4bx5zUNVvi",
+      imgUrl: "/assets/Internet Satelital en Tlaxcala JabaSat.jpg",
       linkText: "Case Study",
       href: "/case-studies",
       colSpan: "lg:col-span-2",
@@ -47,14 +48,14 @@ export default function IndustriesPage() {
     {
       title: "Education & EdTech",
       desc: "Building interactive learning management systems, student analytics dashboards, and virtual classrooms.",
-      imgUrl: "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=800",
+      imgUrl: "/assets/AI-driven education model.jpg",
       linkText: "Case Study",
       href: "/case-studies",
     },
     {
       title: "Software & Hi-Tech",
       desc: "Engineering the next generation of SaaS, cloud infrastructure, and enterprise AI frameworks.",
-      imgUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuD-8p71qvpD4wLf4cOw1nOxkRu5tekRFKnZsdT61vJi_8nG5YOCBGFdwYHPbMeIUqtYBy7K99v5jBt5GkiNrXSO0S7w0x4slA7DZ17zL0SA9djO5KRTN1MNQlED6F2-JkZaCPDTPJN-M7E6sFHHlnaSClPzltdedWIt6on7Q89jk-dqFn0w0sIXq_6P1CyC4HWQuXG_X0Fw6HUlYLcHMJ1GxywftdrF63l2sdnI5hTxPImOmSbFNRQfKCGJsUaTlOdFyHycuCtnokyH",
+      imgUrl: "/assets/AI Adoption Soars_ 270% Increase in Four Years.jpg",
       linkText: "View Solutions",
       href: "/solutions",
     },
@@ -155,7 +156,7 @@ export default function IndustriesPage() {
             >
               <div
                 className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                style={{ backgroundImage: `url('${sector.imgUrl}')` }}
+                style={{ backgroundImage: `url('${encodeURI(sector.imgUrl)}')` }}
               ></div>
               <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity"></div>
               <div className="absolute bottom-0 left-0 p-8 w-full">
@@ -177,35 +178,26 @@ export default function IndustriesPage() {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="bg-enterprise-blue-dark py-24 text-white">
-        <div className="max-w-container-max-width mx-auto px-6 md:px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-gutter text-center">
-          <div className="p-8 border-b md:border-b-0 md:border-r border-primary-container/30 last:border-0">
-            <h4 className="text-metallic-gold-light font-display-xl text-3xl md:text-4xl mb-2">15+</h4>
-            <p className="text-on-primary-container font-label-bold uppercase tracking-widest text-xs">
-              Verticals Served
+      {/* White Section with Industry Text */}
+      <section className="bg-white py-24 w-full relative z-10 shadow-sm">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12 text-center">
+          <h2 className="text-3xl md:text-5xl font-bold text-[#004643] mb-12 tracking-tight">
+            Pioneering the Next Era of Industry
+          </h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 text-left max-w-5xl mx-auto">
+            <p className="text-lg md:text-xl text-gray-600 leading-relaxed border-l-4 border-[#004643] pl-6">
+              From modernizing legacy financial infrastructures to deploying autonomous drone fleets for precision surveying, SentientWare provides the architectural foundation for global enterprises.
             </p>
-          </div>
-          <div className="p-8 border-b md:border-b-0 md:border-r border-primary-container/30 last:border-0">
-            <h4 className="text-metallic-gold-light font-display-xl text-3xl md:text-4xl mb-2">200+</h4>
-            <p className="text-on-primary-container font-label-bold uppercase tracking-widest text-xs">
-              Enterprise Clients
-            </p>
-          </div>
-          <div className="p-8 border-b md:border-b-0 md:border-r border-primary-container/30 last:border-0">
-            <h4 className="text-metallic-gold-light font-display-xl text-3xl md:text-4xl mb-2">30k+</h4>
-            <p className="text-on-primary-container font-label-bold uppercase tracking-widest text-xs">
-              Engineers
-            </p>
-          </div>
-          <div className="p-8 last:border-0">
-            <h4 className="text-metallic-gold-light font-display-xl text-3xl md:text-4xl mb-2">$1.8B</h4>
-            <p className="text-on-primary-container font-label-bold uppercase tracking-widest text-xs">
-              Annual Revenue
+            <p className="text-lg md:text-xl text-gray-600 leading-relaxed border-l-4 border-[#F0EDE5] pl-6">
+              We bridge the gap between complex AI research and scalable, real-world deployment, ensuring every sector can leverage the power of continuous automation without compromising on security or compliance.
             </p>
           </div>
         </div>
       </section>
+
+      {/* Stats Section */}
+      <IndustryStatsCarousel />
 
       {/* CTA Section */}
       <section className="py-32 relative overflow-hidden grid-mesh">

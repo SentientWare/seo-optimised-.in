@@ -7,13 +7,15 @@ export default function Industries() {
       icon: <Landmark size={26} color="var(--primary)" style={{ transition: 'transform 0.3s ease' }} className="icon-hover" />,
       name: 'Banking & Financial Services',
       description: 'Securing digital assets and accelerating fintech innovation through robust architecture.',
-      linkText: 'Case Study'
+      linkText: 'Case Study',
+      imgUrl: '/assets/download (7).jpg'
     },
     {
       icon: <Activity size={26} color="var(--primary)" style={{ transition: 'transform 0.3s ease' }} className="icon-hover" />,
       name: 'Healthcare & Life Sciences',
       description: 'Engineering patient-centric ecosystems and interoperable data networks for global health systems.',
-      linkText: 'View Solutions'
+      linkText: 'View Solutions',
+      imgUrl: '/assets/Ejemplos de la Inteligencia Artificial en la medicina.jpg'
     },
     {
       icon: <ShoppingCart size={26} color="var(--primary)" style={{ transition: 'transform 0.3s ease' }} className="icon-hover" />,
@@ -25,19 +27,22 @@ export default function Industries() {
       icon: <Factory size={26} color="var(--primary)" style={{ transition: 'transform 0.3s ease' }} className="icon-hover" />,
       name: 'Manufacturing & Industrial',
       description: 'Driving Industry 4.0 through IoT sensors, digital twins, and predictive maintenance solutions.',
-      linkText: 'Case Study'
+      linkText: 'Case Study',
+      imgUrl: '/assets/Internet Satelital en Tlaxcala JabaSat.jpg'
     },
     {
       icon: <GraduationCap size={26} color="var(--primary)" style={{ transition: 'transform 0.3s ease' }} className="icon-hover" />,
       name: 'Education & EdTech',
       description: 'Building interactive learning management systems, student analytics dashboards, and virtual classrooms.',
-      linkText: 'Case Study'
+      linkText: 'Case Study',
+      imgUrl: '/assets/AI-driven education model.jpg'
     },
     {
       icon: <Cpu size={26} color="var(--primary)" style={{ transition: 'transform 0.3s ease' }} className="icon-hover" />,
       name: 'Software & Hi-Tech',
       description: 'Engineering the next generation of SaaS, cloud infrastructure, and enterprise AI frameworks.',
-      linkText: 'View Solutions'
+      linkText: 'View Solutions',
+      imgUrl: '/assets/AI Adoption Soars_ 270% Increase in Four Years.jpg'
     },
     {
       icon: <Truck size={26} color="var(--primary)" style={{ transition: 'transform 0.3s ease' }} className="icon-hover" />,
@@ -107,30 +112,40 @@ export default function Industries() {
                 e.currentTarget.style.boxShadow = '0 20px 40px rgba(0, 112, 243, 0.15)';
                 e.currentTarget.style.border = '1px solid rgba(0, 112, 243, 0.3)';
                 const icon = e.currentTarget.querySelector('.icon-hover');
-                if (icon) (icon as HTMLElement).style.transform = 'scale(1.15)';
+                if (icon) icon.style.transform = 'scale(1.15)';
+                const img = e.currentTarget.querySelector('.img-hover');
+                if (img) img.style.transform = 'scale(1.05)';
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = 'translateY(0)';
                 e.currentTarget.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.1)';
                 e.currentTarget.style.border = '1px solid rgba(255, 255, 255, 0.05)';
                 const icon = e.currentTarget.querySelector('.icon-hover');
-                if (icon) (icon as HTMLElement).style.transform = 'scale(1)';
+                if (icon) icon.style.transform = 'scale(1)';
+                const img = e.currentTarget.querySelector('.img-hover');
+                if (img) img.style.transform = 'scale(1)';
               }}
             >
-              <div 
-                style={{ 
-                  width: '56px', 
-                  height: '56px', 
-                  backgroundColor: 'rgba(0, 112, 243, 0.1)', 
-                  borderRadius: '14px', 
-                  display: 'flex', 
-                  alignItems: 'center', 
-                  justifyContent: 'center',
-                  marginBottom: '0.5rem'
-                }}
-              >
-                {ind.icon}
-              </div>
+              {ind.imgUrl ? (
+                <div style={{ width: '100%', height: '140px', borderRadius: '10px', overflow: 'hidden', marginBottom: '0.5rem' }}>
+                  <img src={encodeURI(ind.imgUrl)} alt={ind.name} style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.5s ease' }} className="img-hover" />
+                </div>
+              ) : (
+                <div 
+                  style={{ 
+                    width: '56px', 
+                    height: '56px', 
+                    backgroundColor: 'rgba(0, 112, 243, 0.1)', 
+                    borderRadius: '14px', 
+                    display: 'flex', 
+                    alignItems: 'center', 
+                    justifyContent: 'center',
+                    marginBottom: '0.5rem'
+                  }}
+                >
+                  {ind.icon}
+                </div>
+              )}
               <h3 style={{ fontSize: '1.4rem', color: 'var(--secondary)', fontWeight: '600' }}>{ind.name}</h3>
               <p style={{ fontSize: '0.95rem', color: 'var(--text-muted)', lineHeight: '1.6', margin: '0', flexGrow: 1 }}>
                 {ind.description}
