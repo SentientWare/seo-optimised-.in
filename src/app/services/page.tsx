@@ -2,24 +2,39 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import ServicesScrollGallery from "@/components/ServicesScrollGallery";
 
 export default function ServicesPage() {
   const [videoOpen, setVideoOpen] = useState(false);
 
   const services = [
     {
-      title: "Sentientware.AI",
-      icon: "neurology",
+      title: "AI & Intelligent Automation",
+      icon: "smart_toy",
+      image: "/assets/_Как искусственный интеллект меняет систему здравоохранения в 2025 году_.jpg",
       desc: "Pioneering the next frontier of intelligence with bespoke Agentic AI and enterprise GenAI architectures.",
       bullets: [
         "Agentic AI Frameworks",
         "GenAI Hub Implementation",
         "Custom LLM Orchestration",
       ],
+      isHero: true,
+    },
+    {
+      title: "Enterprise Application Development",
+      icon: "developer_mode",
+      image: "/assets/Web Developer Tools.jpg",
+      desc: "Building scalable, robust, and future-proof enterprise applications tailored to your business needs.",
+      bullets: [
+        "Custom Software Engineering",
+        "Legacy Modernization",
+        "Microservices Architecture",
+      ],
     },
     {
       title: "Cloud & Infrastructure",
       icon: "cloud_done",
+      image: "/assets/Cloud tech_.jpg",
       desc: "Resilient multi-cloud and hybrid foundations designed for maximum availability and global distribution.",
       bullets: [
         "Cloud Native Engineering",
@@ -30,6 +45,7 @@ export default function ServicesPage() {
     {
       title: "Data & Analytics",
       icon: "analytics",
+      image: "/assets/Data analytics and visualization.jpg",
       desc: "Turning raw data into strategic assets with advanced telemetry and predictive modeling systems.",
       bullets: [
         "Data Modernization Strategy",
@@ -38,18 +54,9 @@ export default function ServicesPage() {
       ],
     },
     {
-      title: "Consulting",
-      icon: "lightbulb",
-      desc: "Strategic roadmaps that bridge the gap between business objectives and technological reality.",
-      bullets: [
-        "Digital Maturity Assessments",
-        "CX/UX Innovation Design",
-        "Agile Transformation",
-      ],
-    },
-    {
       title: "Software Product Engineering",
       icon: "settings_ethernet",
+      image: "/assets/download (6).jpg",
       desc: "End-to-end product development life cycles focused on scalability, security, and market velocity.",
       bullets: [
         "Full-stack Development",
@@ -58,8 +65,20 @@ export default function ServicesPage() {
       ],
     },
     {
+      title: "DevOps & Platform Engineering",
+      icon: "speed",
+      image: "/assets/The Demand for DevOps Engineers in Canada Is Exploding — Here Is Why.jpg",
+      desc: "Accelerating delivery pipelines with automated, secure, and reliable deployment processes.",
+      bullets: [
+        "CI/CD Automation",
+        "Infrastructure as Code",
+        "Site Reliability Engineering",
+      ],
+    },
+    {
       title: "Enterprise Security",
       icon: "shield_with_heart",
+      image: "/assets/Stay Ahead of Cyber Threats!.jpg",
       desc: "Protecting your global ecosystem with Zero Trust architectures and real-time threat intelligence.",
       bullets: [
         "Zero Trust Architecture",
@@ -67,15 +86,92 @@ export default function ServicesPage() {
         "Threat Hunting & Response",
       ],
     },
+    {
+      title: "Digital Transformation & Consulting",
+      icon: "trending_up",
+      image: "/assets/Which Digital Transformation Services is best in 2026.jpg",
+      desc: "Strategic roadmaps that bridge the gap between business objectives and technological reality.",
+      bullets: [
+        "Digital Maturity Assessments",
+        "Agile Transformation",
+        "Change Management",
+      ],
+    },
+    {
+      title: "Digital Experience Engineering",
+      icon: "language",
+      image: "/assets/Want to reduce client churn and increase agency retention rates_.jpg",
+      desc: "Crafting immersive, intuitive, and engaging digital experiences across all touchpoints.",
+      bullets: [
+        "CX/UX Innovation Design",
+        "Omnichannel Experiences",
+        "Interactive Portals",
+      ],
+    },
+    {
+      title: "Industry Solutions",
+      icon: "factory",
+      image: "/assets/Streamlining Manufacturing Processes with OEE Efficiency Tools.jpg",
+      desc: "Domain-specific technology solutions tailored for complex and highly regulated industries.",
+      bullets: [
+        "FinTech & Banking",
+        "Healthcare Tech",
+        "Industrial IoT",
+      ],
+    },
+    {
+      title: "Data Engineering Solutions",
+      icon: "database",
+      image: "/assets/Claves de la privacidad y protección de datos.jpg",
+      desc: "Architecting robust data pipelines and scalable lakes to harness the full potential of your enterprise data.",
+      bullets: [
+        "Data Lake Architecture",
+        "ETL Pipeline Automation",
+        "Big Data Processing",
+      ],
+    },
+    {
+      title: "Data Science",
+      icon: "science",
+      image: "/assets/DATA SCIENCE_ Data Science Deep Learning Artificial Intelligence Analysis Business Internet Technolog Stock Illustration _ Adobe Stock.jpg",
+      desc: "Extracting actionable insights through advanced statistical modeling and predictive analytics.",
+      bullets: [
+        "Predictive Modeling",
+        "Statistical Analysis",
+        "Deep Learning",
+      ],
+    },
+    {
+      title: "Machine Learning",
+      icon: "memory",
+      image: "/assets/Understanding Machine Learning_ The Technology Reshaping Our World.jpg",
+      desc: "Building and deploying custom ML models that automate complex processes and drive innovation.",
+      bullets: [
+        "Custom ML Models",
+        "Natural Language Processing",
+        "Computer Vision",
+      ],
+    },
+    {
+      title: "Drone & IoT Technologies",
+      icon: "flight_takeoff",
+      image: "/assets/IOT MOBILE APP DEVELOPMENT COMPANY AHMEDABAD.jpg",
+      desc: "Integrating unmanned aerial systems and connected devices for real-time remote monitoring, data collection, and automation.",
+      bullets: [
+        "Unmanned Aerial Systems (UAS)",
+        "IoT Sensor Networks",
+        "Edge Computing Integration",
+      ],
+    },
   ];
 
   const industries = [
-    { name: "FinTech", icon: "account_balance" },
-    { name: "Healthcare", icon: "health_metrics" },
-    { name: "Industrial", icon: "precision_manufacturing" },
-    { name: "Telecom", icon: "cell_tower" },
-    { name: "Retail", icon: "shopping_cart_checkout" },
-    { name: "AeroSpace", icon: "rocket" },
+    { name: "Banking & Financial Services", icon: "account_balance" },
+    { name: "Healthcare & Life Sciences", icon: "health_metrics" },
+    { name: "Education & EdTech", icon: "school" },
+    { name: "Retail & eCommerce", icon: "shopping_cart_checkout" },
+    { name: "Manufacturing & Industrial", icon: "precision_manufacturing" },
+    { name: "AI & Enterprise SaaS", icon: "smart_toy" },
   ];
 
   return (
@@ -133,41 +229,7 @@ export default function ServicesPage() {
             Comprehensive solutions tailored for complex global infrastructures. We specialize in high-performance engineering that drives sustainable growth.
           </p>
         </div>
-        <div className="max-w-container-max-width mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
-          {services.map((service, idx) => (
-            <div
-              key={idx}
-              className="group bg-surface-container-lowest border border-outline-variant p-10 rounded shadow-sm transition-all duration-300 service-card-glow"
-            >
-              <div className="w-16 h-16 mb-8 flex items-center justify-center bg-primary text-on-primary rounded-lg transition-transform group-hover:scale-110">
-                <span className="material-symbols-outlined text-3xl">{service.icon}</span>
-              </div>
-              <h3 className="font-headline-md text-headline-md text-primary mb-4">{service.title}</h3>
-              <p className="text-on-surface-variant mb-8 leading-relaxed text-sm font-body-md">
-                {service.desc}
-              </p>
-              <ul className="space-y-4 mb-10">
-                {service.bullets.map((bullet, bIdx) => (
-                  <li key={bIdx} className="flex items-center gap-3 text-body-md text-sm text-on-surface">
-                    <span className="material-symbols-outlined text-secondary text-[20px]">
-                      check_circle
-                    </span>
-                    {bullet}
-                  </li>
-                ))}
-              </ul>
-              <Link
-                href="/solutions"
-                className="inline-flex items-center gap-2 text-primary font-label-bold group/link transition-all"
-              >
-                Learn More
-                <span className="material-symbols-outlined text-[18px] transition-transform group-hover/link:translate-x-1">
-                  arrow_forward
-                </span>
-              </Link>
-            </div>
-          ))}
-        </div>
+        <ServicesScrollGallery items={services} />
       </section>
 
       {/* Deep Dive Featured Service */}
@@ -208,22 +270,15 @@ export default function ServicesPage() {
           <div className="relative group">
             <div className="absolute -inset-4 bg-secondary-fixed opacity-10 blur-2xl group-hover:opacity-20 transition-opacity"></div>
             <div className="relative bg-enterprise-blue-dark border border-primary-container rounded-xl overflow-hidden shadow-2xl">
-              <div
-                className="w-full aspect-[4/3] bg-cover bg-center grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700"
-                style={{
-                  backgroundImage:
-                    "url('https://lh3.googleusercontent.com/aida-public/AB6AXuBWL0xjOi1T3Ipzl7eLK47j9tgXj3VkC7RA2yRE5a14Wq10xZsjxcI0laRe7CMI7kZ3K9REMT6qA0By_QLAtjKkNF29xtC8510L9eIgyYcPV9OVORsQVrrrVaMwgNEdMK2WOJDGvY-MMIYYmW_tIOEZYjBKRzAnWsz6rgPWH74SVNzmkt7arP1IOnXEbsBHeETw1ETh_GSmNwLM6yROUEEdMXD80rn01NxpDWmqndMIvp4Uv307RKcPLHLc2xllx3H2SUU_ChjPmk4Q')",
-                }}
-              ></div>
-              <div className="absolute inset-0 flex items-center justify-center">
-                <button
-                  onClick={() => setVideoOpen(true)}
-                  className="w-20 h-20 bg-secondary-fixed text-on-secondary-fixed rounded-full flex items-center justify-center hover:scale-110 transition-transform shadow-lg cursor-pointer"
-                  aria-label="Play video"
-                >
-                  <span className="material-symbols-outlined text-4xl">play_arrow</span>
-                </button>
-              </div>
+              <video
+                className="w-full aspect-[4/3] object-cover transition-all duration-700"
+                autoPlay
+                loop
+                controls
+                playsInline
+              >
+                <source src="/assets/IMG_0965.MP4" type="video/mp4" />
+              </video>
             </div>
           </div>
         </div>
@@ -252,10 +307,19 @@ export default function ServicesPage() {
             {industries.map((ind, idx) => (
               <div
                 key={idx}
-                className="group bg-surface-container-low p-6 text-center rounded border border-transparent hover:border-metallic-gold-light hover:bg-white transition-all shadow-sm"
+                className="group relative bg-surface-container-lowest p-6 text-center rounded-none border border-outline-variant/40 hover:border-primary/80 transition-all duration-300 hover:shadow-[0_10px_40px_-10px_rgba(0,112,243,0.15)] cursor-pointer overflow-hidden flex flex-col items-center justify-center min-h-[160px] hover:-translate-y-1"
               >
-                <span className="material-symbols-outlined text-primary mb-3 text-3xl">{ind.icon}</span>
-                <p className="text-label-bold font-label-bold text-on-surface text-sm">{ind.name}</p>
+                {/* Subtle radial glow on hover */}
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                
+                {/* Animated top accent border */}
+                <div className="absolute top-0 left-0 w-0 h-[3px] bg-primary group-hover:w-full transition-all duration-500 ease-out"></div>
+                
+                <div className="mb-4 relative z-10">
+                  <span className="material-symbols-outlined text-on-surface-variant/80 group-hover:text-primary text-4xl transition-all duration-300 group-hover:scale-110">{ind.icon}</span>
+                </div>
+                
+                <p className="font-semibold text-on-surface text-sm leading-snug relative z-10">{ind.name}</p>
               </div>
             ))}
           </div>

@@ -550,18 +550,16 @@ export default function HomePage() {
                       onChange={handleInputChange}
                     >
                       <option>Industry Interest</option>
-                      <option>Banking</option>
-                      <option>Healthcare</option>
-                      <option>Manufacturing</option>
-                      <option>Technology</option>
-                      <option>Finance</option>
-                      <option>Education</option>
-                      <option>Retail & E-commerce</option>
-                      <option>Telecommunications</option>
-                      <option>Media & Entertainment</option>
-                      <option>Real Estate</option>
-                      <option>Energy & Utilities</option>
-                      <option>Logistics</option>
+                      <option>Banking & Financial Services</option>
+                      <option>Healthcare & Life Sciences</option>
+                      <option>Retail & eCommerce</option>
+                      <option>Manufacturing & Industrial</option>
+                      <option>Education & EdTech</option>
+                      <option>Software & Hi-Tech</option>
+                      <option>Logistics & Supply Chain</option>
+                      <option>IoT & Connected Devices</option>
+                      <option>Real Estate & PropTech</option>
+                      <option>Drone & UAV Solutions</option>
                       <option>Other</option>
                     </select>
                     <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-text-muted">
