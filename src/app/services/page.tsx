@@ -1,11 +1,34 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import ServicesScrollGallery from "@/components/ServicesScrollGallery";
 
 export default function ServicesPage() {
   const [videoOpen, setVideoOpen] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            videoRef.current?.play().catch((e) => console.log("Video play failed:", e));
+          } else {
+            videoRef.current?.pause();
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    if (videoRef.current) {
+      observer.observe(videoRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
 
   const services = [
     {
@@ -277,8 +300,8 @@ export default function ServicesPage() {
             <div className="absolute -inset-4 bg-secondary-fixed opacity-10 blur-2xl group-hover:opacity-20 transition-opacity"></div>
             <div className="relative bg-enterprise-blue-dark border border-primary-container rounded-xl overflow-hidden shadow-2xl">
               <video
+                ref={videoRef}
                 className="w-full aspect-[4/3] object-cover transition-all duration-700"
-                autoPlay
                 loop
                 controls
                 playsInline

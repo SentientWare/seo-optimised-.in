@@ -1,12 +1,12 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect, useRef } from "react";
 import Link from "next/link";
 
 interface CaseStudy {
   id: number;
-  category: "Healthcare" | "Cloud Migration" | "Industrial AI";
-  industry: "Healthcare" | "Financial Services" | "Manufacturing";
+  category: string;
+  industry: string;
   title: string;
   desc: string;
   metric: string;
@@ -16,79 +16,102 @@ interface CaseStudy {
 }
 
 export default function CaseStudiesPage() {
-  const [activeFilter, setActiveFilter] = useState<string>("All Industries");
+  const [activeFilter, setActiveFilter] = useState<string>("All Solutions");
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [videoOpen, setVideoOpen] = useState(false);
-  const [visibleCount, setVisibleCount] = useState(3);
+  const [visibleCount, setVisibleCount] = useState(6);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Play with sound when section is in view
+            videoRef.current?.play().catch(e => console.log("Video play failed:", e));
+          } else {
+            // Pause when section leaves view
+            videoRef.current?.pause();
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    if (videoRef.current) {
+      observer.observe(videoRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   const initialCaseStudies: CaseStudy[] = [
     {
       id: 1,
-      category: "Healthcare",
-      industry: "Healthcare",
-      title: "AI-Powered Patient Triage System for Regional Health Hub",
-      desc: "Optimizing emergency response workflows using real-time predictive analytics and natural language processing across 14 hospitals.",
-      metric: "35%",
-      metricLabel: "Wait Time Reduction",
-      imgUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuAvdtSbmV8r3YJzvom8dRNxwSQnZeqvJvemNCEQJLWJ1BwQROm1MieySFU86CZz3_JZqTVsGsPWZd1xpAQn-fg8o3D5Zlp4OhgVcop-_42dj6s-xft0P5fXpIRAboOCJMST7SKPtq80y3azw3eCWcwbT7as2El9uWq6IC1_q2fcuhnqx6ggVYEpPiFpGPxBl9PldLJyGipaFWrgzumXrk304nASHkAshlvi6xdDqmPOU_s0YRnM_QJEyofaUr36uW7Ek3jRSXaoszI1",
+      category: "Industrial AI",
+      industry: "Data & Intelligence",
+      title: "AI-Powered Drone Intelligence Platform",
+      desc: "Delivering autonomous drone solutions for aerial inspection, surveillance, infrastructure monitoring, and AI-driven visual analytics across enterprise operations.",
+      metric: "80%",
+      metricLabel: "Reduction in Inspection Time",
+      imgUrl: "/assets/download%20(8).jpg",
     },
     {
       id: 2,
-      category: "Cloud Migration",
-      industry: "Financial Services",
-      title: "Cloud Migration for a Fortune 500 Global Bank",
-      desc: "Architecting a seamless transition of legacy core banking systems to a multi-cloud environment without downtime.",
+      category: "Business Intelligence",
+      industry: "Data & Intelligence",
+      title: "Executive Analytics & Business Intelligence",
+      desc: "Transforming enterprise data into actionable insights with real-time dashboards, KPI monitoring, predictive analytics, and AI-powered executive reporting.",
       metric: "40%",
-      metricLabel: "Increase in Operational Efficiency",
-      imgUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuDk1sr5ExXfrqsfHbB-NMl5jwAFTeAlywonanlpJ7D5vfG4Xz3n10lEH8-hofsdSzXyZJCHthAuBSOCXsebu4zoHr2I5uBLu4_8-bLLqN6Ahppf-AbRVWR_NzEv9KYe_0Cq2Ir7wGFoRW0MGEDhXYq7KiVqC-FnqAKtyHwOqSF57l-ED-cRNU-njczl7zMWHq7bS4yw7uJ73QrMEiIDUoGzemx7y1-23nlXSX6HWYjhxUPS3yJo4VJt60y53Pxlrzi7dACfAwn9EX8l",
-      bgIsPlaceholder: true,
+      metricLabel: "Faster Decision-Making",
+      imgUrl: "/assets/Business%20Analytics%20Skiils.jpg",
     },
     {
       id: 3,
-      category: "Industrial AI",
-      industry: "Manufacturing",
-      title: "Predictive Maintenance for Global Steel Manufacturer",
-      desc: "Reducing unscheduled downtime through IoT-integrated sensor networks and deep learning failure models.",
-      metric: "$12M",
-      metricLabel: "Annual Maintenance Savings",
-      imgUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuCP-MQjMzPp10R9GXptlBmlhSI8l5spWw5WCUSaDpBD-RxItnyiVh1d7JmW6c5ijkoV4rkMiI99YgnWhsbCHMtSk5HF1YjEf6Rxq0h2IZSD3TfpOy962DV_gIDMnBa43wcjfwR9M2f2ydxgLkhHgl7IgIPUJIaZdegwT_iw4i7HmHf4gugR_lOqmVdutm3GogdzumXgCIgkh1hGVkVI1Nnu07vJBqxAOKJya5Ol1581G52ffxX7OO77LOdeSoEc8yfFYDH8SoDcgjx",
+      category: "Enterprise AI",
+      industry: "Cloud & Platforms",
+      title: "Enterprise Learning & Workforce Platform",
+      desc: "Empowering organizations with an AI-driven learning platform featuring training management, assessments, certifications, skill development, and workforce analytics.",
+      metric: "3×",
+      metricLabel: "Increase in Learning Engagement",
+      imgUrl: "/assets/ADCA%20Computer%20Centre%20in%20Ara%20-%20Career%20Boss%20Institute.jpg",
     },
     {
       id: 4,
-      category: "Healthcare",
-      industry: "Healthcare",
-      title: "AI Genomics Platform for Pediatric Cancer Diagnosis",
-      desc: "Building a distributed genomic computing pipeline that speeds diagnostic report generation from 3 weeks to under 24 hours.",
-      metric: "95%",
-      metricLabel: "Speed Improvement",
-      imgUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuCJ4Pk-bum-BIbJ9CxDeRhHmoDQ5_Zoba8ZxDQmenOYGJ4xYJ_pWamtY0D7nXgSKmj24yhQLfN7rBReRpGWx1DtwdFOEvq6_AYPpUAXSDTkhbToVAnHK8t9DTLO5l9M6dRvWFjMfDdMrE0enLJBD4TKv54pQN5sg_jDv6bAMVoDe8RSwcvfUIel1_kkiHu9CCekctR01m8DlsSWm2pr6NXVwHv0oJOYXDH_qs6dBbtV-HHLKeTCg_n5Hd17BaXpqIZs8GnV3m0JmBxl",
+      category: "Enterprise AI",
+      industry: "Enterprise Automation",
+      title: "AI-Powered Recruitment & Talent Screening",
+      desc: "Helping enterprises streamline hiring through AI-powered resume screening, candidate assessments, interview workflows, and intelligent recruitment analytics.",
+      metric: "75%",
+      metricLabel: "Reduction in Manual Screening",
+      imgUrl: "/assets/AI-Powered%20Interview%20Copilot.jpg",
     },
     {
       id: 5,
       category: "Cloud Migration",
-      industry: "Financial Services",
-      title: "Secure Payment Ledger Migration for FinTech Enterprise",
-      desc: "Upgrading and migrating highly audited distributed ledgers to AWS using automated compliance validation scripts.",
-      metric: "100%",
-      metricLabel: "Audit Success",
-      imgUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuAfCvXrs0-Vi9HWCerUXJT5M5EYuqMnpjxTZSXJ0L37-JEJWA-ojOY3gDXm3qnMg1vbvr47ruopzgGd8Ab3GHlXreJ_ordfJzgmTRbTZSNE3uA5fwOhvtWqcn-fV8spP5TNww3alGgPXxiQJn0g3wZBUEd7S2I3Bd-ChMkNfDRKTZCtyqErEHsbCj5YSW-_3giExumOR7g_2DBe_3BH4xHgdJkIyIvV1l_1MIvn583dcA5SzddydmPQGmjGhpYiu8rt3v_7ebUzmk4S",
+      industry: "Cloud & Platforms",
+      title: "Enterprise Cloud Modernization",
+      desc: "Modernizing enterprise infrastructure through cloud migration, scalable architectures, DevOps automation, and secure multi-cloud deployments.",
+      metric: "99.9%",
+      metricLabel: "Platform Availability",
+      imgUrl: "/assets/6%20Benefits%20of%20Seamless%20Cloud%20Integration%20for%20SMBs.jpg",
     },
     {
       id: 6,
-      category: "Industrial AI",
-      industry: "Manufacturing",
-      title: "Warehouse Supply Chain Optimizer for EuroGlobal Logistics",
-      desc: "Optimizing global freight paths and cargo container packing configurations using multi-agent reinforcement learning.",
-      metric: "22%",
-      metricLabel: "Fuel Optimization",
-      imgUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuAc1crElsqL96fsQO0OdgmtQHoymL5aw4QJSsReWQPBiWBBGz-5Yu_CtBIcFOysvim36NisywnYfJcPRCTPzqNSxtQeFct1rVlqYSjfJeuR6e4oTs0vDi3Ia7BmzNe0hzMVqFFgkSpbrg-LrYSSBTudrmg6jS75x0CREX8IaAKYy_9TfU7ru5_LnbUH9-a65XA8eWdNPwK_cDtfcXKEV4ZlwHDFliLCWwB27FNt4M5AEPUUhQNvnsDLg3ffooEFW1NyWklxVQkskLpI",
+      category: "Enterprise AI",
+      industry: "Enterprise Automation",
+      title: "Intelligent Business Process Automation",
+      desc: "Automating approvals, document workflows, HR operations, finance processes, and enterprise task management using AI-driven automation.",
+      metric: "60%",
+      metricLabel: "Faster Process Execution",
+      imgUrl: "/assets/Transform%20Your%20Company%20with%20Future-Proof%20Digital%20Process%20Automation.jpg",
     },
   ];
 
   const filteredCaseStudies = useMemo(() => {
     return initialCaseStudies.filter((study) => {
       const matchesFilter =
-        activeFilter === "All Industries" || study.industry === activeFilter;
+        activeFilter === "All Solutions" || study.industry === activeFilter;
       const matchesSearch =
         study.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
         study.desc.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -101,7 +124,7 @@ export default function CaseStudiesPage() {
     setVisibleCount((prev) => prev + 3);
   };
 
-  const industries = ["All Industries", "Healthcare", "Financial Services", "Manufacturing"];
+  const industries = ["All Solutions", "Data & Intelligence", "Enterprise Automation", "Cloud & Platforms"];
 
   return (
     <>
@@ -154,7 +177,7 @@ export default function CaseStudiesPage() {
                   key={ind}
                   onClick={() => {
                     setActiveFilter(ind);
-                    setVisibleCount(3);
+                    setVisibleCount(6);
                   }}
                   className={`px-6 py-2 rounded-full font-label-bold whitespace-nowrap text-sm transition-all duration-300 ${
                     active
@@ -175,7 +198,7 @@ export default function CaseStudiesPage() {
               value={searchQuery}
               onChange={(e) => {
                 setSearchQuery(e.target.value);
-                setVisibleCount(3);
+                setVisibleCount(6);
               }}
             />
             <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">
@@ -239,13 +262,6 @@ export default function CaseStudiesPage() {
                             {study.metricLabel}
                           </span>
                         </div>
-                        <button
-                          onClick={() => alert(`Opening detailed report for Case Study #${study.id}...`)}
-                          className="flex items-center gap-2 font-label-bold text-primary group-hover:text-secondary transition-colors text-sm text-left"
-                        >
-                          Read Story{" "}
-                          <span className="material-symbols-outlined text-[20px]">chevron_right</span>
-                        </button>
                       </div>
                     </div>
                   </article>
@@ -273,58 +289,46 @@ export default function CaseStudiesPage() {
           <div className="flex flex-col lg:flex-row gap-16 items-center">
             <div className="w-full lg:w-1/2">
               <span className="text-metallic-gold-light font-label-bold uppercase tracking-widest mb-4 block text-sm">
-                Flagship Transformation
+                🚚 Logistics & Supply Chain (Coming Soon)
               </span>
               <h2 className="font-display-xl text-3xl md:text-[48px] text-white mb-8 leading-tight">
-                Reimagining Logistics for EuroGlobal Freight
+                AI-Driven Logistics Optimization Platform
               </h2>
               <p className="text-primary-fixed-dim font-body-lg text-sm md:text-base mb-10 leading-relaxed">
-                EuroGlobal faced a critical scalability bottleneck in their manual dispatch logic. Our engineering team deployed a custom-built AI &apos;Orchestrator&apos; that unified disparate legacy databases into a real-time graph database, enabling instant route optimization across 40 countries.
+                Currently in R&D, we&apos;re building an intelligent logistics platform that leverages AI, IoT, and real-time analytics to optimize fleet operations, automate warehouse workflows, and enhance supply chain visibility.
               </p>
               <div className="grid grid-cols-2 gap-8 mb-12">
                 <div>
                   <span className="text-secondary-fixed font-display-xl text-3xl md:text-[40px] block mb-2">
-                    22%
+                    30%
                   </span>
                   <p className="text-surface-variant text-caption uppercase font-label-bold text-[10px]">
-                    Fuel Cost Reduction
+                    Target Reduction in Delivery Costs
                   </p>
                 </div>
                 <div>
                   <span className="text-secondary-fixed font-display-xl text-3xl md:text-[40px] block mb-2">
-                    99.9%
+                    40%
                   </span>
                   <p className="text-surface-variant text-caption uppercase font-label-bold text-[10px]">
-                    System Uptime
+                    Goal Faster Route Planning
                   </p>
                 </div>
               </div>
-              <button
-                onClick={() => alert("Downloading EuroGlobal Freight Case Study...")}
-                className="bg-white text-enterprise-blue-dark px-10 py-4 rounded font-label-bold flex items-center gap-3 hover:bg-surface-variant transition-all text-sm"
-              >
-                View Full Report
-                <span className="material-symbols-outlined">description</span>
-              </button>
             </div>
             <div className="w-full lg:w-1/2">
               <div className="relative group">
                 <div className="absolute -inset-2 bg-gradient-to-r from-metallic-gold-light to-secondary-fixed rounded-2xl blur-xl opacity-20 group-hover:opacity-40 transition-opacity"></div>
                 <div className="relative glass-card p-4 rounded-2xl">
-                  <img
-                    className="rounded-xl w-full aspect-video object-cover shadow-2xl"
-                    alt="EuroGlobal Command Center"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAc1crElsqL96fsQO0OdgmtQHoymL5aw4QJSsReWQPBiWBBGz-5Yu_CtBIcFOysvim36NisywnYfJcPRCTPzqNSxtQeFct1rVlqYSjfJeuR6e4oTs0vDi3Ia7BmzNe0hzMVqFFgkSpbrg-LrYSSBTudrmg6jS75x0CREX8IaAKYy_9TfU7ru5_LnbUH9-a65XA8eWdNPwK_cDtfcXKEV4ZlwHDFliLCWwB27FNt4M5AEPUUhQNvnsDLg3ffooEFW1NyWklxVQkskLpI"
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <button
-                      onClick={() => setVideoOpen(true)}
-                      className="w-20 h-20 bg-primary/80 backdrop-blur-md rounded-full flex items-center justify-center text-white scale-100 hover:scale-110 active:scale-95 transition-all cursor-pointer shadow-lg"
-                      aria-label="Play report video"
-                    >
-                      <span className="material-symbols-outlined text-[40px]">play_arrow</span>
-                    </button>
-                  </div>
+                  <video
+                    ref={videoRef}
+                    className="rounded-xl w-full aspect-video object-cover shadow-2xl bg-black"
+                    controls
+                    playsInline
+                  >
+                    <source src="/assets/Untitled design.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
                 </div>
               </div>
             </div>
@@ -334,11 +338,23 @@ export default function CaseStudiesPage() {
 
       {/* Global Reach Section */}
       <section className="py-24 bg-white border-b border-surface-grey">
-        <div className="max-w-container-max-width mx-auto px-6 md:px-margin-desktop text-center mb-16">
-          <h2 className="font-headline-lg text-3xl md:text-headline-lg text-primary mb-4">A Global Presence</h2>
-          <p className="text-text-muted max-w-2xl mx-auto font-body-lg text-sm md:text-base">
-            With strategic hubs in 21 countries, we combine global engineering standards with deep localized market insights.
-          </p>
+        <div className="max-w-container-max-width mx-auto px-6 md:px-margin-desktop mb-20 flex flex-col md:flex-row gap-12 md:gap-24">
+          <div className="w-full md:w-1/2">
+            <span className="text-secondary font-label-bold uppercase tracking-widest mb-4 block">Global Reach</span>
+            <h2 className="font-display-xl text-3xl md:text-5xl text-primary leading-tight">
+              Connecting Businesses Worldwide
+            </h2>
+            <p className="text-text-muted text-lg leading-relaxed mt-6">
+              Through innovative technology, intelligent solutions, and AI-powered products, we&apos;re helping organizations across the globe accelerate digital transformation and build a smarter future together.
+            </p>
+          </div>
+          <div className="w-full md:w-1/2 flex flex-col justify-center">
+            <div className="w-12 h-1 bg-secondary mb-6"></div>
+            <h3 className="text-2xl font-bold text-enterprise-blue-dark mb-4">A Connected Digital Ecosystem</h3>
+            <p className="text-text-muted text-base leading-relaxed">
+              From intelligent automation and enterprise platforms to cloud infrastructure, IoT, drone technologies, and advanced analytics, we empower businesses to streamline operations, improve decision-making, and unlock new opportunities for growth. Our vision is to create a connected digital ecosystem where innovation knows no boundaries, enabling organizations of every size to adapt, scale, and thrive in an increasingly intelligent world.
+            </p>
+          </div>
         </div>
         <div className="max-w-container-max-width mx-auto px-6 md:px-margin-desktop h-[400px] md:h-[500px] bg-surface-container-low rounded-2xl overflow-hidden relative border border-surface-grey">
           <div className="w-full h-full opacity-80 mix-blend-multiply">
@@ -350,41 +366,10 @@ export default function CaseStudiesPage() {
               }}
             ></div>
           </div>
-          {/* Map Overlay Info */}
-          <div className="absolute bottom-8 left-8 flex flex-wrap gap-4 pr-8">
-            <div className="bg-white/90 backdrop-blur-md p-4 rounded shadow border border-surface-grey">
-              <span className="text-caption font-label-bold text-outline uppercase block mb-1 text-[10px]">
-                North America
-              </span>
-              <span className="text-body-md font-bold text-primary text-sm">6 Major Hubs</span>
-            </div>
-            <div className="bg-white/90 backdrop-blur-md p-4 rounded shadow border border-surface-grey">
-              <span className="text-caption font-label-bold text-outline uppercase block mb-1 text-[10px]">
-                EMEA
-              </span>
-              <span className="text-body-md font-bold text-primary text-sm">12 Design Centers</span>
-            </div>
-            <div className="bg-white/90 backdrop-blur-md p-4 rounded shadow border border-surface-grey">
-              <span className="text-caption font-label-bold text-outline uppercase block mb-1 text-[10px]">
-                APAC
-              </span>
-              <span className="text-body-md font-bold text-primary text-sm">15 Innovation Labs</span>
-            </div>
-          </div>
+
         </div>
       </section>
 
-      {/* Floating Advisor Button */}
-      <button
-        onClick={() => alert("Opening chat with an enterprise advisor...")}
-        className="fixed bottom-8 right-8 w-16 h-16 bg-primary hover:bg-secondary text-white rounded-full shadow-2xl flex items-center justify-center transition-all z-50 group cursor-pointer"
-        aria-label="Contact an Advisor"
-      >
-        <span className="material-symbols-outlined text-[32px]">support_agent</span>
-        <span className="absolute right-20 bg-primary text-white px-4 py-2 rounded-lg text-xs font-label-bold opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-xl pointer-events-none">
-          Contact an Advisor
-        </span>
-      </button>
 
       {/* Video Modal Overlay */}
       {videoOpen && (
@@ -397,21 +382,15 @@ export default function CaseStudiesPage() {
             >
               <span className="material-symbols-outlined text-2xl">close</span>
             </button>
-            <div className="w-full h-full flex flex-col items-center justify-center text-center p-12 text-white">
-              <span className="material-symbols-outlined text-6xl text-metallic-gold-light mb-4 animate-pulse">
-                smart_display
-              </span>
-              <h3 className="font-headline-md text-2xl mb-2">EuroGlobal Logistics Transformation Report</h3>
-              <p className="text-surface-variant max-w-md">
-                This report demonstrates how a multi-agent AI system optimizes shipping routes across 40 countries, saving fuel and improving dispatch speed.
-              </p>
-              <button
-                onClick={() => setVideoOpen(false)}
-                className="mt-6 px-6 py-2 bg-secondary-fixed text-on-secondary-fixed rounded font-label-bold text-sm"
-              >
-                Dismiss Player
-              </button>
-            </div>
+            <video
+              className="w-full h-full object-cover bg-black"
+              controls
+              autoPlay
+              playsInline
+            >
+              <source src="/assets/Untitled design.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
       )}

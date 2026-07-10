@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import WhatSetsUsApartAnimated from "@/components/WhatSetsUsApartAnimated";
 
 export default function AboutUsPage() {
   const [csrModal, setCsrModal] = useState(false);
@@ -78,37 +79,6 @@ export default function AboutUsPage() {
         </div>
       </section>
 
-      {/* Stats Section (The Grid) */}
-      <section className="py-24 bg-surface border-b border-surface-grey">
-        <div className="max-w-container-max-width mx-auto px-6 md:px-margin-desktop">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-gutter">
-            <div className="border-l-4 border-secondary pl-6 py-4">
-              <div className="text-3xl md:text-display-xl font-display-xl text-primary mb-2">30+</div>
-              <div className="text-[10px] md:text-label-bold font-label-bold text-outline uppercase tracking-widest">
-                Years Experience
-              </div>
-            </div>
-            <div className="border-l-4 border-secondary pl-6 py-4">
-              <div className="text-3xl md:text-display-xl font-display-xl text-primary mb-2">20+</div>
-              <div className="text-[10px] md:text-label-bold font-label-bold text-outline uppercase tracking-widest">
-                Global Offices
-              </div>
-            </div>
-            <div className="border-l-4 border-secondary pl-6 py-4">
-              <div className="text-3xl md:text-display-xl font-display-xl text-primary mb-2">15k+</div>
-              <div className="text-[10px] md:text-label-bold font-label-bold text-outline uppercase tracking-widest">
-                Experts Globally
-              </div>
-            </div>
-            <div className="border-l-4 border-secondary pl-6 py-4">
-              <div className="text-3xl md:text-display-xl font-display-xl text-primary mb-2">500+</div>
-              <div className="text-[10px] md:text-label-bold font-label-bold text-outline uppercase tracking-widest">
-                Enterprise Clients
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Philosophy Section (Modern Bento Layout) */}
       <section id="philosophy" className="py-32 bg-white overflow-hidden scroll-mt-20">
@@ -173,71 +143,8 @@ export default function AboutUsPage() {
         </div>
       </section>
 
-      {/* Executive Leadership Section */}
-      <section className="py-32 bg-surface">
-        <div className="max-w-container-max-width mx-auto px-6 md:px-margin-desktop">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
-            <div>
-              <h2 className="font-headline-lg text-3xl md:text-headline-lg text-primary mb-4">
-                Executive Leadership
-              </h2>
-              <p className="text-body-lg text-body-md md:text-body-lg text-on-surface-variant">
-                Guided by industry veterans with a vision for global engineering excellence.
-              </p>
-            </div>
-            <button
-              onClick={() => alert("Leader bio overlay coming soon...")}
-              className="font-label-bold text-secondary flex items-center gap-2 hover:underline text-sm"
-            >
-              Meet All Leaders <span className="material-symbols-outlined text-sm">arrow_forward</span>
-            </button>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
-            {leaders.map((leader, idx) => (
-              <div key={idx} className="group">
-                <div className="relative overflow-hidden rounded-xl mb-6 aspect-[4/5] bg-surface-container-highest shadow-sm">
-                  <img
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    alt={leader.name}
-                    src={leader.imgUrl}
-                  />
-                  <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-300 bg-gradient-to-t from-primary/95 to-transparent pt-12">
-                    <p className="text-white text-xs mb-3 italic">{leader.bio}</p>
-                    <div className="flex gap-4">
-                      <a
-                        href="#"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          alert(`LinkedIn profile for ${leader.name}`);
-                        }}
-                        className="text-white hover:text-secondary-fixed"
-                        aria-label="LinkedIn"
-                      >
-                        <span className="material-symbols-outlined text-sm">link</span>
-                      </a>
-                      <a
-                        href="#"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          alert(`Email ${leader.name}`);
-                        }}
-                        className="text-white hover:text-secondary-fixed"
-                        aria-label="Email"
-                      >
-                        <span className="material-symbols-outlined text-sm">alternate_email</span>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <h4 className="font-headline-md text-xl md:text-headline-md text-primary mb-1">
-                  {leader.name}
-                </h4>
-                <p className="text-body-md font-body-md text-on-surface-variant text-sm">{leader.role}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* What Sets Us Apart Section */}
+      <WhatSetsUsApartAnimated />
 
       {/* Global Locations Section */}
       <section className="py-32 bg-enterprise-blue-dark text-on-primary text-white">
@@ -245,36 +152,36 @@ export default function AboutUsPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div>
               <h2 className="font-headline-lg text-3xl md:text-headline-lg text-on-primary mb-8">
-                Engineering Excellence Globally
+                Connecting Businesses Worldwide
               </h2>
-              <p className="text-body-lg font-body-lg text-primary-fixed mb-12 text-sm md:text-base">
-                With strategic hubs in over 20 countries, we provide 24/7 delivery capabilities and localized expertise for global enterprises.
+              <p className="text-body-lg font-body-lg text-primary-fixed mb-12 text-sm md:text-base leading-relaxed">
+                We're building intelligent technologies that empower organizations across the globe. Through AI, enterprise solutions, cloud innovation, and digital transformation, our mission is to connect businesses, accelerate growth, and create lasting impact—wherever innovation is needed.
               </p>
               <div className="space-y-6">
                 <div className="flex items-start gap-4 pb-6 border-b border-primary-container">
-                  <span className="material-symbols-outlined text-secondary-fixed text-3xl">public</span>
+                  <span className="text-3xl">🌎</span>
                   <div>
-                    <h4 className="font-label-bold text-lg mb-1">North America</h4>
-                    <p className="text-surface-variant text-body-md text-sm">
-                      San Francisco (HQ), New York, Toronto, Austin
+                    <h4 className="font-label-bold text-lg mb-1">Global Vision</h4>
+                    <p className="text-surface-variant text-body-md text-sm leading-relaxed">
+                      Expanding intelligent solutions that help organizations innovate, automate, and scale across every region.
                     </p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4 pb-6 border-b border-primary-container">
-                  <span className="material-symbols-outlined text-secondary-fixed text-3xl">language</span>
+                  <span className="text-3xl">🤝</span>
                   <div>
-                    <h4 className="font-label-bold text-lg mb-1">Europe & MEA</h4>
-                    <p className="text-surface-variant text-body-md text-sm">
-                      London, Berlin, Dubai, Johannesburg
+                    <h4 className="font-label-bold text-lg mb-1">Connected Partnerships</h4>
+                    <p className="text-surface-variant text-body-md text-sm leading-relaxed">
+                      Building trusted collaborations with businesses, startups, and enterprises worldwide to solve real-world challenges.
                     </p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <span className="material-symbols-outlined text-secondary-fixed text-3xl">map</span>
+                  <span className="text-3xl">🚀</span>
                   <div>
-                    <h4 className="font-label-bold text-lg mb-1">Asia Pacific</h4>
-                    <p className="text-surface-variant text-body-md text-sm">
-                      Bangalore, Singapore, Sydney, Tokyo
+                    <h4 className="font-label-bold text-lg mb-1">Future Expansion</h4>
+                    <p className="text-surface-variant text-body-md text-sm leading-relaxed">
+                      Growing our global presence by delivering AI-powered products, enterprise platforms, and transformative technologies to customers around the world.
                     </p>
                   </div>
                 </div>
@@ -303,105 +210,95 @@ export default function AboutUsPage() {
             </div>
             <div className="max-w-2xl relative z-10">
               <h2 className="font-headline-lg text-3xl md:text-headline-lg text-primary mb-6">
-                Engineering a Sustainable Future
+                Driving Innovation for Tomorrow
               </h2>
-              <p className="text-body-lg text-sm md:text-base text-on-surface-variant mb-10">
-                Our commitment to Corporate Social Responsibility goes beyond charity. We leverage technology to solve environmental challenges, promote digital inclusion, and foster diversity in the engineering world.
+              <p className="text-body-lg text-sm md:text-base text-on-surface-variant mb-10 leading-relaxed">
+                Innovation is at the heart of everything we build. We continuously explore emerging technologies to create intelligent, secure, and scalable solutions that empower businesses to adapt, grow, and lead in a rapidly evolving digital world.
               </p>
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10 text-sm">
                 <li className="flex items-center gap-3">
-                  <span className="material-symbols-outlined text-secondary">check_circle</span>
-                  <span className="font-label-bold text-on-surface">Net Zero by 2030</span>
+                  <span className="text-xl">✅</span>
+                  <span className="font-label-bold text-on-surface">AI-Driven Innovation</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <span className="material-symbols-outlined text-secondary">check_circle</span>
-                  <span className="font-label-bold text-on-surface">Global Literacy Tech Fund</span>
+                  <span className="text-xl">✅</span>
+                  <span className="font-label-bold text-on-surface">Enterprise-Grade Security</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <span className="material-symbols-outlined text-secondary">check_circle</span>
-                  <span className="font-label-bold text-on-surface">50% Female Leadership</span>
+                  <span className="text-xl">✅</span>
+                  <span className="font-label-bold text-on-surface">Cloud-First Engineering</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <span className="material-symbols-outlined text-secondary">check_circle</span>
-                  <span className="font-label-bold text-on-surface">Open Source Stewardship</span>
+                  <span className="text-xl">✅</span>
+                  <span className="font-label-bold text-on-surface">Continuous Research & Development</span>
                 </li>
               </ul>
-              <button
-                onClick={() => setCsrModal(true)}
-                className="bg-primary text-on-primary font-label-bold px-8 py-4 rounded hover:bg-enterprise-blue-dark transition-all text-sm cursor-pointer"
-              >
-                Read CSR Report
-              </button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Awards & Recognitions */}
+      {/* Global Awards & Accolades */}
       <section className="py-24 bg-surface-container-low">
         <div className="max-w-container-max-width mx-auto px-6 md:px-margin-desktop text-center">
           <h3 className="font-label-bold text-outline uppercase tracking-widest mb-16 text-xs md:text-sm">
             Global Awards & Accolades
           </h3>
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-12 items-center opacity-70">
-            <div className="flex flex-col items-center gap-4">
-              <span className="material-symbols-outlined text-5xl text-primary">military_tech</span>
-              <p className="text-caption font-label-bold text-on-surface-variant text-xs">
-                Everest Group Peak Matrix
-              </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+            
+            {/* MSME */}
+            <div className="bg-white rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 p-8 flex flex-col items-center justify-center text-center hover:-translate-y-2 transition-transform duration-300">
+              <div className="w-24 h-24 bg-[#FCFBF8] rounded-full flex items-center justify-center mb-6 shadow-inner">
+                <span className="material-symbols-outlined text-5xl text-[#B89645]">account_balance</span>
+              </div>
+              <h4 className="text-xl font-bold text-[#1E293B] mb-1">MSME</h4>
+              <p className="text-sm text-[#475569] mb-6 font-medium">Registered</p>
+              <div className="w-6 h-1 bg-[#2546A6] rounded-full"></div>
             </div>
-            <div className="flex flex-col items-center gap-4">
-              <span className="material-symbols-outlined text-5xl text-primary">workspace_premium</span>
-              <p className="text-caption font-label-bold text-on-surface-variant text-xs">
-                Gartner Magic Quadrant
-              </p>
+
+            {/* ISO */}
+            <div className="bg-white rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 p-8 flex flex-col items-center justify-center text-center hover:-translate-y-2 transition-transform duration-300">
+              <div className="w-24 h-24 bg-[#F8FAFC] rounded-full flex items-center justify-center mb-6 shadow-inner">
+                <span className="material-symbols-outlined text-5xl text-[#2546A6]">verified</span>
+              </div>
+              <h4 className="text-xl font-bold text-[#1E293B] mb-1">ISO</h4>
+              <p className="text-sm text-[#475569] mb-6 font-medium">Certified</p>
+              <div className="w-6 h-1 bg-[#2546A6] rounded-full"></div>
             </div>
-            <div className="flex flex-col items-center gap-4">
-              <span className="material-symbols-outlined text-5xl text-primary">verified</span>
-              <p className="text-caption font-label-bold text-on-surface-variant text-xs">
-                ISO 27001 Certified
-              </p>
+
+            {/* MCA */}
+            <div className="bg-white rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 p-8 flex flex-col items-center justify-center text-center hover:-translate-y-2 transition-transform duration-300">
+              <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center mb-6 shadow-[0_2px_10px_rgb(0,0,0,0.05)]">
+                <span className="material-symbols-outlined text-5xl text-[#0F172A]">domain</span>
+              </div>
+              <h4 className="text-xl font-bold text-[#1E293B] mb-1">MCA</h4>
+              <p className="text-sm text-[#475569] mb-6 font-medium">Registered</p>
+              <div className="w-6 h-1 bg-[#2546A6] rounded-full"></div>
             </div>
-            <div className="flex flex-col items-center gap-4">
-              <span className="material-symbols-outlined text-5xl text-primary">stars</span>
-              <p className="text-caption font-label-bold text-on-surface-variant text-xs">
-                Forbes Best Employers
-              </p>
+
+            {/* Startup India */}
+            <div className="bg-white rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 p-8 flex flex-col items-center justify-center text-center hover:-translate-y-2 transition-transform duration-300">
+              <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center mb-6 shadow-[0_2px_10px_rgb(0,0,0,0.05)]">
+                <span className="material-symbols-outlined text-5xl text-[#E87121]">rocket_launch</span>
+              </div>
+              <h4 className="text-xl font-bold text-[#1E293B] mb-1">Startup</h4>
+              <p className="text-sm text-[#475569] mb-6 font-medium">India</p>
+              <div className="w-6 h-1 bg-[#2546A6] rounded-full"></div>
             </div>
-            <div className="flex flex-col items-center gap-4">
-              <span className="material-symbols-outlined text-5xl text-primary">award_star</span>
-              <p className="text-caption font-label-bold text-on-surface-variant text-xs">
-                AWS Premier Partner
-              </p>
+
+            {/* Startup Odisha */}
+            <div className="bg-white rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 p-8 flex flex-col items-center justify-center text-center hover:-translate-y-2 transition-transform duration-300">
+              <div className="w-24 h-24 bg-[#F8FAFC] rounded-full flex items-center justify-center mb-6 shadow-inner">
+                <span className="material-symbols-outlined text-5xl text-[#D84315]">flag</span>
+              </div>
+              <h4 className="text-xl font-bold text-[#1E293B] mb-1">Startup</h4>
+              <p className="text-sm text-[#475569] mb-6 font-medium">Odisha</p>
+              <div className="w-6 h-1 bg-[#2546A6] rounded-full"></div>
             </div>
+
           </div>
         </div>
       </section>
-
-      {/* CSR Report Modal */}
-      {csrModal && (
-        <div className="fixed inset-0 z-50 bg-enterprise-blue-dark/90 flex items-center justify-center p-6 text-black">
-          <div className="relative w-full max-w-lg bg-white p-8 rounded shadow-2xl border border-surface-grey">
-            <button
-              onClick={() => setCsrModal(false)}
-              className="absolute top-4 right-4 text-text-muted hover:text-primary"
-              aria-label="Close report"
-            >
-              <span className="material-symbols-outlined">close</span>
-            </button>
-            <h3 className="font-headline-md text-2xl mb-4 text-primary">CSR Report Summary</h3>
-            <p className="text-body-md text-sm text-text-muted mb-6">
-              Our CSR program highlights for {new Date().getFullYear()} include transition to 100% renewable energy for all hosting and office infrastructures, alongside donating $5M to digital literacy initiatives globally.
-            </p>
-            <button
-              onClick={() => setCsrModal(false)}
-              className="w-full py-3 bg-primary text-white rounded font-label-bold text-sm"
-            >
-              Dismiss
-            </button>
-          </div>
-        </div>
-      )}
     </>
   );
 }
