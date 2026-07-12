@@ -71,7 +71,7 @@ export default function Services3DCarousel({ items }: Services3DCarouselProps) {
       onTouchEnd={handleMouseUp}
     >
       {/* Container size matches the cards size approx */}
-      <div className="relative w-[340px] h-[480px]">
+      <div className="relative w-[290px] sm:w-[340px] h-[440px] sm:h-[480px]">
         {items.map((item, index) => {
           let offset = index - activeIndex;
           if (offset < -Math.floor(items.length / 2)) {

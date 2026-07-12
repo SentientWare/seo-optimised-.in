@@ -20,7 +20,7 @@ export default function ServicesScrollGallery({ items }: ServicesScrollGalleryPr
   return (
     <div className="w-full relative pb-32">
       {/* We add a large padding bottom so the last card has room to scroll */}
-      <div className="max-w-5xl mx-auto flex flex-col gap-8 md:gap-20 relative">
+      <div className="max-w-5xl mx-auto w-full px-4 md:px-8 flex flex-col gap-8 md:gap-20 relative">
         {items.map((item, index) => {
           // Calculate the sticky top position so they stack neatly like a deck of cards
           // For mobile, we might use a smaller offset
@@ -64,7 +64,7 @@ export default function ServicesScrollGallery({ items }: ServicesScrollGalleryPr
                     <div className={`flex items-center justify-center bg-primary text-white rounded-2xl shadow-xl mb-6 backdrop-blur-sm border border-white/20 ${item.isHero ? "w-20 h-20" : "w-14 h-14"}`}>
                       <span className="material-symbols-outlined text-3xl">{item.icon}</span>
                     </div>
-                    <h3 className={`font-headline-md text-white leading-tight drop-shadow-lg ${item.isHero ? "text-4xl md:text-5xl font-bold" : "text-3xl"}`}>
+                    <h3 className={`font-headline-md text-white leading-tight drop-shadow-lg ${item.isHero ? "text-3xl md:text-5xl font-bold" : "text-2xl md:text-3xl"}`}>
                       {item.title}
                     </h3>
                     {item.isHero && (

@@ -44,7 +44,7 @@ export default function Hero({ persona }) {
               <span>{current.badge}</span>
             </div>
             
-            <h1 style={{ fontSize: '3.2rem', fontWeight: 800, color: 'var(--secondary)', marginBottom: '1.5rem', letterSpacing: '-1px' }}>
+            <h1 style={{ fontSize: 'clamp(2rem, 5vw + 1rem, 3.2rem)', fontWeight: 800, color: 'var(--secondary)', marginBottom: '1.5rem', letterSpacing: '-1px' }}>
               {current.title}
             </h1>
             
@@ -63,7 +63,7 @@ export default function Hero({ persona }) {
             </div>
 
             {/* Stats Showcase */}
-            <div style={{ display: 'flex', gap: '2.5rem', borderTop: '1px solid var(--border-light)', paddingTop: '2rem', width: '100%' }}>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.5rem', borderTop: '1px solid var(--border-light)', paddingTop: '2rem', width: '100%' }}>
               {current.stats.map((stat, index) => (
                 <div key={index}>
                   <p style={{ fontSize: '2.2rem', fontWeight: 800, color: 'var(--primary)', lineHeight: 1.1 }}>{stat.value}</p>
@@ -97,7 +97,7 @@ export default function Hero({ persona }) {
                 </div>
               </div>
 
-              <div className="glass-card" style={{ display: 'flex', gap: '1.2rem', alignItems: 'center', marginLeft: '2rem' }}>
+              <div className="glass-card" style={{ display: 'flex', gap: '1.2rem', alignItems: 'center', marginLeft: 'clamp(0px, 5vw, 2rem)' }}>
                 <div style={{ padding: '0.8rem', background: '#eafcf2', borderRadius: '12px', color: '#10b981' }}>
                   <Award size={24} />
                 </div>

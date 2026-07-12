@@ -61,7 +61,7 @@ export default function EngagementModels({ persona }) {
       <div className="container">
         {/* Section Header */}
         <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-          <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem', color: 'var(--secondary)' }}>
+          <h2 style={{ fontSize: 'clamp(1.8rem, 5vw + 1rem, 2.5rem)', marginBottom: '1rem', color: 'var(--secondary)' }}>
             {isBusiness ? 'How We Can Partner Together' : 'Pathways to Grow With Us'}
           </h2>
           <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem', maxWidth: '600px', margin: '0 auto' }}>

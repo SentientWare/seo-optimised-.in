@@ -8,6 +8,10 @@ export default function ContactFooter() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (form.name && form.email && form.message) {
+      const subject = encodeURIComponent(`New Project Inquiry from ${form.name}`);
+      const body = encodeURIComponent(`Name: ${form.name}\nEmail: ${form.email}\nCompany: ${form.company}\n\nProject Details:\n${form.message}`);
+      window.location.href = `mailto:info@sentientware.in?subject=${subject}&body=${body}`;
+
       setSubmitted(true);
       setTimeout(() => {
         setSubmitted(false);
@@ -24,7 +28,7 @@ export default function ContactFooter() {
           {/* Left contact info */}
           <div>
             <span style={{ color: 'var(--primary)', fontWeight: 600, textTransform: 'uppercase', fontSize: '0.85rem' }}>Let's Build Together</span>
-            <h2 style={{ fontSize: '2.5rem', color: '#ffffff', marginTop: '0.5rem', marginBottom: '1.5rem' }}>Partner with the AI-Native Elite</h2>
+            <h2 style={{ fontSize: 'clamp(1.8rem, 6vw, 2.5rem)', color: '#ffffff', marginTop: '0.5rem', marginBottom: '1.5rem' }}>Partner with the AI-Native Elite</h2>
             <p style={{ color: 'rgba(255,255,255,0.7)', marginBottom: '2.5rem', maxWidth: '450px' }}>
               Fill out the form and our technical solutions architect will get in touch with you within 24 hours to map out your product needs.
             </p>
@@ -41,14 +45,14 @@ export default function ContactFooter() {
                 <div style={{ color: 'var(--primary)' }}><Phone size={22} /></div>
                 <div>
                   <h4 style={{ color: '#ffffff', fontSize: '0.95rem' }}>Phone Support</h4>
-                  <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.85rem' }}>+1 973 910 9755</p>
+                  <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.85rem' }}>+91 6371763610</p>
                 </div>
               </div>
               <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
                 <div style={{ color: 'var(--primary)' }}><Mail size={22} /></div>
                 <div>
                   <h4 style={{ color: '#ffffff', fontSize: '0.95rem' }}>General Inquiries</h4>
-                  <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.85rem' }}>partner@ajackus.com</p>
+                  <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.85rem' }}>info@sentientware.in</p>
                 </div>
               </div>
             </div>
@@ -58,8 +62,8 @@ export default function ContactFooter() {
           <div className="glass-card" style={{ backgroundColor: 'rgba(255,255,255,0.03)', borderColor: 'rgba(255,255,255,0.08)' }}>
             {submitted ? (
               <div style={{ textAlign: 'center', padding: '3rem 0' }}>
-                <h3 style={{ color: '#ffffff', marginBottom: '1rem' }}>Form Submitted Successfully!</h3>
-                <p style={{ color: 'rgba(255,255,255,0.7)' }}>Thank you for reaching out. We will get in touch with you shortly.</p>
+                <h3 style={{ color: '#ffffff', marginBottom: '1rem' }}>Successfully taken</h3>
+                <p style={{ color: 'rgba(255,255,255,0.7)' }}>Our team will connect with you soon</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem' }}>

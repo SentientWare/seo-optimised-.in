@@ -257,11 +257,11 @@ export default function ContactPage() {
               <div className="space-y-4 text-sm font-semibold">
                 <div className="flex items-center gap-3">
                   <span className="material-symbols-outlined text-metallic-gold-light">call</span>
-                  <span>+1-800-SENTIENT</span>
+                  <span>+91 6371763610</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <span className="material-symbols-outlined text-metallic-gold-light">mail</span>
-                  <span>priority@sentientware.com</span>
+                  <span>info@sentientware.in</span>
                 </div>
               </div>
             </div>

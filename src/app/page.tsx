@@ -6,6 +6,27 @@ import Image from "next/image";
 import TechnologyStack from "@/components/TechnologyStack";
 import CaseStudies3DCarousel from "@/components/CaseStudies3DCarousel";
 
+function AnimatedStat({ target, suffix = "", isFloat = false }: { target: number, suffix?: string, isFloat?: boolean }) {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    let start: number | null = null;
+    const duration = 2000;
+    const animate = (timestamp: number) => {
+      if (!start) start = timestamp;
+      const progress = Math.min((timestamp - start) / duration, 1);
+      const ease = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+      setCount(ease * target);
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      }
+    };
+    requestAnimationFrame(animate);
+  }, [target]);
+
+  return <>{isFloat ? count.toFixed(1) : Math.floor(count)}{suffix}</>;
+}
+
 export default function HomePage() {
   const [formData, setFormData] = useState({
     firstName: "",
@@ -15,8 +36,6 @@ export default function HomePage() {
     challenge: "",
   });
   const [formSubmitted, setFormSubmitted] = useState(false);
-  const [revenueStat, setRevenueStat] = useState("$1.0B+");
-
   const backgroundVideos = [
     "/assets/video1.mp4",
     "/assets/video2.mp4",
@@ -31,13 +50,6 @@ export default function HomePage() {
     setCurrentVideoIndex((prevIndex) => (prevIndex + 1) % backgroundVideos.length);
   };
 
-  // Animate statistics counter simulation
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setRevenueStat("$1.65B+");
-    }, 1000);
-    return () => clearTimeout(timer);
-  }, []);
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
@@ -90,7 +102,7 @@ export default function HomePage() {
                 Digital Engineering Excellence
               </span>
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-[4rem] text-white leading-tight font-bold tracking-tight lg:whitespace-nowrap">
+            <h1 className="text-4xl md:text-5xl xl:text-[4rem] text-white leading-tight font-bold tracking-tight">
               Driving Innovation in <span className="text-[#F5A623]">Automation,</span><br />
               <span className="text-[#F5A623]">AI Works & Seamless Automation</span>
             </h1>
@@ -121,31 +133,54 @@ export default function HomePage() {
 
       {/* Company Statistics */}
       <section className="bg-surface py-20 border-b border-surface-grey">
-        <div className="max-w-container-max-width mx-auto px-6 md:px-margin-desktop grid grid-cols-2 lg:grid-cols-4 gap-gutter text-center">
-          <div className="space-y-2">
-            <div className="font-display-xl text-3xl md:text-headline-lg text-primary transition-all duration-1000 ease-out">
-              {revenueStat}
+        <div className="max-w-container-max-width mx-auto px-4 md:px-margin-desktop grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 lg:gap-8 text-center items-start">
+          <div className="space-y-2 w-full">
+            <div className="font-display-xl text-3xl md:text-4xl lg:text-3xl xl:text-4xl text-primary">
+              <AnimatedStat target={10} suffix="+" />
             </div>
-            <div className="text-caption text-text-muted font-label-bold uppercase tracking-widest">
-              Annual Revenue
-            </div>
-          </div>
-          <div className="space-y-2">
-            <div className="font-display-xl text-3xl md:text-headline-lg text-primary">30,000+</div>
-            <div className="text-caption text-text-muted font-label-bold uppercase tracking-widest">
-              Global Talent
+            <div className="text-caption text-text-muted font-label-bold uppercase tracking-widest text-[10px] lg:text-xs xl:text-sm">
+              Projects Delivered
             </div>
           </div>
-          <div className="space-y-2">
-            <div className="font-display-xl text-3xl md:text-headline-lg text-primary">25+</div>
-            <div className="text-caption text-text-muted font-label-bold uppercase tracking-widest">
-              Countries
+          <div className="space-y-2 w-full">
+            <div className="font-display-xl text-3xl md:text-4xl lg:text-3xl xl:text-4xl text-primary">
+              <AnimatedStat target={6} suffix="+" />
+            </div>
+            <div className="text-caption text-text-muted font-label-bold uppercase tracking-widest text-[10px] lg:text-xs xl:text-sm">
+              Enterprise Clients
             </div>
           </div>
-          <div className="space-y-2">
-            <div className="font-display-xl text-3xl md:text-headline-lg text-primary">100%</div>
-            <div className="text-caption text-text-muted font-label-bold uppercase tracking-widest">
-              Carbon Neutral Goals
+          <div className="space-y-2 w-full">
+            <div className="font-display-xl text-3xl md:text-4xl lg:text-3xl xl:text-4xl text-primary">
+              <AnimatedStat target={3} suffix="+" />
+            </div>
+            <div className="text-caption text-text-muted font-label-bold uppercase tracking-widest text-[10px] lg:text-xs xl:text-sm">
+              AI Solutions
+            </div>
+          </div>
+          <div className="space-y-2 w-full">
+            <div className="font-display-xl text-3xl md:text-4xl lg:text-3xl xl:text-4xl text-primary">
+              <AnimatedStat target={24} suffix="/7" />
+            </div>
+            <div className="text-caption text-text-muted font-label-bold uppercase tracking-widest text-[10px] lg:text-xs xl:text-sm">
+              Technical Support
+            </div>
+          </div>
+          <div className="space-y-2 w-full">
+            <div className="font-display-xl text-3xl md:text-4xl lg:text-3xl xl:text-4xl text-primary">
+              <AnimatedStat target={99.9} suffix="%" isFloat={true} />
+            </div>
+            <div className="text-caption text-text-muted font-label-bold uppercase tracking-widest text-[10px] lg:text-xs xl:text-sm">
+              Platform Availability
+            </div>
+          </div>
+
+          <div className="space-y-2 w-full">
+            <div className="font-display-xl text-3xl md:text-4xl lg:text-3xl xl:text-4xl text-primary">
+              <AnimatedStat target={500} suffix="+" />
+            </div>
+            <div className="text-caption text-text-muted font-label-bold uppercase tracking-widest text-[10px] lg:text-xs xl:text-sm">
+              Participants Trained
             </div>
           </div>
         </div>
@@ -313,21 +348,37 @@ export default function HomePage() {
               <div className="absolute inset-0 bg-gradient-to-t from-enterprise-blue-dark via-transparent to-transparent"></div>
               <div className="absolute bottom-8 left-8 right-8">
                 <h4 className="font-headline-md text-white mb-2">Drone & IoT Technologies</h4>
-                <div className="h-1 w-0 group-hover:w-20 bg-metallic-gold-light transition-all duration-300"></div>
+                <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-all duration-500 ease-out">
+                  <div className="overflow-hidden">
+                    <p className="text-surface-variant text-sm leading-relaxed pb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                      Empowering aerial data collection, mapping, and automated surveying operations with next-generation IoT connectivity.
+                    </p>
+                  </div>
+                </div>
+                <div className="h-[2px] w-12 group-hover:w-full bg-metallic-gold-light transition-all duration-500 ease-out mb-4 mt-2"></div>
+                <Link href="/industries" className="flex items-center gap-2 text-metallic-gold-light cursor-pointer w-fit group/btn">
+                  <span className="font-label-bold uppercase tracking-wider text-sm group-hover/btn:text-white transition-colors">Learn More</span>
+                  <span className="material-symbols-outlined text-sm transform group-hover/btn:translate-x-2 transition-transform">arrow_forward</span>
+                </Link>
               </div>
             </div>
             <div className="group relative overflow-hidden h-96 bg-enterprise-blue-dark rounded shadow-lg">
               <Image src="/assets/Pixel Foundry.jpg" alt="Software & Hi-Tech Landscape" fill className="object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" />
               <div className="absolute inset-0 bg-gradient-to-t from-enterprise-blue-dark via-transparent to-transparent"></div>
               <div className="absolute bottom-8 left-8 right-8">
-                <div className="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300 ease-out">
-                  <h4 className="font-headline-md text-white mb-2">Software & Hi-Tech</h4>
-                  <div className="h-1 w-0 group-hover:w-20 bg-metallic-gold-light transition-all duration-300 mb-2"></div>
-                  <Link href="/industries" className="flex items-center gap-2 text-metallic-gold-light opacity-0 group-hover:opacity-100 transition-opacity duration-300 cursor-pointer">
-                    <span className="font-label-bold uppercase tracking-wider text-sm hover:underline">Learn More</span>
-                    <span className="material-symbols-outlined text-sm transform group-hover:translate-x-1 transition-transform">arrow_forward</span>
-                  </Link>
+                <h4 className="font-headline-md text-white mb-2">Software & Hi-Tech</h4>
+                <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-all duration-500 ease-out">
+                  <div className="overflow-hidden">
+                    <p className="text-surface-variant text-sm leading-relaxed pb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                      Engineering the next generation of SaaS, cloud infrastructure, and enterprise AI frameworks for global tech leaders.
+                    </p>
+                  </div>
                 </div>
+                <div className="h-[2px] w-12 group-hover:w-full bg-metallic-gold-light transition-all duration-500 ease-out mb-4 mt-2"></div>
+                <Link href="/industries" className="flex items-center gap-2 text-metallic-gold-light cursor-pointer w-fit group/btn">
+                  <span className="font-label-bold uppercase tracking-wider text-sm group-hover/btn:text-white transition-colors">Learn More</span>
+                  <span className="material-symbols-outlined text-sm transform group-hover/btn:translate-x-2 transition-transform">arrow_forward</span>
+                </Link>
               </div>
             </div>
             <div className="group relative overflow-hidden h-96 bg-enterprise-blue-dark rounded shadow-lg">
@@ -376,17 +427,15 @@ export default function HomePage() {
             {[...Array(2)].map((_, arrayIndex) => (
               <div key={arrayIndex} className="flex items-center justify-center gap-12 md:gap-24 px-6 md:px-12 shrink-0">
                 {[
-                  { name: "Microsoft", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/microsoft/microsoft-original.svg" },
-                  { name: "Google Cloud", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/googlecloud/googlecloud-original.svg" },
-                  { name: "Amazon", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" },
-                  { name: "IBM", icon: "https://www.vectorlogo.zone/logos/ibm/ibm-icon.svg" },
-                  { name: "Oracle", icon: "https://www.vectorlogo.zone/logos/oracle/oracle-icon.svg" },
-                  { name: "DigitalOcean", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/digitalocean/digitalocean-original.svg" },
-                  { name: "Salesforce", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/salesforce/salesforce-original.svg" },
-                  { name: "Docker", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" }
+                  { name: "Catering Management", icon: "https://catering-management-system-three.vercel.app/assets/logo-DpWsjSC5.jpeg" },
+                  { name: "Lumenxo", icon: "https://lumenxo.com/assets/logolumenxo-GrLvEknW.png", imgClassName: "bg-enterprise-blue-dark p-2 rounded-md" },
+                  { name: "Lumenxo App", icon: "https://lumenxo.com/assets/photo3-SOcDNapp.jpg" },
+                  { name: "Trendplus24", icon: "https://www.trendplus24.in/logo.png" },
+                  { name: "Client 5", icon: "/assets/client5.jpeg" },
+                  { name: "Client 6", icon: "/assets/client6.jpeg" }
                 ].map((client, idx) => (
-                  <div key={idx} className="flex items-center justify-center transition-all duration-500 group-hover/marquee:opacity-30 group-hover/marquee:grayscale hover:!opacity-100 hover:!grayscale-0 hover:scale-125 hover:drop-shadow-2xl cursor-pointer w-28 h-14 md:w-40 md:h-20 shrink-0">
-                    <img src={client.icon} alt={client.name} className="max-h-full max-w-full object-contain" />
+                  <div key={idx} className="flex items-center justify-center transition-all duration-300 bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md cursor-pointer w-48 h-24 md:w-64 md:h-32 p-4 shrink-0">
+                    <img src={client.icon} alt={client.name} className={`max-h-full max-w-full object-contain ${client.imgClassName || ''}`} />
                   </div>
                 ))}
               </div>

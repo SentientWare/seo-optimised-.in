@@ -111,7 +111,7 @@ export default function CaseStudies3DCarousel() {
       onTouchMove={handleMouseMove}
       onTouchEnd={handleMouseUp}
     >
-      <div className="relative w-[320px] h-[480px]">
+      <div className="relative w-[290px] sm:w-[320px] h-[450px] sm:h-[480px]">
         {items.map((item, index) => {
           // Calculate circular offset
           let offset = index - activeIndex;

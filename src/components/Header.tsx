@@ -10,7 +10,6 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { name: "Home", href: "/" },
     { name: "Services", href: "/services" },
     { name: "Industries", href: "/industries" },
     { name: "Solutions", href: "/solutions" },
@@ -29,7 +28,7 @@ export default function Header() {
         </Link>
 
         {/* Center Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
+        <nav className="hidden xl:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
           {navLinks.map((link) => {
             const active = isActive(link.href);
             return (
@@ -54,7 +53,7 @@ export default function Header() {
         </nav>
 
         {/* Header Action CTAs (Right Side) */}
-        <div className="hidden md:flex items-center gap-4">
+        <div className="hidden xl:flex items-center gap-4">
             <a
               href="https://career.sentientware.in/"
               target="_blank"
@@ -74,7 +73,7 @@ export default function Header() {
         {/* Mobile Hamburger Burger Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden flex items-center p-2 text-gray-800 hover:text-blue-600 transition-colors"
+          className="xl:hidden flex items-center p-2 text-gray-800 hover:text-blue-600 transition-colors"
           aria-label="Toggle navigation menu"
         >
           <span className="material-symbols-outlined text-3xl">
@@ -85,7 +84,7 @@ export default function Header() {
 
       {/* Mobile Navigation Drawer */}
       {isOpen && (
-        <div className="md:hidden fixed inset-0 top-20 z-40 bg-surface/95 dark:bg-enterprise-blue-dark/95 backdrop-blur-md flex flex-col p-6 space-y-6 shadow-xl border-t border-outline-variant dark:border-primary-container">
+        <div className="xl:hidden fixed inset-0 top-20 z-40 bg-surface/95 dark:bg-enterprise-blue-dark/95 backdrop-blur-md flex flex-col p-6 space-y-6 shadow-xl border-t border-outline-variant dark:border-primary-container">
           <nav className="flex flex-col space-y-4">
             {navLinks.map((link) => {
               const active = isActive(link.href);

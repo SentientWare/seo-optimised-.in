@@ -3,6 +3,8 @@ import { Sora, Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ChatbotIcon from "@/components/ChatbotIcon";
+import CookieConsent from "@/components/CookieConsent";
 
 const sora = Sora({
   variable: "--font-sora",
@@ -17,7 +19,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "SentientWare Tech Solution",
+  title: "SentientWare Tech Solutions",
   description: "Sentientware engineers the future of business. We bridge the gap between human ambition and artificial intelligence to deliver unprecedented digital transformation at scale.",
 };
 
@@ -41,13 +43,8 @@ export default function RootLayout({
         <Header />
         <main className="flex-grow">{children}</main>
         <Footer />
-        <div className="fixed bottom-8 right-20 w-40 h-40 z-[100] pointer-events-auto cursor-pointer hover:scale-105 transition-transform duration-300 drop-shadow-2xl">
-          <iframe 
-            src="https://lottie.host/embed/9342959c-d5cd-4d5c-955b-29d06f866b9a/CpPWk6pygF.lottie"
-            className="w-full h-full border-0 bg-transparent pointer-events-none"
-            title="Gemini Bot"
-          ></iframe>
-        </div>
+        <CookieConsent />
+        <ChatbotIcon />
       </body>
     </html>
   );

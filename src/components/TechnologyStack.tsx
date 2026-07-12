@@ -65,12 +65,12 @@ export default function TechnologyStack() {
         </div>
 
         {/* Tabs Header */}
-        <div className="flex border-b border-gray-200 mb-12">
+        <div className="flex flex-col md:flex-row border-b border-gray-200 mb-12">
           {tabs.map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`flex-1 py-4 text-center font-semibold text-lg transition-colors border-b-2 ${
+              className={`flex-1 py-3 md:py-4 text-center font-semibold text-base md:text-lg transition-colors border-b-2 ${
                 activeTab === tab 
                   ? "border-blue-900 text-blue-900" 
                   : "border-transparent text-gray-500 hover:text-gray-700"
