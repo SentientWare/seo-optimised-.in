@@ -55,12 +55,14 @@ export default function Header() {
 
         {/* Header Action CTAs (Right Side) */}
         <div className="hidden md:flex items-center gap-4">
-            <Link
-              href="/careers"
+            <a
+              href="https://career.sentientware.in/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-5 py-2 border border-gray-300 text-enterprise-blue-dark text-sm font-semibold rounded-md hover:text-blue-500 hover:border-blue-500 transition-colors duration-300 whitespace-nowrap"
             >
               Careers
-            </Link>
+            </a>
             <Link
               href="/contact"
               className="px-5 py-2 bg-enterprise-blue-dark text-white text-sm font-semibold rounded-md hover:bg-blue-500 transition-colors duration-300 shadow-sm whitespace-nowrap"
@@ -72,7 +74,7 @@ export default function Header() {
         {/* Mobile Hamburger Burger Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden flex items-center p-2 text-primary dark:text-white"
+          className="md:hidden flex items-center p-2 text-gray-800 hover:text-blue-600 transition-colors"
           aria-label="Toggle navigation menu"
         >
           <span className="material-symbols-outlined text-3xl">
@@ -111,13 +113,15 @@ export default function Header() {
             >
               Get Started
             </Link>
-            <Link
-              href="/careers"
+            <a
+              href="https://career.sentientware.in/"
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setIsOpen(false)}
               className="w-full text-center py-3 border border-metallic-gold-light text-primary dark:text-secondary-fixed font-label-bold rounded transition-colors"
             >
               Careers
-            </Link>
+            </a>
           </div>
         </div>
       )}

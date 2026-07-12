@@ -38,8 +38,8 @@ const CARDS_DATA = [
   {
     icon: "🔒",
     floatingEmojis: ["🔑", "👁️", "🔥"],
-    title: "SECURITY BY DESIGN",
-    titleClass: "font-sans font-black uppercase text-center",
+    title: "Security by design",
+    titleClass: "font-sans font-black text-center",
     desc: "Security isn't an afterthought—it's embedded in our DNA. We implement military-grade encryption, zero-trust architectures, and strict compliance standards (like ISO 27001) to protect your mission-critical data against evolving cyber threats.",
     bgClass: "bg-[#3B154D]",
     textColor: "text-white",

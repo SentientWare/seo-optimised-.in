@@ -1,7 +1,11 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import Link from "next/link";
+import PrivacyPolicyModal from "./PrivacyPolicyModal";
 
 export default function Footer() {
+  const [isPrivacyModalOpen, setIsPrivacyModalOpen] = useState(false);
   return (
     <footer className="bg-enterprise-blue-dark dark:bg-primary-container w-full pt-16 pb-8 border-t border-primary-container text-white transition-colors duration-300">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-gutter px-6 md:px-margin-desktop max-w-container-max-width mx-auto">
@@ -150,12 +154,14 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link
-                href="/careers"
+              <a
+                href="https://career.sentientware.in/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-surface-variant opacity-80 hover:text-metallic-gold-light underline transition-all"
               >
                 Careers & Opportunities
-              </Link>
+              </a>
             </li>
             <li>
               <Link
@@ -166,12 +172,15 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <a
-                href="#"
-                className="text-surface-variant opacity-80 hover:text-metallic-gold-light underline transition-all"
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  setIsPrivacyModalOpen(true);
+                }}
+                className="text-surface-variant opacity-80 hover:text-metallic-gold-light underline transition-all text-left"
               >
                 Privacy Policy & Terms
-              </a>
+              </button>
             </li>
           </ul>
         </div>
@@ -183,6 +192,11 @@ export default function Footer() {
           © {new Date().getFullYear()} Sentientware Tech Solution. Engineering Excellence Globally. All rights reserved.
         </p>
       </div>
+
+      <PrivacyPolicyModal 
+        isOpen={isPrivacyModalOpen} 
+        onClose={() => setIsPrivacyModalOpen(false)} 
+      />
     </footer>
   );
 }

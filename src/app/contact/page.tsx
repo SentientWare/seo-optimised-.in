@@ -335,9 +335,9 @@ export default function ContactPage() {
                   Explore global opportunities and join our team of engineering experts.
                 </p>
               </div>
-              <Link href="/careers" className="text-primary font-label-bold hover:text-secondary text-sm">
+              <a href="https://career.sentientware.in/" target="_blank" rel="noopener noreferrer" className="text-primary font-label-bold hover:text-secondary text-sm">
                 Visit Careers Portal →
-              </Link>
+              </a>
             </div>
 
             {/* Media */}
@@ -395,18 +395,7 @@ export default function ContactPage() {
           }}
         ></div>
         <div className="absolute inset-0 bg-primary/20 pointer-events-none"></div>
-        <div className="relative z-10 h-full flex items-center justify-center p-6">
-          <div className="bg-white/90 backdrop-blur-md p-8 rounded-xl border border-outline-variant shadow-xl text-center max-w-sm w-full">
-            <h3 className="font-headline-md text-xl md:text-headline-md text-primary mb-2">Our Global HQ</h3>
-            <p className="font-caption text-on-surface-variant mb-4 text-xs">San Francisco, CA, USA</p>
-            <button
-              onClick={() => window.open("https://maps.google.com/?q=San+Francisco", "_blank")}
-              className="bg-primary hover:bg-enterprise-blue-dark text-on-primary px-6 py-2 rounded font-label-bold text-sm cursor-pointer shadow"
-            >
-              Get Directions
-            </button>
-          </div>
-        </div>
+
       </section>
     </>
   );

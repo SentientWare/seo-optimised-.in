@@ -247,53 +247,53 @@ export default function AboutUsPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
             
             {/* MSME */}
-            <div className="bg-white rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 p-8 flex flex-col items-center justify-center text-center hover:-translate-y-2 transition-transform duration-300">
-              <div className="w-24 h-24 bg-[#FCFBF8] rounded-full flex items-center justify-center mb-6 shadow-inner">
-                <span className="material-symbols-outlined text-5xl text-[#B89645]">account_balance</span>
+            <div className="group bg-white rounded-none shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.12)] border border-gray-100 p-8 flex flex-col items-center justify-center text-center hover:-translate-y-3 transition-all duration-500">
+              <div className="w-full h-32 flex items-center justify-center mb-6 overflow-hidden">
+                <img src="/assets/msme_profile.jpg" alt="MSME Logo" className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" />
               </div>
               <h4 className="text-xl font-bold text-[#1E293B] mb-1">MSME</h4>
               <p className="text-sm text-[#475569] mb-6 font-medium">Registered</p>
-              <div className="w-6 h-1 bg-[#2546A6] rounded-full"></div>
+              <div className="w-6 group-hover:w-16 h-1 bg-[#2546A6] rounded-full transition-all duration-500"></div>
             </div>
 
             {/* ISO */}
-            <div className="bg-white rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 p-8 flex flex-col items-center justify-center text-center hover:-translate-y-2 transition-transform duration-300">
-              <div className="w-24 h-24 bg-[#F8FAFC] rounded-full flex items-center justify-center mb-6 shadow-inner">
-                <span className="material-symbols-outlined text-5xl text-[#2546A6]">verified</span>
+            <div className="group bg-white rounded-none shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.12)] border border-gray-100 p-8 flex flex-col items-center justify-center text-center hover:-translate-y-3 transition-all duration-500">
+              <div className="w-full h-32 flex items-center justify-center mb-6 overflow-hidden">
+                <img src="/assets/iso_9001.jpg" alt="ISO Logo" className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" />
               </div>
               <h4 className="text-xl font-bold text-[#1E293B] mb-1">ISO</h4>
               <p className="text-sm text-[#475569] mb-6 font-medium">Certified</p>
-              <div className="w-6 h-1 bg-[#2546A6] rounded-full"></div>
+              <div className="w-6 group-hover:w-16 h-1 bg-[#2546A6] rounded-full transition-all duration-500"></div>
             </div>
 
             {/* MCA */}
-            <div className="bg-white rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 p-8 flex flex-col items-center justify-center text-center hover:-translate-y-2 transition-transform duration-300">
-              <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center mb-6 shadow-[0_2px_10px_rgb(0,0,0,0.05)]">
-                <span className="material-symbols-outlined text-5xl text-[#0F172A]">domain</span>
+            <div className="group bg-white rounded-none shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.12)] border border-gray-100 p-8 flex flex-col items-center justify-center text-center hover:-translate-y-3 transition-all duration-500">
+              <div className="w-full h-32 flex items-center justify-center mb-6 overflow-hidden">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Ministry_of_Corporate_Affairs_India.svg/960px-Ministry_of_Corporate_Affairs_India.svg.png?_=20220329164413" alt="MCA Logo" className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" />
               </div>
               <h4 className="text-xl font-bold text-[#1E293B] mb-1">MCA</h4>
               <p className="text-sm text-[#475569] mb-6 font-medium">Registered</p>
-              <div className="w-6 h-1 bg-[#2546A6] rounded-full"></div>
+              <div className="w-6 group-hover:w-16 h-1 bg-[#2546A6] rounded-full transition-all duration-500"></div>
             </div>
 
             {/* Startup India */}
-            <div className="bg-white rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 p-8 flex flex-col items-center justify-center text-center hover:-translate-y-2 transition-transform duration-300">
-              <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center mb-6 shadow-[0_2px_10px_rgb(0,0,0,0.05)]">
-                <span className="material-symbols-outlined text-5xl text-[#E87121]">rocket_launch</span>
+            <div className="group bg-white rounded-none shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.12)] border border-gray-100 p-8 flex flex-col items-center justify-center text-center hover:-translate-y-3 transition-all duration-500">
+              <div className="w-full h-32 flex items-center justify-center mb-6 overflow-hidden">
+                <img src="/assets/startup_india.jpg" alt="Startup India Logo" className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" />
               </div>
               <h4 className="text-xl font-bold text-[#1E293B] mb-1">Startup</h4>
               <p className="text-sm text-[#475569] mb-6 font-medium">India</p>
-              <div className="w-6 h-1 bg-[#2546A6] rounded-full"></div>
+              <div className="w-6 group-hover:w-16 h-1 bg-[#2546A6] rounded-full transition-all duration-500"></div>
             </div>
 
             {/* Startup Odisha */}
-            <div className="bg-white rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 p-8 flex flex-col items-center justify-center text-center hover:-translate-y-2 transition-transform duration-300">
-              <div className="w-24 h-24 bg-[#F8FAFC] rounded-full flex items-center justify-center mb-6 shadow-inner">
-                <span className="material-symbols-outlined text-5xl text-[#D84315]">flag</span>
+            <div className="group bg-white rounded-none shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.12)] border border-gray-100 p-8 flex flex-col items-center justify-center text-center hover:-translate-y-3 transition-all duration-500">
+              <div className="w-full h-32 flex items-center justify-center mb-6 overflow-hidden">
+                <img src="https://startupodisha.gov.in/wp-content/uploads/2021/04/logo.png" alt="Startup Odisha Logo" className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" />
               </div>
               <h4 className="text-xl font-bold text-[#1E293B] mb-1">Startup</h4>
               <p className="text-sm text-[#475569] mb-6 font-medium">Odisha</p>
-              <div className="w-6 h-1 bg-[#2546A6] rounded-full"></div>
+              <div className="w-6 group-hover:w-16 h-1 bg-[#2546A6] rounded-full transition-all duration-500"></div>
             </div>
 
           </div>
