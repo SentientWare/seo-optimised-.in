@@ -99,7 +99,7 @@ export default function HomePage() {
             <div className="flex items-center gap-3">
               <div className="w-8 h-[2px] bg-[#F5A623]"></div>
               <span className="text-[#F5A623] text-sm font-semibold tracking-wide uppercase">
-                Digital Engineering Excellence
+                Brings Ideas to Life
               </span>
             </div>
             <h1 className="text-4xl md:text-5xl xl:text-[4rem] text-white leading-tight font-bold tracking-tight">

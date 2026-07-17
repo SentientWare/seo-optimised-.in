@@ -266,45 +266,26 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Global Presence Locations */}
+            {/* India Headquarters Locations */}
             <div className="bg-white p-8 rounded-xl border border-surface-grey shadow-sm">
-              <h3 className="font-headline-md text-headline-md text-primary mb-6">Global Presence</h3>
+              <h3 className="font-headline-md text-headline-md text-primary mb-6">India Headquarters</h3>
               <div className="space-y-6">
-                <div className="pb-6 border-b border-surface-grey">
-                  <h4 className="font-label-bold text-primary mb-1 text-sm font-bold">
-                    North America Headquarters
-                  </h4>
-                  <p className="text-xs text-on-surface-variant leading-relaxed">
-                    1200 Innovation Drive, Suite 500
-                    <br />
-                    San Francisco, CA 94105
-                  </p>
-                </div>
-                <div className="pb-6 border-b border-surface-grey">
-                  <h4 className="font-label-bold text-primary mb-1 text-sm font-bold">
-                    EMEA Center of Excellence
-                  </h4>
-                  <p className="text-xs text-on-surface-variant leading-relaxed">
-                    Tech Plaza, Building 4
-                    <br />
-                    Zurich, Switzerland 8001
-                  </p>
-                </div>
                 <div>
-                  <h4 className="font-label-bold text-primary mb-1 text-sm font-bold">APAC Hub</h4>
-                  <p className="text-xs text-on-surface-variant leading-relaxed">
-                    Level 42, International Finance Centre
-                    <br />
-                    Singapore 018981
+                  <h4 className="font-label-bold text-primary mb-2 text-sm font-bold">
+                    SentientWare Tech Solutions Pvt. Ltd.
+                  </h4>
+                  <p className="text-sm text-on-surface-variant leading-relaxed mb-6">
+                    Lakshmi Narayan Panda<br />
+                    Uma Nagar 3rd Lane<br />
+                    Lanjipalli, Brahmapur Sadar<br />
+                    Ganjam, Odisha – 760008<br />
+                    India
+                  </p>
+                  <p className="text-sm text-on-surface-variant leading-relaxed italic">
+                    Delivering enterprise software, AI, cloud, data engineering, and digital transformation solutions to clients worldwide from our India headquarters.
                   </p>
                 </div>
               </div>
-              <Link
-                className="mt-6 inline-flex items-center gap-2 font-label-bold text-primary hover:text-secondary transition-colors text-sm"
-                href="/about-us"
-              >
-                View All Offices <span className="material-symbols-outlined">arrow_forward</span>
-              </Link>
             </div>
           </div>
         </div>
