@@ -3,9 +3,11 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import PrivacyPolicyModal from "./PrivacyPolicyModal";
+import TermsConditionsModal from "./TermsConditionsModal";
 
 export default function Footer() {
   const [isPrivacyModalOpen, setIsPrivacyModalOpen] = useState(false);
+  const [isTermsModalOpen, setIsTermsModalOpen] = useState(false);
   return (
     <footer className="bg-enterprise-blue-dark dark:bg-primary-container w-full pt-16 pb-8 border-t border-primary-container text-white transition-colors duration-300">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-gutter px-6 md:px-margin-desktop max-w-container-max-width mx-auto">
@@ -179,7 +181,18 @@ export default function Footer() {
                 }}
                 className="text-surface-variant opacity-80 hover:text-metallic-gold-light underline transition-all text-left"
               >
-                Privacy Policy & Terms
+                Privacy Policy
+              </button>
+            </li>
+            <li>
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  setIsTermsModalOpen(true);
+                }}
+                className="text-surface-variant opacity-80 hover:text-metallic-gold-light underline transition-all text-left"
+              >
+                Terms & Conditions
               </button>
             </li>
           </ul>
@@ -196,6 +209,10 @@ export default function Footer() {
       <PrivacyPolicyModal 
         isOpen={isPrivacyModalOpen} 
         onClose={() => setIsPrivacyModalOpen(false)} 
+      />
+      <TermsConditionsModal
+        isOpen={isTermsModalOpen}
+        onClose={() => setIsTermsModalOpen(false)}
       />
     </footer>
   );
