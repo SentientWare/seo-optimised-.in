@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ChatbotIcon from "@/components/ChatbotIcon";
 import CookieConsent from "@/components/CookieConsent";
+import IntroWrapper from "@/components/IntroWrapper";
 
 const sora = Sora({
   variable: "--font-sora",
@@ -40,11 +41,13 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col bg-surface text-on-surface font-body-md overflow-x-hidden">
-        <Header />
-        <main className="flex-grow">{children}</main>
-        <Footer />
-        <CookieConsent />
-        <ChatbotIcon />
+        <IntroWrapper>
+          <Header />
+          <main className="flex-grow">{children}</main>
+          <Footer />
+          <CookieConsent />
+          <ChatbotIcon />
+        </IntroWrapper>
       </body>
     </html>
   );
