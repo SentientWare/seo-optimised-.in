@@ -41,13 +41,32 @@ export async function POST(req: Request) {
       <p>${message.replace(/\n/g, '<br />')}</p>
     `;
 
-    // Send the email
+    // Send the email to the admin
     await transporter.sendMail({
       from: `"Sentientware Website" <${process.env.SMTP_USER}>`,
       to: process.env.RECEIVER_EMAIL,
       subject: `New Contact from ${fullName} (${company || 'Website'})`,
       html: htmlContent,
       replyTo: email,
+    });
+
+    // Send the auto-reply to the user
+    await transporter.sendMail({
+      from: `"Sentientware Team" <${process.env.SMTP_USER}>`,
+      to: email,
+      subject: `Thank you for contacting Sentientware`,
+      html: `
+        <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
+          <h2>Hello ${firstName},</h2>
+          <p>Thank you for reaching out to us at Sentientware!</p>
+          <p>We have successfully received your message and our team will get back to you as soon as possible.</p>
+          <br/>
+          <p>Best regards,</p>
+          <p><strong>The Sentientware Team</strong></p>
+          <hr style="border: none; border-top: 1px solid #eaeaea; margin: 20px 0;" />
+          <p style="font-size: 12px; color: #888;">This is an automated message. Please do not reply directly to this email.</p>
+        </div>
+      `,
     });
 
     return NextResponse.json({ success: true, message: 'Email sent successfully!' });
