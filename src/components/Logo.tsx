@@ -7,12 +7,12 @@ interface LogoProps {
 
 export default function Logo({ className = "", showText = true }: LogoProps) {
   return (
-    <div className={`flex items-center gap-1.5 ${className}`}>
+    <div className={`flex items-center ${className}`}>
       {/* Sentientware Company Logo */}
       <img 
-        src="/favicon.ico" 
+        src="https://career.sentientware.in/logo.png" 
         alt="Sentientware Logo" 
-        className="w-14 h-14 object-contain flex-shrink-0"
+        className="w-20 h-20 object-contain flex-shrink-0 -mr-4"
       />
       
       {showText && (
