@@ -69,13 +69,36 @@ export default function HomePage() {
     }
   };
 
-  const handleFormSubmit = (e: React.FormEvent) => {
+  const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.firstName || !formData.email) {
       alert("Please fill out the required fields (First Name and Email).");
       return;
     }
-    setFormSubmitted(true);
+    
+    try {
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+          email: formData.email,
+          message: formData.challenge || 'No challenge provided',
+          company: formData.industry,
+        }),
+      });
+
+      if (response.ok) {
+        setFormSubmitted(true);
+      } else {
+        const result = await response.json();
+        alert(result.error || "Failed to send message.");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("An error occurred. Please try again later.");
+    }
   };
 
   return (

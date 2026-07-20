@@ -51,13 +51,35 @@ export default function CareersPage() {
     });
   }, [selectedLocation, selectedDept]);
 
-  const handleApplySubmit = (e: React.FormEvent) => {
+  const handleApplySubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!applyForm.name || !applyForm.email) {
       alert("Please fill out your Name and Email.");
       return;
     }
-    setApplySuccess(true);
+    
+    try {
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: applyForm.name,
+          email: applyForm.email,
+          message: `Job Application for: ${applyJob?.title}\nResume uploaded: ${applyForm.resumeName || 'None'}`,
+          company: 'Job Applicant',
+        }),
+      });
+
+      if (response.ok) {
+        setApplySuccess(true);
+      } else {
+        const result = await response.json();
+        alert(result.error || "Failed to submit application.");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("An error occurred. Please try again later.");
+    }
   };
 
   return (

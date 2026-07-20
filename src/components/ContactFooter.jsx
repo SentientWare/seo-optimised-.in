@@ -5,18 +5,30 @@ export default function ContactFooter() {
   const [form, setForm] = useState({ name: '', email: '', company: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (form.name && form.email && form.message) {
-      const subject = encodeURIComponent(`New Project Inquiry from ${form.name}`);
-      const body = encodeURIComponent(`Name: ${form.name}\nEmail: ${form.email}\nCompany: ${form.company}\n\nProject Details:\n${form.message}`);
-      window.location.href = `mailto:info@sentientware.in?subject=${subject}&body=${body}`;
-
-      setSubmitted(true);
-      setTimeout(() => {
-        setSubmitted(false);
-        setForm({ name: '', email: '', company: '', message: '' });
-      }, 3000);
+    if (!form.name || !form.email || !form.message) return;
+    
+    try {
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+      
+      if (response.ok) {
+        setSubmitted(true);
+        setTimeout(() => {
+          setSubmitted(false);
+          setForm({ name: '', email: '', company: '', message: '' });
+        }, 3000);
+      } else {
+        const result = await response.json();
+        alert(result.error || "Failed to send message.");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Error sending message.");
     }
   };
 
